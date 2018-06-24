@@ -9,8 +9,8 @@ Complemento,Determinante,Substantivo -> Complementos
 Determinante,Substantivo,Verbo -> Sujeito,Verbo
 Determinante,Sujeito,Verbo -> Sujeito,Verbo
 Frase -> Período
-Locução Adverbial -> Complemento
 Locução Adverbial -> Advérbio
+Locução Adverbial -> Complemento
 Numeral -> Pos-determinante
 Predicado complexo,Complemento -> Predicado complexo
 Predicado simples -> Período

@@ -1,6 +1,5 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-    "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
   <head>
     <meta charset="UTF-8">
@@ -9,12 +8,10 @@
     <script>
         function analisaSintaxe() {
             var xhttp = new XMLHttpRequest();
-
             xhttp.onreadystatechange = function () {
                 if (this.readyState === 4 && this.status === 200)
                     document.getElementById("idSaida").innerHTML = this.responseText;
             };
-
             xhttp.open("GET", "analisar?entrada=" + encodeURIComponent(document.getElementById("idCampoEntrada").value), true);
             xhttp.send();
         }
