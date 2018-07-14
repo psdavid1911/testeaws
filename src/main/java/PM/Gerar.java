@@ -1,6 +1,6 @@
 package PM;
 
-import EstruturasDeDados.Lista;
+import EstruturasDeDados.ListaAntiga;
 import Tempo.DataHora;
 import java.time.Month;
 
@@ -14,7 +14,7 @@ public class Gerar {
         return servico;
     }
 
-    static Agente agente(String contato, Tipo_de_escala escala, String nome, int numeral, Lista<Servico> servicos, String ingresso) {
+    static Agente agente(String contato, Tipo_de_escala escala, String nome, int numeral, ListaAntiga<Servico> servicos, String ingresso) {
         Agente agente = new Agente();
         agente.setContato(contato);
         agente.setEscala(escala);

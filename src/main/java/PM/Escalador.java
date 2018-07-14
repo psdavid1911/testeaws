@@ -1,19 +1,19 @@
 package PM;
 
-import EstruturasDeDados.Lista;
+import EstruturasDeDados.ListaAntiga;
 import Tempo.DataHora;
 
 public class Escalador {
 
-    Lista<Agente> agentes;
+    ListaAntiga<Agente> agentes;
 
-    public Escalador(Lista<Agente> agentes) {
+    public Escalador(ListaAntiga<Agente> agentes) {
         this.agentes = agentes;
     }
 
-    Lista<Escalacao> criaPosto(String onde, DataHora inicio, DataHora fim, int quantos) {
+    ListaAntiga<Escalacao> criaPosto(String onde, DataHora inicio, DataHora fim, int quantos) {
         int contador = 0;
-        Lista<Escalacao> escala = new Lista<Escalacao>();
+        ListaAntiga<Escalacao> escala = new ListaAntiga<Escalacao>();
 
         for (Agente policial : agentes) {
             if (policial.disponibilidadeDoHorario(inicio, fim)) {
@@ -27,8 +27,8 @@ public class Escalador {
         return escala;
     }
     
-    Lista<Escalacao> criaEscala(String onde, DataHora inicio, DataHora fim, Lista<String> postos){
-        Lista<Escalacao> escala = new Lista<Escalacao>();
+    ListaAntiga<Escalacao> criaEscala(String onde, DataHora inicio, DataHora fim, ListaAntiga<String> postos){
+        ListaAntiga<Escalacao> escala = new ListaAntiga<Escalacao>();
         for(String posto: postos){
             escala.adicionaTodos(criaPosto(onde, inicio, fim, 2));
         }

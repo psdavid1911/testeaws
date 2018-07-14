@@ -1,6 +1,6 @@
 package PM;
 
-import EstruturasDeDados.Lista;
+import EstruturasDeDados.ListaAntiga;
 import Tempo.DataHora;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -35,7 +35,7 @@ public class AgenteTest {
         agente.setEscala(Gerar.tipo_de_escala(4, 2));
         agente.setNome("David");
         agente.setNumeral(32711);
-        agente.setServicos(new Lista<Servico>(
+        agente.setServicos(new ListaAntiga<Servico>(
                 Gerar.servico(new DataHora(7, 30), new DataHora(14, 30), "Caça e pesca"),
                 Gerar.servico(new DataHora(10, 00), new DataHora(17, 0), "Tia")
         ));
@@ -64,11 +64,11 @@ public class AgenteTest {
     @Test
     public void testGetServicos() {
         System.out.println("getServicos");
-        Lista<Servico> expResult = new Lista<Servico>(
+        ListaAntiga<Servico> expResult = new ListaAntiga<Servico>(
                 Gerar.servico(new DataHora(7, 30), new DataHora(14, 30), "Caça e pesca"),
                 Gerar.servico(new DataHora(10, 00), new DataHora(17, 0), "Tia")
         );
-        Lista<Servico> result = agente.getServicos();
+        ListaAntiga<Servico> result = agente.getServicos();
         assertEquals(expResult.toString(), result.toString());
     }
 
@@ -77,12 +77,12 @@ public class AgenteTest {
         System.out.println("addServico");
         Servico servico = Gerar.servico(new DataHora(0, 0), new DataHora(0, 0), "Arapao");
         agente.addServico(servico);
-        Lista<Servico> expResult = new Lista<Servico>(
+        ListaAntiga<Servico> expResult = new ListaAntiga<Servico>(
                 Gerar.servico(new DataHora(7, 30), new DataHora(14, 30), "Caça e pesca"),
                 Gerar.servico(new DataHora(10, 00), new DataHora(17, 0), "Tia"),
                 Gerar.servico(new DataHora(0, 0), new DataHora(0, 0), "Arapao")
         );
-        Lista<Servico> result = agente.getServicos();
+        ListaAntiga<Servico> result = agente.getServicos();
         assertEquals(expResult.toString(), result.toString());
     }
 
@@ -105,12 +105,12 @@ public class AgenteTest {
         System.out.println("adicionaServico"); // verificar diferencas depois
         Servico servico = Gerar.servico(new DataHora(0, 0), new DataHora(0, 0), "Arapao");
         agente.addServico(servico);
-        Lista<Servico> expResult = new Lista<Servico>(
+        ListaAntiga<Servico> expResult = new ListaAntiga<Servico>(
                 Gerar.servico(new DataHora(7, 30), new DataHora(14, 30), "Caça e pesca"),
                 Gerar.servico(new DataHora(10, 00), new DataHora(17, 0), "Tia"),
                 Gerar.servico(new DataHora(0, 0), new DataHora(0, 0), "Arapao")
         );
-        Lista<Servico> result = agente.getServicos();
+        ListaAntiga<Servico> result = agente.getServicos();
         assertEquals(expResult.toString(), result.toString());
     }
 
@@ -121,10 +121,10 @@ public class AgenteTest {
     public void testRemoveServico() {
         System.out.println("removeServico");
         agente.removeServico(Gerar.servico(new DataHora(10, 00), new DataHora(17, 0), "Tia"));
-        Lista<Servico> expResult = new Lista<Servico>(
+        ListaAntiga<Servico> expResult = new ListaAntiga<Servico>(
                 Gerar.servico(new DataHora(7, 30), new DataHora(14, 30), "Caça e pesca")
         );
-        Lista<Servico> result = agente.getServicos();
+        ListaAntiga<Servico> result = agente.getServicos();
         System.out.println( agente.getServicos().toString() );
         assertEquals(expResult.toString(), result.toString());
     }
@@ -146,7 +146,7 @@ public class AgenteTest {
     @Test
     public void testCompareTo() {
         System.out.println("compareTo");
-        Agente outroAgente = Gerar.agente("", Gerar.tipo_de_escala(4, 2), "neo", 0, new Lista<Servico>(), "01/01/2018");
+        Agente outroAgente = Gerar.agente("", Gerar.tipo_de_escala(4, 2), "neo", 0, new ListaAntiga<Servico>(), "01/01/2018");
         int expResult = 1;
         int result = agente.compareTo(outroAgente);
         assertEquals(expResult, result);

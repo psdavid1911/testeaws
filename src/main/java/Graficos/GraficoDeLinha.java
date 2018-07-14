@@ -1,5 +1,5 @@
 package Graficos;
-import EstruturasDeDados8.Lista8;
+import EstruturasDeDados8.Lista;
 import EstruturasDeDados8.Par8;
 import EstruturasDeDados8.TabelaHash8;
 import java.io.*;
@@ -21,7 +21,7 @@ public class GraficoDeLinha<TIPOX extends Comparable,TIPOY extends Number>{
             conjuntoDeDados.addValue(entrada.getValue(),NomeDaSerie,entrada.getKey());
     }
 
-    public void adicionaConjuntoDeDados(Lista8<Par8<TIPOX,TIPOY>> dados,String NomeDaSerie){
+    public void adicionaConjuntoDeDados(Lista<Par8<TIPOX,TIPOY>> dados,String NomeDaSerie){
         for(Par8<TIPOX,TIPOY> par:dados)
             conjuntoDeDados.addValue(par.getY(),NomeDaSerie,par.getX());
     }

@@ -1,6 +1,6 @@
 package teste_Imagem;
 import EstruturasDeDados8.Grafo8;
-import EstruturasDeDados8.Lista8;
+import EstruturasDeDados8.Lista;
 import EstruturasDeDados8.Par8;
 import EstruturasDeDados8.V;
 import Imagem.Imagem;
@@ -55,12 +55,12 @@ public class ImagemGrafo{
          * MUITO CUIDADO!!! CUIDADO!!!! OS VALORES DA LISTA INTERNA DO GRAFO NÃO
          * ESTAO SENDO MODIFICADOS MELHORAR!!!!!!!!!!!!
          */
-        for(Entry<V<String>,Lista8<V<String>>> entrada:grafo.conjunto())
-            for(Entry<V<String>,Lista8<V<String>>> entrada2:grafo.conjunto())
+        for(Entry<V<String>,Lista<V<String>>> entrada:grafo.conjunto())
+            for(Entry<V<String>,Lista<V<String>>> entrada2:grafo.conjunto())
                 for(V<String> verticeAdjascente:grafo.pegaVertices())
                     if(grafo.existeAresta(verticeAdjascente,entrada.getKey()))
                         imagem.desenhaLinha(Color.yellow,entrada.getKey().x,entrada.getKey().y,verticeAdjascente.x,verticeAdjascente.y);
-        for(Entry<V<String>,Lista8<V<String>>> entrada:grafo.conjunto()) {
+        for(Entry<V<String>,Lista<V<String>>> entrada:grafo.conjunto()) {
             /**
              * Impressao da bola
              */
@@ -83,9 +83,9 @@ public class ImagemGrafo{
             /**
              * Itera por todas as posicoes Atribuindo valores aleatorios
              */
-            for(Entry<V<String>,Lista8<V<String>>> entrada:grafo.conjunto()) {
+            for(Entry<V<String>,Lista<V<String>>> entrada:grafo.conjunto()) {
                 V<String> vertice=entrada.getKey();
-                Lista8<V<String>> adjascencias=entrada.getValue();
+                Lista<V<String>> adjascencias=entrada.getValue();
                 vertice.x=aleatorioMenorQueMetadeX();
                 vertice.y=aleatorioMenorQueMetadeY();
                 imprime(vertice.toString()); // ja verifica
@@ -199,7 +199,7 @@ public class ImagemGrafo{
 //        int xAnterior = xDoCentro;
 //        int yAnterior = yDoCentro;
 //        double angulo = 0;
-//        for(Entry<String, Lista8<String>> par : grafo.conjunto()){
+//        for(Entry<String, Lista<String>> par : grafo.conjunto()){
 //            /**
 //             * Cálculo da posicao
 //             */

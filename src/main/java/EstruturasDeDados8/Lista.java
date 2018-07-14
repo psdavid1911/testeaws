@@ -1,6 +1,6 @@
 package EstruturasDeDados8;
 
-import EstruturasDeDados.Lista;
+import EstruturasDeDados.ListaAntiga;
 import java.util.List;
 import java.util.Random;
 import java.util.function.Consumer;
@@ -15,12 +15,16 @@ import java.util.stream.Stream;
  * @author david
  * @param <T>
  */
-public class Lista8<T extends Comparable<T>> extends Lista<T> implements Iterable<T>{
-    public Lista8(List<T> lista){
+public class Lista<T extends Comparable<T>> extends ListaAntiga<T> implements Iterable<T>{
+    public Lista(T... elementos ){
+        super(elementos);
+    }
+    
+    public Lista(List<T> lista){
         super(lista);
     }
 
-    public Lista8(){
+    public Lista(){
         super();
     }
 
@@ -32,8 +36,8 @@ public class Lista8<T extends Comparable<T>> extends Lista<T> implements Iterabl
         return stream().filter(predicado);
     }
 
-    public Lista8<T> sublista(Predicate<T> expressaoLambda){
-        return new Lista8(filtro(expressaoLambda).collect(Collectors.toList()));
+    public Lista<T> sublista(Predicate<T> expressaoLambda){
+        return new Lista(filtro(expressaoLambda).collect(Collectors.toList()));
     }
 
     public void paraCada(Consumer<? super T> expressaoLambda){

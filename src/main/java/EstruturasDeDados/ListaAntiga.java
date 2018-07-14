@@ -15,19 +15,19 @@ import java.util.Random;
  * @author david
  * @param <T>
  */
-public class Lista<T extends Comparable<T>> extends ArrayList<T> implements Iterable<T>, Comparable<Lista<T>>
+public class ListaAntiga<T extends Comparable<T>> extends ArrayList<T> implements Iterable<T>, Comparable<ListaAntiga<T>>
 {
-    public Lista( T... elementos )
+    public ListaAntiga( T... elementos )
     {
         super( asList( elementos ) );
     }
 
-    public Lista( List<T> lista )
+    public ListaAntiga( List<T> lista )
     {
         super( lista );
     }
 
-    public Lista()
+    public ListaAntiga()
     {
         super();
     }
@@ -38,7 +38,7 @@ public class Lista<T extends Comparable<T>> extends ArrayList<T> implements Iter
     }
 
     @Override
-    public int compareTo( Lista<T> o )
+    public int compareTo( ListaAntiga<T> o )
     {
         return this.toString().compareTo( o.toString() );
     }
@@ -118,9 +118,9 @@ public class Lista<T extends Comparable<T>> extends ArrayList<T> implements Iter
         return get( indiceDoElemento( elemento ) );
     }
 
-    public Lista<T> subLista( int posicaoInicial, int posicaoFinal )
+    public ListaAntiga<T> subLista( int posicaoInicial, int posicaoFinal )
     {
-        return new Lista<T>( subList( posicaoInicial, posicaoFinal ) );
+        return new ListaAntiga<T>( subList( posicaoInicial, posicaoFinal ) );
     }
 
     public int indiceDoElemento( T elemento )

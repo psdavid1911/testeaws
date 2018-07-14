@@ -21,12 +21,12 @@ import java.util.Iterator;
  */
 public class Relacao8<A extends Comparable<A>,B extends Comparable<B>> implements Iterable<Par8<A,B>>{
 
-    Lista8<Par8<A,B>> relacao=new Lista8<Par8<A,B>>();
+    Lista<Par8<A,B>> relacao=new Lista<Par8<A,B>>();
 
     public Relacao8(){
     }
 
-    public Relacao8(Lista8<Par8<A,B>> relacao){
+    public Relacao8(Lista<Par8<A,B>> relacao){
         this.relacao=relacao;
     }
 
@@ -47,15 +47,15 @@ public class Relacao8<A extends Comparable<A>,B extends Comparable<B>> implement
 
     //Construtivo
     public Relacao8<A,B> pegaRelacoes(A elementoDoDominio){
-        Lista8<Par8<A,B>> novaLista=new Lista8<Par8<A,B>>();
+        Lista<Par8<A,B>> novaLista=new Lista<Par8<A,B>>();
         for(Par8<A,B> par:relacao)
             if(par.getX().equals(elementoDoDominio))
                 novaLista.adiciona(par);
         return new Relacao8<A,B>(novaLista);
     }
 
-    public Lista8<B> pegaImagens(A elementoDoDominio){
-        Lista8<B> imagens=new Lista8<B>();
+    public Lista<B> pegaImagens(A elementoDoDominio){
+        Lista<B> imagens=new Lista<B>();
         for(Par8<A,B> parOrdenado:relacao)
             imagens.adiciona(parOrdenado.getY());
         return imagens;

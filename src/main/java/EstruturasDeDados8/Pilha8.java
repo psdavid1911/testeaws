@@ -69,7 +69,7 @@ public class Pilha8<T extends Comparable<T>> implements Iterable<T>{
         return pilha.size();
     }
 
-    public Lista8<T> pegaLista(){
-        return new Lista8(Arrays.asList(pilha.toArray()));
+    public Lista<T> pegaLista(){
+        return new Lista(Arrays.asList(pilha.toArray()));
     }
 }

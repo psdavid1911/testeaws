@@ -1,6 +1,6 @@
 package FluxoDeArquivos;
 
-import EstruturasDeDados.Lista;
+import EstruturasDeDados.ListaAntiga;
 import java.util.Arrays;
 import org.junit.Test;
 
@@ -10,7 +10,7 @@ public class TestesFLuxoTexto{
     public void testEscreve2(){
         FluxoDeTexto es;
         es=new FluxoDeTexto("test/lixo/TesteFluxoDeTexto2.txt");
-        Lista<String> linhas=new Lista<String>(Arrays.asList(
+        ListaAntiga<String> linhas=new ListaAntiga<String>(Arrays.asList(
                 "Linha 1","Linha 2","Linha 3"
         ));
         es.escreve(linhas);
@@ -21,7 +21,7 @@ public class TestesFLuxoTexto{
     public void testLe1(){
         FluxoDeTexto es;
         es=new FluxoDeTexto("test/lixo/TesteFluxoDeTexto.txt");
-        Lista<String> linhas=es.le();
+        ListaAntiga<String> linhas=es.le();
         System.out.println(linhas);
     }
 
@@ -29,7 +29,7 @@ public class TestesFLuxoTexto{
     public void testLe2(){
         FluxoDeTexto es;
         es=new FluxoDeTexto("test/lixo/TesteFluxoDeTexto2.txt");
-        Lista<String> linhas=es.le();
+        ListaAntiga<String> linhas=es.le();
         System.out.println(linhas);
     }
 

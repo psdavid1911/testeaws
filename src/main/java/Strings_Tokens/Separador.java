@@ -1,10 +1,10 @@
 package Strings_Tokens;
 
-import EstruturasDeDados.Lista;
+import EstruturasDeDados.ListaAntiga;
 import java.util.StringTokenizer;
 
 public class Separador{
-    public Lista<String> listaDePedacos = new Lista<String>();
+    public ListaAntiga<String> listaDePedacos = new ListaAntiga<String>();
 
     public Separador( String linha ){
         StringTokenizer st = new StringTokenizer( linha, " \n" );
@@ -12,8 +12,8 @@ public class Separador{
             listaDePedacos.adiciona( ( String ) st.nextElement() );
     }
 
-    public static Lista<String> separa( String linha ){
-        Lista<String> listaDePedacos = new Lista<String>();
+    public static ListaAntiga<String> separa( String linha ){
+        ListaAntiga<String> listaDePedacos = new ListaAntiga<String>();
         StringTokenizer st = new StringTokenizer( linha, " \n" );
         while( st.hasMoreElements() )listaDePedacos.adiciona( ( String ) st.nextElement() );
         return listaDePedacos;

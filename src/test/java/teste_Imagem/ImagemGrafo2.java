@@ -1,6 +1,6 @@
 package teste_Imagem;
 import EstruturasDeDados8.Grafo8;
-import EstruturasDeDados8.Lista8;
+import EstruturasDeDados8.Lista;
 import EstruturasDeDados8.Par8;
 import EstruturasDeDados8.TabelaHash8;
 import EstruturasDeDados8.parSimples;
@@ -51,9 +51,9 @@ public class ImagemGrafo2{
         /**
          * Inicializa o manipulador de coordenadas do grafo
          */
-        for(Entry<String,Lista8<String>> entrada:grafo.conjunto()) {
+        for(Entry<String,Lista<String>> entrada:grafo.conjunto()) {
             String vertice=entrada.getKey();
-            Lista8<String> listaDeAdjascencias=entrada.getValue();
+            Lista<String> listaDeAdjascencias=entrada.getValue();
             //coordenadasDoGrafo.adiciona(vertice, new Par8(0,0));
             coordenadas.adiciona(vertice,new Par8(new Random().nextInt(xDoCentro)-xDoCentro/2,new Random().nextInt(yDoCentro)-xDoCentro/2));
             System.out.println("\nPosicao Inicial: "+coordenadas.pega(vertice).getX()+" : "+coordenadas.pega(vertice).getY());
@@ -67,7 +67,7 @@ public class ImagemGrafo2{
         calculaPosicoes();
         // Visualizacao pelo terminal terminal
         imprime(grafo.toString());
-        for(Entry<String,Lista8<String>> entrada:grafo.conjunto()) {
+        for(Entry<String,Lista<String>> entrada:grafo.conjunto()) {
             int xNovo=coordenadas.pega(entrada.getKey()).getX();
             int yNovo=coordenadas.pega(entrada.getKey()).getY();
             for(String v:entrada.getValue()) {
@@ -76,7 +76,7 @@ public class ImagemGrafo2{
                 imagem.desenhaLinha(Color.yellow,xNovo+xDoCentro,yNovo+yDoCentro,xf+xDoCentro,yf+yDoCentro);
             }
         }
-        for(Entry<String,Lista8<String>> entrada:grafo.conjunto()) {
+        for(Entry<String,Lista<String>> entrada:grafo.conjunto()) {
             int xNovo=coordenadas.pega(entrada.getKey()).getX();
             int yNovo=coordenadas.pega(entrada.getKey()).getY();
             System.out.println("\nCoordenada: "+(xNovo+xDoCentro)+" : "+(yNovo+yDoCentro));
@@ -96,9 +96,9 @@ public class ImagemGrafo2{
             /**
              * Itera por todas as posicoes Atribuindo valores aleatorios
              */
-            for(Entry<String,Lista8<String>> entradas:grafo.conjunto()) {
+            for(Entry<String,Lista<String>> entradas:grafo.conjunto()) {
                 String vertice=entradas.getKey();
-                Lista8<String> adjascencias=entradas.getValue();
+                Lista<String> adjascencias=entradas.getValue();
                 coordenadas.pega(vertice).x=aleatorioMenorQueMetadeX();
                 coordenadas.pega(vertice).y=aleatorioMenorQueMetadeY();
                 for(String s:adjascencias) {
@@ -182,7 +182,7 @@ public class ImagemGrafo2{
 //        int xAnterior = xDoCentro;
 //        int yAnterior = yDoCentro;
 //        double angulo = 0;
-//        for(Entry<String, Lista8<String>> par : grafo.conjunto()){
+//        for(Entry<String, Lista<String>> par : grafo.conjunto()){
 //            /**
 //             * Cálculo da posicao
 //             */
