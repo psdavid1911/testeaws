@@ -1,6 +1,5 @@
 package Matematica;
 import EstruturasDeDados8.Lista;
-import mat.EstatisticaDescritiva;
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 

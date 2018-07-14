@@ -5,7 +5,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import mat.EstatisticaDescritiva;
+import Matematica.EstatisticaDescritiva;
 
 @WebServlet(urlPatterns={"/calcularEstatistico"})
 public class servletEstatistico extends HttpServlet{
