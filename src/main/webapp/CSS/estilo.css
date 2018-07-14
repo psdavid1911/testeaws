@@ -64,7 +64,7 @@ div, fieldset, input[type=text], input[type=button]{
 .projeto{
     background: linear-gradient( 180deg , rgba(255,255,255,0), rgba(255,255,255,0), rgba(255,255,255,0));
     margin-bottom: 100px;
-    align-content: space-between;
+    align-content: flex-start;
     /*align-items: flex-end;*/
     /*          text-align: justify;
               text-justify: inter-word;*/
