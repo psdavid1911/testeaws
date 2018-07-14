@@ -6,13 +6,13 @@
     <link rel="stylesheet" type="text/css" href="CSS/estilo.css">
     <script src="JS/include.js"></script>
     <script>
-       function analisaSintaxe() {
+       function analisaEstatisticamente() {
             var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function () {
                 if (this.readyState === 4 && this.status === 200)
                     document.getElementById("idSaida").innerHTML = this.responseText;
             };
-            xhttp.open("GET", "analisar?entrada=" + encodeURIComponent(document.getElementById("idCampoEntrada").value), true);
+            xhttp.open("GET", "calcularEstatistico?entrada=" + encodeURIComponent(document.getElementById("idCampoEntrada").value), true);
             xhttp.send();
         }
     </script>
@@ -20,13 +20,13 @@
   <body>
     <script>leitorDeArquivo("Esqueletos/marca.html");</script>
     <div class="coluna">
-      <div class="linha titulo" style="font-size: 90pt;">Funções estatísticas</div>
+      <div class="linha titulo" style="font-size: 90pt;">Estatística Descritiva</div>
       <div class="linha" style="height: 150px"></div>
       <div class="linha">
         <form>
           <fieldset>
-            <input id="idCampoEntrada"  type="text" placeholder="Digite a oração a analisar...">
-            <input type="button" style="width: auto;"  value="Analisar" onclick="analisaSintaxe();" /><br>
+            <input id="idCampoEntrada"  type="text" placeholder="Digite uma série, como por exemplo: 1,2,3">
+            <input type="button" style="width: auto;"  value="Analisar" onclick="analisaEstatisticamente();" /><br>
             <div class="linha" style="height: 100px"></div>
             <p id="idSaida" >Saída do programa</p>
           </fieldset>
