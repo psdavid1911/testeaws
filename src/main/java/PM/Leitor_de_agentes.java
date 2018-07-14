@@ -12,7 +12,10 @@ public class Leitor_de_agentes {
 
     Leitor_de_agentes() {
         Lista<String> linhasDoArquivo = manipulador.le();
-        linhasDoArquivo.remove(0);
+        try{linhasDoArquivo.remove(0);}
+        catch(Exception e){
+            return;
+        }
         for (String linha : linhasDoArquivo) {
             String[] campo = linha.split(";");
             // nome numeral ingresso contato escala
