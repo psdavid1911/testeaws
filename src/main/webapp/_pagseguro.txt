@@ -1,0 +1,11 @@
+Descrição da aplicação:
+Aplicação de teste
+ID da aplicação:
+testeaws2
+URL da aplicação:
+http://18.228.55.248/
+URL de notificação:
+http://18.228.55.248/pagseguro_test.jsp
+Nome do parâmetro para o código da transação:
+id_compra
+A chave desta aplicação é:3E19742AFAFA428004E31F8BF481F08E

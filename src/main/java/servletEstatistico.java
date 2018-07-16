@@ -1,16 +1,20 @@
 import EstruturasDeDados8.Lista;
+import Matematica.EstatisticaDescritiva;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import Matematica.EstatisticaDescritiva;
 
 @WebServlet(urlPatterns={"/calcularEstatistico"})
 public class servletEstatistico extends HttpServlet{
 
     @Override protected void doGet(HttpServletRequest request,HttpServletResponse response) throws ServletException,IOException{
+        doPost(request,response);
+    }
+
+    @Override protected void doPost(HttpServletRequest request,HttpServletResponse response) throws ServletException,IOException{
         EstatisticaDescritiva e=new EstatisticaDescritiva();
         response.setContentType("text/html");
         String entrada=request.getParameter("entrada");
