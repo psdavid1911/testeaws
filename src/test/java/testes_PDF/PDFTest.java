@@ -1,4 +1,4 @@
-package PDF;
+package testes_PDF;
 
 import Servlets.PDF.PDF;
 import org.junit.After;

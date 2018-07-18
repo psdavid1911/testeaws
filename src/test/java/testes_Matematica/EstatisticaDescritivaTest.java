@@ -1,5 +1,6 @@
-package Matematica;
+package testes_Matematica;
 import EstruturasDeDados.Lista;
+import Matematica.EstatisticaDescritiva;
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 

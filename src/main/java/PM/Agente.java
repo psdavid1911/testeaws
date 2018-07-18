@@ -7,12 +7,12 @@ import java.time.Period;
 
 public class Agente implements Comparable<Agente> {
 
-    private int numeral;
-    private DataHora ingresso;
-    private String nome;
-    private String contato;
-    private Tipo_de_escala escala;
-    private Lista<Servico> servicos;
+    public int numeral;
+    public DataHora ingresso;
+    public String nome;
+    public String contato;
+    public Tipo_de_escala escala;
+    public Lista<Servico> servicos;
     
     
 

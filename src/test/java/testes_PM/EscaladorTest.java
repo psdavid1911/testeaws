@@ -1,6 +1,10 @@
-package PM;
+package testes_PM;
 
 import EstruturasDeDados.Lista;
+import PM.Escalacao;
+import PM.Escalador;
+import PM.Gerar;
+import PM.Servico;
 import Tempo.DataHora;
 import org.junit.After;
 import org.junit.AfterClass;

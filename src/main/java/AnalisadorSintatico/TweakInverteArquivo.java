@@ -5,9 +5,11 @@ import org.junit.Test;
 
 public class TweakInverteArquivo{
 
+    String arquivo = "lexico.txt";
+    
     @Test public void teste(){
         Lista<String> nova=new Lista<String>();
-        FluxoDeTexto manipulador=new FluxoDeTexto("lexico.txt");
+        FluxoDeTexto manipulador=new FluxoDeTexto(arquivo);
         for(String linha:manipulador.le()){
             linha=Gramatica.consertaFormatacao(linha);
             String argumentos[]=linha.split("->");

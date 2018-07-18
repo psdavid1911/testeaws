@@ -1,6 +1,7 @@
-package PM;
+package testes_PM;
 
 import Definicoes.Print;
+import PM.Leitor_de_agentes;
 import org.junit.Test;
 
 /**

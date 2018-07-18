@@ -10,7 +10,7 @@ public class Leitor_de_agentes {
 
     TabelaHash<Integer, Agente> agentes = new TabelaHash<Integer, Agente>();
 
-    Leitor_de_agentes() {
+    public Leitor_de_agentes() {
         Lista<String> linhasDoArquivo = manipulador.le();
         try{linhasDoArquivo.remove(0);}
         catch(Exception e){
