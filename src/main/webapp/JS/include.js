@@ -18,6 +18,7 @@ function leitorDeArquivo(file)
 
 function cabecalhos() {
     var cssId = 'externo';  // you could encode the css path itself to generate id..
+    var base = 'http://18.228.55.248/'
     if (!document.getElementById(cssId))
     {
         var head = document.getElementsByTagName('head')[0];
@@ -35,7 +36,7 @@ function cabecalhos() {
         link2.rel = 'stylesheet';
         link2.type = 'text/css';
         link2.media = 'all';
-        link2.href = 'CSS/estilo.css';
+        link2.href = base + 'CSS/estilo.css';
         head2.appendChild(link2);
     }
 }
