@@ -1,9 +1,3 @@
-<%-- 
-    Document   : escala_de_trabalho
-    Created on : 13/06/2018, 13:43:53
-    Author     : psdav
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>

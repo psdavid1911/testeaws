@@ -1,9 +1,3 @@
-<%-- 
-    Document   : gerador_de_trabalhos
-    Created on : 13/06/2018, 13:45:25
-    Author     : psdav
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>

@@ -4,7 +4,7 @@
   <head>
     <meta charset="UTF-8">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <link rel="stylesheet" type="text/css" href="CSS/estilo.css">
+    <link rel="stylesheet" href="https://cdn.concisecss.com/concise.min.css" >
     <script src="JS/include.js"></script>
   </head>
   <body>
@@ -25,6 +25,5 @@
       </div>
       <script>leitorDeArquivo("Esqueletos/rodape.html");</script>
     </div>
-
   </body>
 </html>

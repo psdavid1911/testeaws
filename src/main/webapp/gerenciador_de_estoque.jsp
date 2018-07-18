@@ -1,9 +1,3 @@
-<%-- 
-    Document   : gerenciador_de_estoque
-    Created on : 13/06/2018, 13:48:09
-    Author     : psdav
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>

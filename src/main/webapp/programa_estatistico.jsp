@@ -3,10 +3,9 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="CSS/estilo.css">
     <script src="JS/include.js"></script>
     <script>
-       function analisaEstatisticamente() {
+        function analisaEstatisticamente() {
             var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function () {
                 if (this.readyState === 4 && this.status === 200)

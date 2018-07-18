@@ -3,7 +3,6 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="CSS/estilo.css">
     <script src="JS/include.js"></script>
     <script>
         function analisaSintaxe() {

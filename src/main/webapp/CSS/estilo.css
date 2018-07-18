@@ -166,3 +166,16 @@ input[type=button]:focus{
     font-size: 500pt;
     color: rgba(0,0,0,0.03);
 }
+
+#botoesFixos{
+    position: fixed;
+    flex-direction: column;
+    text-align: center;
+    top: 50px;
+    left: 50px;
+    z-index: 99;
+}
+#botaoFixo{
+    color: white;
+    font-size:50px;
+}
