@@ -1,6 +1,6 @@
 package PM;
 
-import EstruturasDeDados.ListaAntiga;
+import EstruturasDeDados.Lista;
 import Tempo.DataHora;
 import java.time.LocalDate;
 import java.time.Period;
@@ -12,7 +12,7 @@ public class Agente implements Comparable<Agente> {
     private String nome;
     private String contato;
     private Tipo_de_escala escala;
-    private ListaAntiga<Servico> servicos;
+    private Lista<Servico> servicos;
     
     
 
@@ -32,11 +32,11 @@ public class Agente implements Comparable<Agente> {
         this.nome = nome;
     }
 
-    public ListaAntiga<Servico> getServicos() {
+    public Lista<Servico> getServicos() {
         return servicos;
     }
 
-    public void setServicos(ListaAntiga<Servico> servicos) {
+    public void setServicos(Lista<Servico> servicos) {
         this.servicos = servicos;
     }
 

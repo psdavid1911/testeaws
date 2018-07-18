@@ -1,17 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package testes_EstruturasDeDados;
-import EstruturasDeDados8.Par8;
-import EstruturasDeDados8.Relacao8;
+import EstruturasDeDados.Par8;
+import EstruturasDeDados.Relacao8;
 import org.junit.Test;
 
-/**
- *
- * @author david
- */
 public class testeRelacao{
 
     @Test

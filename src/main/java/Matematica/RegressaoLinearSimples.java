@@ -1,7 +1,7 @@
 package Matematica;
-import EstruturasDeDados8.Lista;
-import EstruturasDeDados8.Par8;
-import EstruturasDeDados8.TabelaHash8;
+import EstruturasDeDados.Lista;
+import EstruturasDeDados.Par8;
+import EstruturasDeDados.TabelaHash8;
 import java.util.Map.Entry;
 import org.apache.commons.math3.stat.regression.SimpleRegression;
 

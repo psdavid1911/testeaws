@@ -1,4 +1,4 @@
-package TiposDeDados;
+package Servlets.TiposDeDados;
 
 import java.time.*;
 import java.time.format.DateTimeFormatter;

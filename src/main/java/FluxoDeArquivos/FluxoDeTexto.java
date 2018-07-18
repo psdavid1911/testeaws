@@ -1,6 +1,6 @@
 package FluxoDeArquivos;
 
-import EstruturasDeDados.ListaAntiga;
+import EstruturasDeDados.Lista;
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -19,9 +19,9 @@ public class FluxoDeTexto{
         arquivo=new GerenciadorDeArquivo(uriArquivo);
     }
 
-    public ListaAntiga<String> le(){
+    public Lista<String> le(){
         try{
-            ListaAntiga<String> linhas=new ListaAntiga<String>();
+            Lista<String> linhas=new Lista<String>();
             BufferedReader leitor=new BufferedReader(new InputStreamReader(new FileInputStream(arquivo),"UTF-8"));
             while(true){
                 String linha=leitor.readLine();
@@ -34,10 +34,10 @@ public class FluxoDeTexto{
         }catch(FileNotFoundException ex){
         }catch(IOException ex){
         }
-        return new ListaAntiga<String>();
+        return new Lista<String>();
     }
 
-    public void escreve(ListaAntiga<String> lista){
+    public void escreve(Lista<String> lista){
         try{
             OutputStreamWriter escritor=new OutputStreamWriter(new FileOutputStream(arquivo),StandardCharsets.UTF_8);
             for(String linha:lista)

@@ -1,4 +1,4 @@
-package PDF;
+package Servlets.PDF;
 
 /**
  *

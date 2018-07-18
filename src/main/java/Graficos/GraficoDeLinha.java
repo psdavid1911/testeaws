@@ -1,7 +1,7 @@
 package Graficos;
-import EstruturasDeDados8.Lista;
-import EstruturasDeDados8.Par8;
-import EstruturasDeDados8.TabelaHash8;
+import EstruturasDeDados.Lista;
+import EstruturasDeDados.Par8;
+import EstruturasDeDados.TabelaHash8;
 import java.io.*;
 import java.util.Map.Entry;
 import java.util.logging.Level;

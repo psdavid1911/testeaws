@@ -1,4 +1,4 @@
-package PDF;
+package Servlets.PDF;
 
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.pdmodel.PDPage;

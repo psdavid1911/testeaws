@@ -1,6 +1,6 @@
 package Imagem;
 
-import EstruturasDeDados8.Par8;
+import EstruturasDeDados.Par8;
 import FluxoDeArquivos.GerenciadorDeArquivo;
 import java.awt.Color;
 import java.awt.Font;

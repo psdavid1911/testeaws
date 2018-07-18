@@ -1,6 +1,6 @@
 package Matematica;
 
-import EstruturasDeDados8.Lista;
+import EstruturasDeDados.Lista;
 import org.apache.commons.math3.stat.*;
 import org.apache.commons.math3.stat.descriptive.DescriptiveStatistics;
 

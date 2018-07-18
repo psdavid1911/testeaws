@@ -3,9 +3,9 @@ package Estruturas;
 import java.util.ArrayList;
 
 public class ArmazenagemEspacial<T>{
-    final int nDimensoes;
-    final int largura;
-    final int nItens;
+    public final int nDimensoes;
+    public final int largura;
+    public final int nItens;
     ArrayList<T> vetor;
 
     public ArmazenagemEspacial( int nDimensoes, int largura ){

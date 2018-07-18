@@ -1,37 +1,36 @@
 package EstruturasDeDados;
-import EstruturasDeDados8.Conjunto8;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
 
 public class Grafo<T extends Comparable<T>>{
 
-    TabelaHash<T,ListaAntiga<T>> grafo=new TabelaHash<T,ListaAntiga<T>>();
+    TabelaHash<T,Lista<T>> grafo=new TabelaHash<T,Lista<T>>();
 
     public void adicionaAresta(T vertice,T verticeAdjascente){
         if(!existeVertice(verticeAdjascente))
             adicionaVertice(verticeAdjascente);
         if(!existeAresta(vertice,verticeAdjascente))
             if(existeVertice(vertice)){
-                ListaAntiga<T> adjascenciasAnteriores=grafo.pega(vertice);
+                Lista<T> adjascenciasAnteriores=grafo.pega(vertice);
                 adjascenciasAnteriores.adiciona(verticeAdjascente);
                 grafo.adiciona(vertice,adjascenciasAnteriores);
             }else {
-                ListaAntiga<T> adjascenciasAnteriores=new ListaAntiga<T>();
+                Lista<T> adjascenciasAnteriores=new Lista<T>();
                 adjascenciasAnteriores.adiciona(verticeAdjascente);
                 grafo.adiciona(vertice,adjascenciasAnteriores);
             }
     }
 
     public void adicionaVertice(T vertice){
-        if(!existeVertice(vertice))grafo.adiciona(vertice,new ListaAntiga<T>());
+        if(!existeVertice(vertice))grafo.adiciona(vertice,new Lista<T>());
     }
 
     public void remove(T elemento){
         grafo.remove(elemento);
-        for(Entry<T,ListaAntiga<T>> entrada:grafo.conjunto()) {
+        for(Entry<T,Lista<T>> entrada:grafo.conjunto()) {
             T par=entrada.getKey();
-            ListaAntiga<T> lista=entrada.getValue();
+            Lista<T> lista=entrada.getValue();
             if(lista.contem(elemento))
                 lista.remove(elemento);
         }
@@ -42,19 +41,19 @@ public class Grafo<T extends Comparable<T>>{
     }
 
     public boolean existeAresta(T verticeInicio,T verticeAdjascente){
-        ListaAntiga<T> listaAdjascencias=grafo.pega(verticeInicio);
+        Lista<T> listaAdjascencias=grafo.pega(verticeInicio);
         if(listaAdjascencias!=null)
             return listaAdjascencias.contem(verticeAdjascente);
         else
             return false;
     }
 
-    public Par< T,ListaAntiga<T>> pegaElementoAleatorio(){
-        ListaAntiga<T> lista=new ListaAntiga<T>();
-        for(Entry<T,ListaAntiga<T>> entrada:grafo.conjunto())
+    public Par< T,Lista<T>> pegaElementoAleatorio(){
+        Lista<T> lista=new Lista<T>();
+        for(Entry<T,Lista<T>> entrada:grafo.conjunto())
             lista.adiciona(entrada.getKey());
         T verticeEscolhido=lista.pegaAleatorio();
-        return new Par< T,ListaAntiga<T>>(verticeEscolhido,grafo.pega(verticeEscolhido));
+        return new Par< T,Lista<T>>(verticeEscolhido,grafo.pega(verticeEscolhido));
     }
 
     public int numeroSaidas(T vertice){
@@ -63,7 +62,7 @@ public class Grafo<T extends Comparable<T>>{
 
     public T pegaVerticeMaisRamos(){
         T vertice=pegaElementoAleatorio().getX();
-        for(Map.Entry<T,ListaAntiga<T>> elemento:grafo.conjunto())
+        for(Map.Entry<T,Lista<T>> elemento:grafo.conjunto())
             if(elemento.getValue().tamanho()>grafo.pega(vertice).tamanho())
                 vertice=elemento.getKey();
         return vertice;
@@ -76,20 +75,20 @@ public class Grafo<T extends Comparable<T>>{
      *
      * @return Nulo se nenhum valor for encontrado
      */
-    public ListaAntiga<T> pegaAdjascentes(T conteudo){
+    public Lista<T> pegaAdjascentes(T conteudo){
         return grafo.pega(conteudo);
     }
 
     public Conjunto8<T> pegaNaoAdjascentes(T conteudo){
         Conjunto8<T> conjunto=new Conjunto8<T>();
-        for(Entry<T,ListaAntiga<T>> entrada:grafo.conjunto()) conjunto.adiciona(entrada.getKey());
+        for(Entry<T,Lista<T>> entrada:grafo.conjunto()) conjunto.adiciona(entrada.getKey());
         conjunto.diferencaCom(grafo.pega(conteudo));
         return conjunto;
     }
 
-    public ListaAntiga<T> pegaVertices(){
-        ListaAntiga<T> vertices=new ListaAntiga<T>();
-        for(Entry<T,ListaAntiga<T>> entrada:grafo.conjunto()) vertices.adiciona(entrada.getKey());
+    public Lista<T> pegaVertices(){
+        Lista<T> vertices=new Lista<T>();
+        for(Entry<T,Lista<T>> entrada:grafo.conjunto()) vertices.adiciona(entrada.getKey());
         return vertices;
     }
 
@@ -100,7 +99,7 @@ public class Grafo<T extends Comparable<T>>{
     @Override
     public String toString(){
         String s="";
-        for(Map.Entry<T,ListaAntiga<T>> par:grafo.conjunto()) {
+        for(Map.Entry<T,Lista<T>> par:grafo.conjunto()) {
             s+=par.getKey().toString();
             s+="      ";
             s+=par.getValue().toString();
@@ -109,15 +108,15 @@ public class Grafo<T extends Comparable<T>>{
         return s;
     }
 
-    public Set<Map.Entry<T,ListaAntiga<T>>> conjunto(){
+    public Set<Map.Entry<T,Lista<T>>> conjunto(){
         return grafo.entrySet();
     }
 
     public void imprime(int tamanhoDaChave){
         System.out.printf("%-"+tamanhoDaChave+"s |   %s \n\n","VERTICE","VERTICES DE DESTINO");
-        for(Map.Entry<T,ListaAntiga<T>> entrada:grafo.conjunto()) {
+        for(Map.Entry<T,Lista<T>> entrada:grafo.conjunto()) {
             T chave=entrada.getKey();
-            ListaAntiga<T> lista=entrada.getValue();
+            Lista<T> lista=entrada.getValue();
             System.out.printf("%-"+tamanhoDaChave+"s |   %s \n",chave,lista.toString());
         }
     }

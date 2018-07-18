@@ -1,4 +1,4 @@
-package Internet;
+package Servlets.Internet;
 
 /** 
 * HtmlEscape in Java, which is compatible with utf-8 

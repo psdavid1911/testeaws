@@ -1,13 +1,13 @@
 package Strings_Tokens;
 
-import EstruturasDeDados.ListaAntiga;
+import EstruturasDeDados.Lista;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Regex{
     private Matcher sentenca;
     private Pattern padrao;
-    public ListaAntiga<ResultadoRegex> l = new ListaAntiga<ResultadoRegex>();
+    public Lista<ResultadoRegex> l = new Lista<ResultadoRegex>();
 
     public Regex(String sentenca, String expressaoDeBusca){
         this.padrao = Pattern.compile(expressaoDeBusca);

@@ -1,4 +1,4 @@
-package BancosDeDados;
+package Servlets.BancosDeDados;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

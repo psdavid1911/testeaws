@@ -1,4 +1,4 @@
-package Compressao;
+package Servlets.Compressao;
 
 public class compressao{
 }

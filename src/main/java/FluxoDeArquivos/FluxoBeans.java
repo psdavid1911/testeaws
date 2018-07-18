@@ -18,13 +18,10 @@ public class FluxoBeans<T>{
 
     public void escreve(T objeto){
         // passo 1
-        FileOutputStream fos;
+        FileOutputStream fos=null;
         try{
             fos = new FileOutputStream(arquivo);
-        }catch(FileNotFoundException e){
-            erro(e.getMessage());
-            e.printStackTrace();
-            return;
+        }catch(FileNotFoundException ex){
         }
         // passo 2
         BufferedOutputStream bos;
