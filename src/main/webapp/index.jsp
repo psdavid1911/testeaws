@@ -2,13 +2,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <link rel="stylesheet" href="https://cdn.concisecss.com/concise.min.css" >
-    <script src="JS/include.js"></script>
+    <script src="js/include.js"></script>
   </head>
   <body>
-    <script>leitorDeArquivo("Esqueletos/marca.html");</script>
+    <script>leitorDeArquivo("esqueletos/marca.html");</script>
     <div class="coluna">
       <div class="linha titulo">Programas!</div>
       <div class="linha subtitulo">\> David<span class="pisca">│</span></div>
@@ -20,10 +17,9 @@
         <a href="gerador_de_trabalhos.jsp"><div class="projeto">Gerador de trabalhos<p>Um assistente de criação de trabalhos acadêmicos com base na normatização da ABNT.</p></div></a>
         <a href="programa_estatistico.jsp"><div class="projeto">Programa estatístico<p>Programa que utiliza funções e métodos estatísticos.</p></div></a>
         <a href="gerenciador_de_estoque.jsp"><div class="projeto">Gerenciador de estoque</div></a>
-        <a href="https://psdavid1911.github.io/"><div class="projeto">Página pessoal<p>Página inteiramente dedicada ao criador deste site.</p></div></a>
         <a href="analisador_logico.jsp"><div class="projeto">Analisador lógico</div></a>
       </div>
-      <script>leitorDeArquivo("Esqueletos/rodape.html");</script>
+      <script>leitorDeArquivo("esqueletos/rodape.html");</script>
     </div>
   </body>
 </html>

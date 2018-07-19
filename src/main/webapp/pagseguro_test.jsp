@@ -3,7 +3,7 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <script src="JS/include.js"></script>
+    <script src="js/include.js"></script>
     <script>
         function analisaEstatisticamente() {
             var xhttp = new XMLHttpRequest();

@@ -2,8 +2,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
   <head>
-    <meta charset="UTF-8">
-    <script src="JS/include.js"></script>
+    <script src="js/include.js"></script>
     <script>
         function analisaSintaxe() {
             var xhttp = new XMLHttpRequest();
@@ -17,7 +16,7 @@
     </script>
   </head>
   <body>
-    <script>leitorDeArquivo("Esqueletos/marca.html");</script>
+    <script>leitorDeArquivo("esqueletos/marca.html");</script>
     <div class="coluna">
       <div class="linha titulo" style="font-size: 90pt;">Analisador sintático</div>
       <div class="linha" style="height: 150px"></div>
@@ -31,7 +30,7 @@
           </fieldset>
         </form>
       </div>
-      <script>leitorDeArquivo("Esqueletos/rodape.html");</script>
+      <script>leitorDeArquivo("esqueletos/rodape.html");</script>
     </div>
   </body>
 </html>
