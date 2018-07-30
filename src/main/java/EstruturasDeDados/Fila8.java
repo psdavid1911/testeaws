@@ -1,11 +1,11 @@
 package Servlets.EstruturasDeDados8;
-
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Queue;
 
 public class Fila8<T> implements Iterable<T>{
-    Queue<T> fila = new LinkedList<T>();
+
+    Queue<T> fila=new LinkedList<T>();
 
     /**
      * Difere de adiciona2 apenas por retornar uma exceção se não for possível

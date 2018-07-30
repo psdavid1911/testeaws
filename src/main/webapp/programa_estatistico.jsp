@@ -17,7 +17,7 @@
     </script>
   </head>
   <body>
-    <script>leitorDeArquivo("Esqueletos/marca.html");</script>
+    <script>leitorDeArquivo("Esqueletos/menu.html");</script>
     <div class="coluna">
       <div class="linha titulo" style="font-size: 90pt;">Estatística Descritiva</div>
       <div class="linha" style="height: 150px"></div>

@@ -1,5 +1,4 @@
 package Servlets;
-
 import java.io.IOException;
 import java.util.Random;
 import javax.servlet.ServletException;

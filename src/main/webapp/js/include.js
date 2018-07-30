@@ -1,19 +1,25 @@
-function leitorDeArquivo(file)
-{
-    var rawFile = new XMLHttpRequest();
-    rawFile.open("GET", file, false);
-    rawFile.onreadystatechange = function ()
-    {
-        if (rawFile.readyState === 4)
-        {
-            if (rawFile.status === 200 || rawFile.status === 0)
-            {
-                var allText = rawFile.responseText;
-                document.write(allText);
+function leitorDeArquivo(file, id) {
+    var arquivoOrigem = new XMLHttpRequest();
+    arquivoOrigem.onreadystatechange = function () {
+        if (arquivoOrigem.readyState === 4) {
+            if (arquivoOrigem.status === 200 || arquivoOrigem.status === 0) {
+                var allText = arquivoOrigem.responseText;
+                document.getElementById(id).innerHTML = allText;
             }
         }
     };
-    rawFile.send(null);
+    arquivoOrigem.open("GET", file, true);
+    arquivoOrigem.send(null);
+}
+
+function analisaSintaxe() {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (this.readyState === 4 && this.status === 200)
+            document.getElementById("idSaida").innerHTML = this.responseText;
+    };
+    xhttp.open("GET", "analisar?entrada=" + encodeURIComponent(document.getElementById("idCampoEntrada").value), true);
+    xhttp.send();
 }
 
 function cabecalhos() {
@@ -48,4 +54,34 @@ function cabecalhos() {
     }
 }
 
+function entra() {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (this.readyState === 4 && this.status === 200)
+            if (this.responseText === "Seja bem vindo!")
+                window.location.href = "/entrada.jsp";
+            else
+                document.getElementById("idSaida").innerHTML = "As credenciais estão erradas";
+    };
+    xhttp.open("GET", ""
+            + "entrar?usuario="
+            + encodeURIComponent(document.getElementById("idCampoEntrada").value)
+            + "&senha="
+            + encodeURIComponent(document.getElementById("idCampoEntrada2").value, false));
+    xhttp.send();
+}
+
 cabecalhos();
+
+function CarregarPos() {
+    leitorDeArquivo("esqueletos/menu.html", "menu");
+    leitorDeArquivo("esqueletos/rodape.html", "rodape");
+}
+
+function Navega(local) {
+    var indice = {
+        "urlHome": "../",
+        "urlPerfil": "https://psdavid1911.github.io/"
+    };
+    window.location.href = indice[local];
+}

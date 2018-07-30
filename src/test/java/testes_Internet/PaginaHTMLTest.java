@@ -8,8 +8,7 @@ public class PaginaHTMLTest{
     @Test
     public void testPegaTxt(){
         System.out.println("pegaHTML");
-        String endereco="http://18.228.55.248/Arquivos/gramatica.txt";
-        Lista<String> result=PaginaHTML.pegaURL(endereco);
+        Lista<String> result=PaginaHTML.pegaURL("http://localhost:8080/arquivos/lexico.txt");
         System.out.println(result);
     }
 }

@@ -1,5 +1,4 @@
 package Servlets.BancosDeDados;
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -7,9 +6,10 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class BancoDeDados{
-    Connection connection = null;
-    Statement statement = null;
-    boolean tabela = false;
+
+    Connection connection=null;
+    Statement statement=null;
+    boolean tabela=false;
 
     // Cria o banco de dados
     public BancoDeDados(){
@@ -51,11 +51,11 @@ public class BancoDeDados{
 
     private void criaTabela(){
         try{
-            connection = DriverManager.getConnection("jdbc:sqlite:novo.db"); //Posso mudar o nome
-            statement = connection.createStatement();
+            connection=DriverManager.getConnection("jdbc:sqlite:novo.db"); //Posso mudar o nome
+            statement=connection.createStatement();
             statement.setQueryTimeout(10);
             statement.executeUpdate("create table if not exists person (id integer, name string)");
-            tabela = true;
+            tabela=true;
         }catch(SQLException ex){
             erro("nao pude criar a tabela");
         }finally{
@@ -70,8 +70,8 @@ public class BancoDeDados{
 
     private void insereDados(){
         try{
-            connection = DriverManager.getConnection("jdbc:sqlite:novo.db"); //Posso mudar o nome
-            statement = connection.createStatement();
+            connection=DriverManager.getConnection("jdbc:sqlite:novo.db"); //Posso mudar o nome
+            statement=connection.createStatement();
             statement.setQueryTimeout(10);
             statement.executeUpdate("insert into person values(1, 'leo')");
             statement.executeUpdate("insert into person values(2, 'yui')");
@@ -89,10 +89,10 @@ public class BancoDeDados{
 
     private void pegaDados(){
         try{
-            connection = DriverManager.getConnection("jdbc:sqlite:novo.db"); //Posso mudar o nome
-            statement = connection.createStatement();
+            connection=DriverManager.getConnection("jdbc:sqlite:novo.db"); //Posso mudar o nome
+            statement=connection.createStatement();
             statement.setQueryTimeout(10);
-            ResultSet rs = statement.executeQuery("select * from person");
+            ResultSet rs=statement.executeQuery("select * from person");
             while(rs.next()){
                 // read the result set
                 System.out.println("name = "+rs.getString("name"));

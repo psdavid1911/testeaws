@@ -23,10 +23,11 @@ public class PaginaHTML{
             leitor.close();
             return linhas;
         }catch(MalformedURLException ex){
-            return null;
+            ex.printStackTrace();
         }catch(IOException ex){
-            return null;
+            ex.printStackTrace();
         }
+        return null;
     }
 
     public static String decodifica(String s){

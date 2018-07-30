@@ -1,9 +1,8 @@
 package Servlets.KultaVendas;
-
-import Servlets.TiposDeDados.Data;
 import KultaEnumeracoes.COR;
 import KultaEnumeracoes.NOME;
 import KultaEnumeracoes.TAMANHO;
+import Servlets.TiposDeDados.Data;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -12,7 +11,8 @@ import java.time.format.DateTimeFormatter;
  *
  * @author david
  */
-public class Venda implements Serializable, Comparable<Venda>{
+public class Venda implements Serializable,Comparable<Venda>{
+
     private Data data;
     private Double valordaunidade;
     private COR cor;
@@ -25,7 +25,7 @@ public class Venda implements Serializable, Comparable<Venda>{
     }
 
     public void setNome(NOME nome){
-        this.nome = nome;
+        this.nome=nome;
     }
 
     public Data getData(){
@@ -33,7 +33,7 @@ public class Venda implements Serializable, Comparable<Venda>{
     }
 
     public void setData(Data data){
-        this.data = data;
+        this.data=data;
     }
 
     public Double getValordaunidade(){
@@ -41,7 +41,7 @@ public class Venda implements Serializable, Comparable<Venda>{
     }
 
     public void setValordaunidade(Double valordaunidade){
-        this.valordaunidade = valordaunidade;
+        this.valordaunidade=valordaunidade;
     }
 
     public COR getCor(){
@@ -49,7 +49,7 @@ public class Venda implements Serializable, Comparable<Venda>{
     }
 
     public void setCor(COR cor){
-        this.cor = cor;
+        this.cor=cor;
     }
 
     public Integer getUnidadesvendidas(){
@@ -57,7 +57,7 @@ public class Venda implements Serializable, Comparable<Venda>{
     }
 
     public void setUnidadesvendidas(Integer unidadesvendidas){
-        this.unidadesvendidas = unidadesvendidas;
+        this.unidadesvendidas=unidadesvendidas;
     }
 
     public TAMANHO getTamanho(){
@@ -65,12 +65,12 @@ public class Venda implements Serializable, Comparable<Venda>{
     }
 
     public void setTamanho(TAMANHO tamanho){
-        this.tamanho = tamanho;
+        this.tamanho=tamanho;
     }
 
-    public static Venda setTudo(NOME nomeDoProduto, String data, Integer unidadesvendidas, Double valordaunidade, COR cor, TAMANHO tamanho){
-        Venda venda = new Venda();
-        venda.setData(new Data(LocalDate.parse(data, DateTimeFormatter.ofPattern("dd-MM-yyyy"))));
+    public static Venda setTudo(NOME nomeDoProduto,String data,Integer unidadesvendidas,Double valordaunidade,COR cor,TAMANHO tamanho){
+        Venda venda=new Venda();
+        venda.setData(new Data(LocalDate.parse(data,DateTimeFormatter.ofPattern("dd-MM-yyyy"))));
         venda.setCor(cor);
         venda.setTamanho(tamanho);
         venda.setUnidadesvendidas(unidadesvendidas);
@@ -98,7 +98,7 @@ public class Venda implements Serializable, Comparable<Venda>{
 
     @Override
     protected Object clone() throws CloneNotSupportedException{
-        Venda nova = new Venda();
+        Venda nova=new Venda();
         nova.setNome(nome);
         nova.setCor(cor);
         nova.setTamanho(tamanho);
@@ -112,7 +112,7 @@ public class Venda implements Serializable, Comparable<Venda>{
     public boolean equals(Object obj){
         if(!(obj instanceof Venda))
             return false;
-        Venda outra = (Venda) obj;
+        Venda outra=(Venda)obj;
         if(outra.getNome().equals(nome)
                 &&outra.getTamanho().equals(tamanho)
                 &&outra.getCor().equals(cor)

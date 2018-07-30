@@ -12,10 +12,9 @@ public class Lexico{
         return cadeia;
     }
 
-    public static HashMap<String,String> novoLexico(){
+    public static HashMap<String,String> novoLexico(String caminhoDoArquivo){
         HashMap<String,String> lexico=new HashMap<String,String>();
-        Lista<String> arquivo=PaginaHTML.pegaURL("http://18.228.55.248/Arquivos/lexico.txt");
-        System.out.println(arquivo);
+        Lista<String> arquivo=PaginaHTML.pegaURL(caminhoDoArquivo);
         for(String linha:arquivo) {
             linha=consertaFormatacao(linha);
             String argumentos[]=linha.split("->");

@@ -1,6 +1,7 @@
 package Imagem;
 
 public class Dimensao{
+
     private int largura;
     private int altura;
 
@@ -9,7 +10,7 @@ public class Dimensao{
     }
 
     public void setLargura(int largura){
-        this.largura = largura;
+        this.largura=largura;
     }
 
     public int getAltura(){
@@ -17,6 +18,6 @@ public class Dimensao{
     }
 
     public void setAltura(int altura){
-        this.altura = altura;
+        this.altura=altura;
     }
 }

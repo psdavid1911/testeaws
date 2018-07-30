@@ -1,5 +1,4 @@
 package testes_FluxoDeArquivos;
-
 import EstruturasDeDados.Lista;
 import FluxoDeArquivos.FluxoDeTexto;
 import java.util.Arrays;
@@ -33,5 +32,4 @@ public class TestesFLuxoTexto{
         Lista<String> linhas=es.le();
         System.out.println(linhas);
     }
-
 }

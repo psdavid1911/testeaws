@@ -13,8 +13,12 @@ import javax.servlet.http.HttpServletResponse;
 public class servletAnalisador extends HttpServlet{
 
     @Override protected void doGet(HttpServletRequest request,HttpServletResponse response) throws ServletException,IOException{
+        request.setCharacterEncoding("UTF-8");
         String resultadoFinal="";
-        Parsing analisador=new Parsing();
+        String uri=request.getRequestURI(); //uri = "/context/someAction"
+        String url=request.getRequestURL().toString();// url = "http://server.name:8080/context/someAction"
+        url=url.replaceFirst(uri,"");// url = "http://server.name:8080"
+        Parsing analisador=new Parsing(url+"/arquivos/lexico.txt",url+"/arquivos/gramatica.txt");
         Lista<String> conversaoInicial=new Lista<String>();
         response.setContentType("text/html");
         String original=request.getParameter("entrada");
@@ -26,4 +30,6 @@ public class servletAnalisador extends HttpServlet{
         resultadoFinal+="<br>Substituição |^|: "+new Lista<String>(original.split(" ")).toString();
         response.getWriter().print(resultadoFinal);
     }
+
+    
 }

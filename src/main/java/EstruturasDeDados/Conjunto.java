@@ -1,5 +1,4 @@
 package EstruturasDeDados;
-
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -11,17 +10,15 @@ import java.util.function.Consumer;
  *
  * @author david
  */
-public class Conjunto<T> implements Iterable<T>
-{
-    Set<T> conjunto = new HashSet<T>();
+public class Conjunto<T> implements Iterable<T>{
 
-    public void adiciona( T elemento )
-    {
-        conjunto.add( elemento );
+    Set<T> conjunto=new HashSet<T>();
+
+    public void adiciona(T elemento){
+        conjunto.add(elemento);
     }
 
-    public boolean vazio()
-    {
+    public boolean vazio(){
         return conjunto.isEmpty();
     }
 
@@ -30,23 +27,19 @@ public class Conjunto<T> implements Iterable<T>
      *
      * @return
      */
-    public int tamanho()
-    {
+    public int tamanho(){
         return conjunto.size();
     }
 
-    public void remove( T elemento )
-    {
-        conjunto.remove( elemento );
+    public void remove(T elemento){
+        conjunto.remove(elemento);
     }
 
-    public boolean contem( T elemento )
-    {
-        return conjunto.contains( elemento );
+    public boolean contem(T elemento){
+        return conjunto.contains(elemento);
     }
 
-    public void limpa()
-    {
+    public void limpa(){
         conjunto.clear();
     }
 
@@ -57,9 +50,8 @@ public class Conjunto<T> implements Iterable<T>
      *
      * @param colecao
      */
-    public void adicionaTodos( Collection<T> colecao )
-    {
-        conjunto.addAll( colecao );
+    public void adicionaTodos(Collection<T> colecao){
+        conjunto.addAll(colecao);
     }
 
     /**
@@ -68,9 +60,8 @@ public class Conjunto<T> implements Iterable<T>
      *
      * @param colecao
      */
-    public boolean contemTodos( Collection<T> colecao )
-    {
-        return conjunto.containsAll( colecao );
+    public boolean contemTodos(Collection<T> colecao){
+        return conjunto.containsAll(colecao);
     }
 
     /**
@@ -80,19 +71,16 @@ public class Conjunto<T> implements Iterable<T>
      *
      * @param colecao
      */
-    public void uneCom( Collection<T> colecao )
-    {
-        conjunto.addAll( colecao );
+    public void uneCom(Collection<T> colecao){
+        conjunto.addAll(colecao);
     }
 
-    public void intersecaoCom( Collection<T> colecao )
-    {
-        conjunto.retainAll( colecao );
+    public void intersecaoCom(Collection<T> colecao){
+        conjunto.retainAll(colecao);
     }
 
-    public void diferencaCom( Collection<T> colecao )
-    {
-        conjunto.removeAll( colecao );
+    public void diferencaCom(Collection<T> colecao){
+        conjunto.removeAll(colecao);
     }
 
     /**
@@ -101,8 +89,7 @@ public class Conjunto<T> implements Iterable<T>
      *
      * @return
      */
-    public int cardinalidade()
-    {
+    public int cardinalidade(){
         return conjunto.size();
     }
 
@@ -115,9 +102,8 @@ public class Conjunto<T> implements Iterable<T>
      *
      * @return
      */
-    public boolean eSubconjunto( Collection<T> colecao )
-    {
-        return conjunto.containsAll( colecao );
+    public boolean eSubconjunto(Collection<T> colecao){
+        return conjunto.containsAll(colecao);
     }
 
     /**
@@ -127,13 +113,12 @@ public class Conjunto<T> implements Iterable<T>
      *
      * @return
      */
-    public Set<T> diferencaSimetrica( Collection<T> colecao )
-    {
-        Set<T> conjuntoDiferecaSimetrica = conjunto;
-        conjuntoDiferecaSimetrica.addAll( colecao );
-        Set<T> tmp = conjunto;
-        tmp.retainAll( colecao );
-        conjuntoDiferecaSimetrica.removeAll( tmp );
+    public Set<T> diferencaSimetrica(Collection<T> colecao){
+        Set<T> conjuntoDiferecaSimetrica=conjunto;
+        conjuntoDiferecaSimetrica.addAll(colecao);
+        Set<T> tmp=conjunto;
+        tmp.retainAll(colecao);
+        conjuntoDiferecaSimetrica.removeAll(tmp);
         return conjuntoDiferecaSimetrica;
     }
 
@@ -145,14 +130,13 @@ public class Conjunto<T> implements Iterable<T>
      *
      * @return
      */
-    public Set<T> unicos( Collection<T> colecao )
-    {
-        Set<T> unicos = new HashSet<T>();
-        Set<T> duplicados = new HashSet<T>();
-        for( T elemento : colecao )
-            if( !unicos.add( elemento ) )
-                duplicados.add( elemento );
-        unicos.removeAll( duplicados );
+    public Set<T> unicos(Collection<T> colecao){
+        Set<T> unicos=new HashSet<T>();
+        Set<T> duplicados=new HashSet<T>();
+        for(T elemento:colecao)
+            if(!unicos.add(elemento))
+                duplicados.add(elemento);
+        unicos.removeAll(duplicados);
         return unicos;
     }
 
@@ -164,35 +148,30 @@ public class Conjunto<T> implements Iterable<T>
      *
      * @return
      */
-    public Set<T> duplicados( Collection<T> colecao )
-    {
-        Set<T> unicos = new HashSet<T>();
-        Set<T> duplicados = new HashSet<T>();
-        for( T elemento : colecao )
-            if( !unicos.add( elemento ) )
-                duplicados.add( elemento );
+    public Set<T> duplicados(Collection<T> colecao){
+        Set<T> unicos=new HashSet<T>();
+        Set<T> duplicados=new HashSet<T>();
+        for(T elemento:colecao)
+            if(!unicos.add(elemento))
+                duplicados.add(elemento);
         return duplicados;
     }
 
-    private Set<T> original()
-    {
+    private Set<T> original(){
         return conjunto;
     }
 
-    public void paraCada( Consumer<? super T> expressaoLambda )
-    {
-        conjunto.forEach( expressaoLambda );
+    public void paraCada(Consumer<? super T> expressaoLambda){
+        conjunto.forEach(expressaoLambda);
     }
 
     @Override
-    public Iterator<T> iterator()
-    {
+    public Iterator<T> iterator(){
         return conjunto.iterator();
     }
 
     @Override
-    public String toString()
-    {
-        return "Conjunto{" + "conjunto=" + conjunto + '}';
+    public String toString(){
+        return "Conjunto{"+"conjunto="+conjunto+'}';
     }
 }

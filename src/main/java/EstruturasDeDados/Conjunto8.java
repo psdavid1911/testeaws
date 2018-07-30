@@ -1,5 +1,4 @@
 package EstruturasDeDados;
-
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -12,7 +11,8 @@ import java.util.function.Consumer;
  * @author david
  */
 public class Conjunto8<T> implements Iterable<T>{
-    Set<T> conjunto = new HashSet<T>();
+
+    Set<T> conjunto=new HashSet<T>();
 
     public void adiciona(T elemento){
         conjunto.add(elemento);
@@ -114,9 +114,9 @@ public class Conjunto8<T> implements Iterable<T>{
      * @return
      */
     public Set<T> diferencaSimetrica(Collection<T> colecao){
-        Set<T> conjuntoDiferecaSimetrica = conjunto;
+        Set<T> conjuntoDiferecaSimetrica=conjunto;
         conjuntoDiferecaSimetrica.addAll(colecao);
-        Set<T> tmp = conjunto;
+        Set<T> tmp=conjunto;
         tmp.retainAll(colecao);
         conjuntoDiferecaSimetrica.removeAll(tmp);
         return conjuntoDiferecaSimetrica;
@@ -131,9 +131,9 @@ public class Conjunto8<T> implements Iterable<T>{
      * @return
      */
     public Set<T> unicos(Collection<T> colecao){
-        Set<T> unicos = new HashSet<T>();
-        Set<T> duplicados = new HashSet<T>();
-        for(T elemento : colecao)
+        Set<T> unicos=new HashSet<T>();
+        Set<T> duplicados=new HashSet<T>();
+        for(T elemento:colecao)
             if(!unicos.add(elemento))
                 duplicados.add(elemento);
         unicos.removeAll(duplicados);
@@ -149,9 +149,9 @@ public class Conjunto8<T> implements Iterable<T>{
      * @return
      */
     public Set<T> duplicados(Collection<T> colecao){
-        Set<T> unicos = new HashSet<T>();
-        Set<T> duplicados = new HashSet<T>();
-        for(T elemento : colecao)
+        Set<T> unicos=new HashSet<T>();
+        Set<T> duplicados=new HashSet<T>();
+        for(T elemento:colecao)
             if(!unicos.add(elemento))
                 duplicados.add(elemento);
         return duplicados;
@@ -174,6 +174,4 @@ public class Conjunto8<T> implements Iterable<T>{
     public String toString(){
         return "Conjunto8{"+"conjunto="+conjunto+'}';
     }
-    
-    
 }

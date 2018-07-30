@@ -1,5 +1,4 @@
 package FluxoDeArquivos8;
-
 import FluxoDeArquivos.GerenciadorDeArquivo;
 import java.beans.XMLDecoder;
 import java.beans.XMLEncoder;
@@ -13,15 +12,16 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 
 public class FluxoBeansXml<T>{
+
     GerenciadorDeArquivo uriArquivo;
 
     public FluxoBeansXml(String uriArquivo){
-        this.uriArquivo = new GerenciadorDeArquivo(uriArquivo);
+        this.uriArquivo=new GerenciadorDeArquivo(uriArquivo);
     }
 
     public void escreve(T objeto){
         try{
-            XMLEncoder encoder = new XMLEncoder(
+            XMLEncoder encoder=new XMLEncoder(
                     new BufferedOutputStream(
                             new FileOutputStream(uriArquivo)));
             encoder.writeObject(objeto);
@@ -33,10 +33,10 @@ public class FluxoBeansXml<T>{
 
     public T le(){
         try{
-            XMLDecoder decoder = new XMLDecoder(
+            XMLDecoder decoder=new XMLDecoder(
                     new BufferedInputStream(
                             new FileInputStream(uriArquivo)));
-            T o = (T) decoder.readObject();
+            T o=(T)decoder.readObject();
             decoder.close();
             return o;
         }catch(FileNotFoundException ex){

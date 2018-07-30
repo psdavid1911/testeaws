@@ -1,10 +1,11 @@
 package Servlets.TiposDeDados;
 
 public class Numero extends Number implements Comparable<Number>{
+
     Number numero;
 
     public Numero(Number numero){
-        this.numero = numero;
+        this.numero=numero;
     }
 
     @Override

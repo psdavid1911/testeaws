@@ -1,5 +1,4 @@
 package testes_Internet;
-
 import Internet.Codificador;
 import org.junit.Test;
 

@@ -1,5 +1,4 @@
 package AnalisadorSintatico;
-
 import EstruturasDeDados.Lista;
 import java.util.StringTokenizer;
 

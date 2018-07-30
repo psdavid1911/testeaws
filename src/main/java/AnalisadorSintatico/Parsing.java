@@ -6,9 +6,14 @@ import java.util.HashMap;
 public class Parsing{
 
     public Lista<String> procedimento=new Lista<String>();
-    public HashMap<String,String> lexico=Lexico.novoLexico();
-    public Grafo<Lista<String>> gramatica=Gramatica.pegaGramatica();
+    public HashMap<String,String> lexico;
+    public Grafo<Lista<String>> gramatica;
     public Lista<String> meta, falha;
+
+    public Parsing(String caminhoDoLexico,String caminhoDaGramatica){
+        lexico=Lexico.novoLexico(caminhoDoLexico);
+        gramatica=Gramatica.pegaGramatica(caminhoDaGramatica);
+    }
 
     public Lista<String> configuraTesta(String meta,String falha,Lista<String> tokens){
         this.meta=new Lista<String>(meta);
@@ -29,7 +34,7 @@ public class Parsing{
     private Lista<Lista<String>> transicoes(Lista<String> estadoInicial){
         Lista<Lista<String>> transicoes=new Lista<Lista<String>>();
         for(int i=0;i<estadoInicial.size();i++)
-            for(int j=estadoInicial.size()-1;j>=0;j--){
+            for(int j=estadoInicial.size()-1;j>=0;j--) {
                 if(i>j)break;
                 Lista<String> sublista=estadoInicial.subLista(i,j+1);
                 Lista<Lista<String>> transicaoEncapsulada=gramatica.pegaAdjascentes(sublista);

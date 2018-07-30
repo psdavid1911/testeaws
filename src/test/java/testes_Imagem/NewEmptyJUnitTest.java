@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package testes_Imagem;
-
 import Imagem.paginaA4;
 import org.junit.Before;
 import org.junit.Test;
@@ -14,7 +13,8 @@ import org.junit.Test;
  * @author david
  */
 public class NewEmptyJUnitTest{
-    paginaA4 documento = new paginaA4("");
+
+    paginaA4 documento=new paginaA4("");
 
     @Before
     public void setUp(){

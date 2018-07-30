@@ -1,5 +1,4 @@
 package Internet;
-
 import EstruturasDeDados.Lista;
 import FluxoDeArquivos.FluxoDeTexto;
 
@@ -14,7 +13,7 @@ public class Codificador{
     public void codifica(){
         Lista<String> linhas=manipulador.le();
         Lista<String> linhasAlteradas=new Lista<String>();
-        for(String linha:linhas){
+        for(String linha:linhas) {
             linha=linha.replaceAll("á","&aacute;");
             linha=linha.replaceAll("é","&eacute;");
             linha=linha.replaceAll("í","&iacute;");

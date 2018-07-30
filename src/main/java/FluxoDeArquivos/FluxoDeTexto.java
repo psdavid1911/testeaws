@@ -1,5 +1,4 @@
 package FluxoDeArquivos;
-
 import EstruturasDeDados.Lista;
 import java.io.BufferedReader;
 import java.io.FileInputStream;

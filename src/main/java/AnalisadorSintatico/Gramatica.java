@@ -3,6 +3,7 @@ import EstruturasDeDados.Grafo;
 import EstruturasDeDados.Lista;
 import Internet.PaginaHTML;
 import java.util.Arrays;
+
 public class Gramatica{
 
     public static String consertaFormatacao(String cadeia){
@@ -15,10 +16,9 @@ public class Gramatica{
         return cadeia;
     }
 
-    public static Grafo<Lista<String>> pegaGramatica(){
+    public static Grafo<Lista<String>> pegaGramatica(String caminhoDoArquivo){
         Grafo<Lista<String>> g=new Grafo<Lista<String>>();
-        Lista<String> arquivo=PaginaHTML.pegaURL("http://18.228.55.248/Arquivos/gramatica.txt");
-        System.out.println(arquivo.toString());
+        Lista<String> arquivo=PaginaHTML.pegaURL(caminhoDoArquivo);
         for(String linha:arquivo) {
             linha=consertaFormatacao(linha);
             String argumentos[]=linha.split("->");

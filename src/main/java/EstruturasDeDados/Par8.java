@@ -1,12 +1,13 @@
 package EstruturasDeDados;
 
-public class Par8<X extends Comparable, Y> implements Comparable<Par8<X, Y>>{
+public class Par8<X extends Comparable,Y> implements Comparable<Par8<X,Y>>{
+
     private X x;
     private Y y;
 
-    public Par8(X x, Y y){
-        this.x = x;
-        this.y = y;
+    public Par8(X x,Y y){
+        this.x=x;
+        this.y=y;
     }
 
     public X getX(){
@@ -14,7 +15,7 @@ public class Par8<X extends Comparable, Y> implements Comparable<Par8<X, Y>>{
     }
 
     public void setX(X x){
-        this.x = x;
+        this.x=x;
     }
 
     public Y getY(){
@@ -22,11 +23,11 @@ public class Par8<X extends Comparable, Y> implements Comparable<Par8<X, Y>>{
     }
 
     public void setY(Y y){
-        this.y = y;
+        this.y=y;
     }
 
     @Override
-    public int compareTo(Par8<X, Y> outro){
+    public int compareTo(Par8<X,Y> outro){
         return this.x.compareTo(outro.x);
     }
 
@@ -34,6 +35,4 @@ public class Par8<X extends Comparable, Y> implements Comparable<Par8<X, Y>>{
     public String toString(){
         return "("+"x="+x+", y="+y+')';
     }
-    
-    
 }

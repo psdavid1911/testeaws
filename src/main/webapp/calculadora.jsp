@@ -143,9 +143,9 @@
   </head>
 
 
-  <body>
-    <script>leitorDeArquivo("esqueletos/marca.html");</script>
+  <body onload="CarregarPos();">
     <div class="coluna">
+      <div id="menu" class="linha menu"></div>
       <div class="linha titulo">Calculadora</div>
       <div class="linha" style="height: 100px"></div>
       <div class="linha">
@@ -230,8 +230,7 @@
           <p id="idSaidaGerador">Saida do gerador</p>
         </fieldset>
       </form>
-
-      <script>leitorDeArquivo("esqueletos/rodape.html");</script>
+      <div id="rodape" class="linha rodape"></div>
     </div>
   </div>
 </body>

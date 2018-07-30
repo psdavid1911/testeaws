@@ -1,46 +1,43 @@
 package testes_PDF;
-
 import Servlets.PDF.PDF;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import static org.junit.Assert.*;
 
 /**
  *
  * @author psdav
  */
-public class PDFTest {
-    
-    public PDFTest() {
+public class PDFTest{
+
+    public PDFTest(){
     }
-    
+
     @BeforeClass
-    public static void setUpClass() {
+    public static void setUpClass(){
     }
-    
+
     @AfterClass
-    public static void tearDownClass() {
+    public static void tearDownClass(){
     }
-    
+
     @Before
-    public void setUp() {
+    public void setUp(){
     }
-    
+
     @After
-    public void tearDown() {
+    public void tearDown(){
     }
 
     /**
      * Test of criaPDF method, of class PDF.
      */
     @Test
-    public void testCriaPDF() {
+    public void testCriaPDF(){
         System.out.println("criaPDF");
-        PDF pdf = new PDF("novo.pdf");
+        PDF pdf=new PDF("novo.pdf");
         pdf.criaPDF();
     }
-    
 }
