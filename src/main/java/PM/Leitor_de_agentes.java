@@ -1,29 +1,23 @@
 package PM;
+
 import EstruturasDeDados.Lista;
-import EstruturasDeDados.TabelaHash;
-import FluxoDeArquivos.FluxoDeTexto;
+import Internet.PaginaHTML;
 
 public class Leitor_de_agentes{
 
-    FluxoDeTexto manipulador=new FluxoDeTexto("agentes.csv");
-    TabelaHash<Integer,Agente> agentes=new TabelaHash<Integer,Agente>();
-
-    public Leitor_de_agentes(){
-        Lista<String> linhasDoArquivo=manipulador.le();
-        try{
-            linhasDoArquivo.remove(0);
-        }catch(Exception e){
-            return;
-        }
-        for(String linha:linhasDoArquivo) {
-            String[] campo=linha.split(";");
-            // nome numeral ingresso contato escala
-            agentes.adiciona(Integer.valueOf(campo[1]),Gerar.agente(campo[3],Gerar.tipo_de_escala(4,2),campo[0],Integer.valueOf(campo[1]),new Lista<Servico>(),campo[2]));
-        }
+    public static String consertaFormatacao(String cadeia){
+        cadeia=cadeia.replaceAll("  ", "");
+        cadeia=cadeia.replaceAll(" ; ", ";");
+        cadeia=cadeia.replaceAll("; ", ";");
+        cadeia=cadeia.replaceAll(" ;", ";");
+        return cadeia;
     }
 
-    @Override
-    public String toString(){
-        return "Leitor_de_agentes{"+"agentes="+agentes.toString()+'}';
+    public Leitor_de_agentes(String URL_dos_agentes){
+        Lista<String> linhasDoArquivo=PaginaHTML.pegaURL(URL_dos_agentes);
+        for(String linha:linhasDoArquivo){
+            String v[]=consertaFormatacao(linha).split(";");
+            AgenteAntigo agente=new AgenteAntigo();
+        }
     }
 }

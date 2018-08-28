@@ -1,15 +1,12 @@
 package testes_PM;
 import EstruturasDeDados.Lista;
-import PM.Agente;
+import PM.AgenteAntigo;
 import PM.Gerar;
 import PM.Servico;
 import PM.Tipo_de_escala;
 import Tempo.DataHora;
-import org.junit.After;
-import org.junit.AfterClass;
 import static org.junit.Assert.*;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 
 /**
@@ -18,18 +15,7 @@ import org.junit.Test;
  */
 public class AgenteTest{
 
-    Agente agente=new Agente();
-
-    public AgenteTest(){
-    }
-
-    @BeforeClass
-    public static void setUpClass(){
-    }
-
-    @AfterClass
-    public static void tearDownClass(){
-    }
+    AgenteAntigo agente=new AgenteAntigo();
 
     @Before
     public void setUp(){
@@ -41,10 +27,6 @@ public class AgenteTest{
                 Gerar.servico(new DataHora(7,30),new DataHora(14,30),"Caça e pesca"),
                 Gerar.servico(new DataHora(10,00),new DataHora(17,0),"Tia")
         ));
-    }
-
-    @After
-    public void tearDown(){
     }
 
     @Test
@@ -89,7 +71,7 @@ public class AgenteTest{
     }
 
     /**
-     * Test of getEscala method, of class Agente.
+     * Test of getEscala method, of class AgenteAntigo.
      */
     @Test
     public void testGetEscala(){
@@ -100,7 +82,7 @@ public class AgenteTest{
     }
 
     /**
-     * Test of adicionaServico method, of class Agente.
+     * Test of adicionaServico method, of class AgenteAntigo.
      */
     @Test
     public void testAdicionaServico(){
@@ -117,7 +99,7 @@ public class AgenteTest{
     }
 
     /**
-     * Test of removeServico method, of class Agente.
+     * Test of removeServico method, of class AgenteAntigo.
      */
     @Test
     public void testRemoveServico(){
@@ -132,7 +114,7 @@ public class AgenteTest{
     }
 
     /**
-     * Test of getContato method, of class Agente.
+     * Test of getContato method, of class AgenteAntigo.
      */
     @Test
     public void testGetContato(){
@@ -143,19 +125,19 @@ public class AgenteTest{
     }
 
     /**
-     * Test of compareTo method, of class Agente.
+     * Test of compareTo method, of class AgenteAntigo.
      */
     @Test
     public void testCompareTo(){
         System.out.println("compareTo");
-        Agente outroAgente=Gerar.agente("",Gerar.tipo_de_escala(4,2),"neo",0,new Lista<Servico>(),"01/01/2018");
+        AgenteAntigo outroAgente=Gerar.agente("",Gerar.tipo_de_escala(4,2),"neo",0,new Lista<Servico>(),"01/01/2018");
         int expResult=1;
         int result=agente.compareTo(outroAgente);
         assertEquals(expResult,result);
     }
 
     /**
-     * Test of disponibilidadeDoHorario method, of class Agente.
+     * Test of disponibilidadeDoHorario method, of class AgenteAntigo.
      */
     @Test
     public void testDisponibilidadeDoHorario(){

@@ -11,6 +11,13 @@ import java.util.regex.Pattern;
 
 public class PaginaHTML{
 
+    /**
+     * Le uma cadeia de texto para um arquivo armazenado no endereço informado a
+     * leitura é feita utilizando o formato UTF-8.
+     *
+     * @param endereco - Caminho para o arquivo na web.
+     * @return - Uma lista com as linhas do arquivo.
+     */
     public static Lista<String> pegaURL(String endereco){
         try{
             Lista<String> linhas=new Lista<String>();

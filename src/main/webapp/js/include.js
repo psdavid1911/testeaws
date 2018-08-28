@@ -1,3 +1,36 @@
+function novoCookie(nome, valor, diasParaExpirar) {
+    var d = new Date();
+    d.setTime(d.getTime() + (diasParaExpirar * 24 * 60 * 60 * 1000));
+    var expires = "expires=" + d.toUTCString();
+    document.cookie = nome + "=" + valor + ";" + expires + ";path=/";
+}
+
+function pegaCookie(nomeDoCookie) {
+    var nome = nomeDoCookie + "=";
+    var cookieDecodificado = decodeURIComponent(document.cookie);
+    var partesDoCookie = cookieDecodificado.split(';');
+    for (var i = 0; i < partesDoCookie.length; i++) {
+        var c = partesDoCookie[i];
+        while (c.charAt(0) === ' ')
+            c = c.substring(1);
+        if (c.indexOf(nome) === 0)
+            return c.substring(nome.length, c.length);
+    }
+    return "";
+}
+
+function checaCookie(nomeDoCookie) {
+    var valorDoCookie=pegaCookie(nomeDoCookie);
+    if (valorDoCookie !== "") {
+        // Acao com o valor do cookie
+    } else {
+       // Ações se não encontrar o cookie
+       if (valorDoCookie !== "" && valorDoCookie !== null) {
+           novoCookie("username", valorDoCookie, 30);
+       }
+    }
+}
+
 function leitorDeArquivo(file, id) {
     var arquivoOrigem = new XMLHttpRequest();
     arquivoOrigem.onreadystatechange = function () {

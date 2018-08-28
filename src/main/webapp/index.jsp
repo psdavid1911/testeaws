@@ -8,7 +8,6 @@
     <div class="coluna">
       <div id="menu" class="linha menu"></div>
       <div class="linha titulo">Log in</div>
-      <div class="linha" style="height: 50px;"></div>
       <fieldset>
         <input id="idCampoEntrada"  type="text" placeholder="Usuário">
         <input id="idCampoEntrada2"  type="password" placeholder="Password">
@@ -17,7 +16,6 @@
         <div class="linha" style="height: 10px;"></div>
         <p id="idSaida" ></p>
       </fieldset>
-      <div class="linha" style="height: 100px"></div>
       <div id="rodape" class="linha rodape"></div>
     </div>
   </body>

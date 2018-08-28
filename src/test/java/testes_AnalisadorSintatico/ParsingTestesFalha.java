@@ -1,9 +1,8 @@
 package testes_AnalisadorSintatico;
+
 import AnalisadorSintatico.Parsing;
-import AnalisadorSintatico.Separador;
-import EstruturasDeDados.Lista;
-import static org.junit.Assert.assertEquals;
 import org.junit.Test;
+import static org.junit.Assert.assertEquals;
 
 /**
  * Não são usadas maiúsculas nos testes
@@ -12,16 +11,21 @@ import org.junit.Test;
  */
 public class ParsingTestesFalha{
 
-    Parsing analisador=new Parsing("http://localhost:8080/arquivos/lexico.txt","http://localhost:8080/arquivos/gramatica.txt");
+    String gramatica="file:///C:/Users/psdav/Documents/NetBeansProjects/testeaws/src/main/webapp/arquivos/gramatica.txt";
+    String lexico="file:///C:/Users/psdav/Documents/NetBeansProjects/testeaws/src/main/webapp/arquivos/lexico.txt";
+    public Parsing analisador=new Parsing(gramatica, lexico);
 
     @Test public void testeFalha001(){
-        Lista<String> conversaoInicial=new Lista<String>();
         String original="casa a é bonita";
-        System.out.printf("\n%-20s[%s]","Original:",original);
-        for(String palavra:Separador.separa(original))
-            conversaoInicial.add(analisador.lexico.get(palavra));
-        assertEquals("[Agramatical]",new Parsing("http://localhost:8080/arquivos/lexico.txt","http://localhost:8080/arquivos/gramatica.txt").configuraTesta("Período","Agramatical",conversaoInicial).toString());
-        conversaoInicial.clear();
-        System.out.println();
+        String resultado=analisador.configuraTesta("Período", "Agramatical", original);
+        analisador.imprime();
+        assertEquals("Agramatical", resultado);
+    }
+
+    @Test public void testeFalha002(){
+        String original="joão gosta de maçã comer";
+        String resultado=analisador.configuraTesta("Período", "Agramatical", original);
+        analisador.imprime();
+        assertEquals("Agramatical", resultado);
     }
 }

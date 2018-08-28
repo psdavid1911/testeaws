@@ -1,10 +1,11 @@
 package PM;
+
 import EstruturasDeDados.Lista;
 import Tempo.DataHora;
 import java.time.LocalDate;
 import java.time.Period;
 
-public class Agente implements Comparable<Agente>{
+public class AgenteAntigo implements Comparable<AgenteAntigo>{
 
     public int numeral;
     public DataHora ingresso;
@@ -67,12 +68,12 @@ public class Agente implements Comparable<Agente>{
     }
 
     @Override
-    public int compareTo(Agente outroAgente){
-        return Integer.compare(numeral,outroAgente.getNumeral());
+    public int compareTo(AgenteAntigo outroAgente){
+        return Integer.compare(numeral, outroAgente.getNumeral());
     }
 
     // esse método só precisa de 3 testes com o início
-    public boolean disponibilidadeDoHorario(DataHora horaInicio,DataHora horaFim){
+    public boolean disponibilidadeDoHorario(DataHora horaInicio, DataHora horaFim){
         for(Servico servico:servicos)
             if(servico.fim.getHora().isBefore(horaInicio.getHora()));else if(servico.fim.getHora().isAfter(horaInicio.getHora())&&servico.fim.getHora().isBefore(horaFim.getHora()))
                 return false;
@@ -91,12 +92,12 @@ public class Agente implements Comparable<Agente>{
      * @param escala
      * @return
      */
-    public boolean disponibildiade(DataHora inicioDeServico,DataHora fimDeServico,Tipo_de_escala escala){
+    public boolean disponibildiade(DataHora inicioDeServico, DataHora fimDeServico, Tipo_de_escala escala){
         LocalDate datainicial=inicioDeServico.getHora().toLocalDate();
         LocalDate dataIngresso=this.ingresso.getHora().toLocalDate();
-        int momentoDaEscala=Period.between(datainicial,dataIngresso).getDays()%escala.getDias_do_ciclo(); // mudar depois para uma funcao q use a escala generica
+        int momentoDaEscala=Period.between(datainicial, dataIngresso).getDays()%escala.getDias_do_ciclo(); // mudar depois para uma funcao q use a escala generica
         if(momentoDaEscala<escala.getDias_trabalhados())
-            return disponibilidadeDoHorario(inicioDeServico,fimDeServico);
+            return disponibilidadeDoHorario(inicioDeServico, fimDeServico);
         return true;
     }
 

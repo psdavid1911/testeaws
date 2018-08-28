@@ -5,40 +5,10 @@ import PM.Escalador;
 import PM.Gerar;
 import PM.Servico;
 import Tempo.DataHora;
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 
-/**
- *
- * @author psdav
- */
 public class EscaladorTest{
-
-    public EscaladorTest(){
-    }
-
-    @BeforeClass
-    public static void setUpClass(){
-    }
-
-    @AfterClass
-    public static void tearDownClass(){
-    }
-
-    @Before
-    public void setUp(){
-    }
-
-    @After
-    public void tearDown(){
-    }
-
-    /**
-     * Test of criaPosto method, of class Escalador.
-     */
+    
     @Test
     public void testCriarEscala(){
         System.out.println("criarEscala");

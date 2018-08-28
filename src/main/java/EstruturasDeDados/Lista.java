@@ -1,6 +1,5 @@
 package EstruturasDeDados;
 import java.util.ArrayList;
-import static java.util.Arrays.asList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
@@ -10,6 +9,7 @@ import java.util.function.Consumer;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
+import static java.util.Arrays.asList;
 
 /**
  * Cuidado, podem haver elementos duplicados em uma Dica, pode realizar
@@ -193,5 +193,9 @@ public class Lista<T extends Comparable<T>> extends ArrayList<T> implements Iter
 
     public void paraCada(Consumer<? super T> expressaoLambda){
         forEach(expressaoLambda);
+    }
+    
+    public T subtraiElemento(int indice){
+        return remove(indice);
     }
 }

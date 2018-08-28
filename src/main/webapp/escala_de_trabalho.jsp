@@ -2,10 +2,15 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>JSP Page</title>
+    <script src="js/include.js"></script>
   </head>
-  <body>
-    <h1>Hello World!</h1>
+  <body onload="CarregarPos()">
+    <div class="coluna">
+      <div id="menu" class="linha menu"></div>
+      <div class="linha titulo">Escalas de trabalho</div>
+      
+      
+      <div id="rodape" class="linha rodape"></div>
+    </div>
   </body>
 </html>

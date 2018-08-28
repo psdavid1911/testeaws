@@ -13,8 +13,8 @@ public class Gerar{
         return servico;
     }
 
-    public static Agente agente(String contato,Tipo_de_escala escala,String nome,int numeral,Lista<Servico> servicos,String ingresso){
-        Agente agente=new Agente();
+    public static AgenteAntigo agente(String contato,Tipo_de_escala escala,String nome,int numeral,Lista<Servico> servicos,String ingresso){
+        AgenteAntigo agente=new AgenteAntigo();
         agente.setContato(contato);
         agente.setEscala(escala);
         agente.setNome(nome);

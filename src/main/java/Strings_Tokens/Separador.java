@@ -9,13 +9,13 @@ public class Separador{
     public Separador(String linha){
         StringTokenizer st=new StringTokenizer(linha," \n");
         while(st.hasMoreElements())
-            listaDePedacos.adiciona((String)st.nextElement());
+            listaDePedacos.add((String)st.nextElement());
     }
 
     public static Lista<String> separa(String linha){
         Lista<String> listaDePedacos=new Lista<String>();
         StringTokenizer st=new StringTokenizer(linha," \n");
-        while(st.hasMoreElements())listaDePedacos.adiciona((String)st.nextElement());
+        while(st.hasMoreElements())listaDePedacos.add((String)st.nextElement());
         return listaDePedacos;
     }
 
