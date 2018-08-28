@@ -1,0 +1,69 @@
+Adjetivo,Substantivo -> Determinante,Substantivo
+Adjunto,Adjetivo -> Adjunto adverbial
+Adjunto,Advérbio -> Adjunto adverbial
+Adjunto,Verbo -> Adjunto adverbial
+Advérbio,Substantivo -> Determinante,Substantivo
+Advérbio,Sujeito,Verbo -> Sujeito,Verbo
+Artigo,Substantivo -> Determinante,Substantivo
+Artigo,Sujeito -> Determinante,Sujeito
+Artigo,Adjetivo,Substantivo -> Determinante,Sujeito
+Complemento,Determinante,Substantivo -> Complementos
+Determinante,Substantivo,Verbo -> Sujeito,Verbo
+Determinante,Sujeito,Verbo -> Sujeito,Verbo
+Frase -> Período
+Locução Adverbial -> Complemento
+Locução Adverbial -> Advérbio
+Numeral -> Pos-determinante
+Predicado complexo,Complemento -> Predicado complexo
+Predicado simples -> Período
+Predicado simples,Complemento -> Predicado complexo
+Predicado simples,Complementos -> Predicado complexo
+Predicado simples,Complementos -> Predicado complexo
+Preposição,Adjetivo -> Locução Adverbial
+Preposição,Advérbio -> Locução Adverbial
+Preposição,Substantivo -> Locução Adverbial
+Preposição,Sujeito -> Locução Adverbial
+Pronome demonstrativo -> Pronome
+Pronome indefinido -> Pronome
+Pronome pessoal do caso reto -> Pronome
+Pronome pessoal do caso reto,Verbo -> Sujeito,Verbo
+Pronome possessivo -> Pos-determinante
+Pronome,Adjetivo,Substantivo -> Determinante,Substantivo
+Pronome,Advérbio,Verbo -> Sujeito,Verbo
+Pronome,Preposição,Pronome pessoal do caso reto -> Sujeito
+Pronome,Substantivo -> Determinante,Substantivo
+Pronome,Substantivo,Verbo -> Sujeito,Verbo
+Pronome,Substantivo,Verbo intransitivo -> Sujeito,Verbo intransitivo
+Pronome,Substantivo,Verbo transitivo -> Sujeito,Verbo transitivo
+Pronome,Sujeito -> Sujeito
+Pronome,Verbo -> Sujeito,Verbo
+Substantivo,Advérbio -> Substantivo,Determinante
+Substantivo,Verbo -> Sujeito,Verbo
+Sujeito,Advérbio,Verbo -> Sujeito,Verbo
+Sujeito,Predicado complexo -> Período
+Sujeito,Predicado simples -> Período
+Sujeito,Verbo -> Sujeito,Predicado simples
+Verbo -> Período
+Verbo de ligação,Adjetivo -> Verbo,Complemento
+Verbo impessoal -> Verbo
+Verbo intransitivo -> Verbo
+Verbo transitivo -> Verbo
+Verbo,Adjunto adnominal,Substantivo -> Verbo,Complemento
+Verbo,Adjunto adverbial,Substantivo -> Verbo,Complemento
+Verbo,Adjunto,Substantivo -> Verbo,Adjunto adnominal,Substantivo
+Verbo,Advérbio -> Verbo,Complemento
+Verbo,Complemento -> Predicado simples
+Verbo,Complemento -> Verbo transitivo,Complemento
+Verbo,Complemento,Complemento -> Verbo,Complementos
+Verbo,Complemento,Complementos -> Verbo,Complementos
+Verbo,Complementos -> Predicado complexo
+Verbo,Complementos,Complemento -> Verbo,Complementos
+Verbo,Determinante,Substantivo -> Verbo,Complemento
+Verbo,Determinante,Sujeito -> Verbo,Complemento
+Verbo,Locução adverbial -> Advérbio
+Verbo,Pronome pessoal do caso reto -> Verbo,Complemento
+Verbo,Pronome,Substantivo -> Verbo,Complemento
+Verbo,Substantivo -> Verbo,Complemento
+Verbo,Substantivo,Artigo,Substantivo -> Verbo,Complementos
+Verbo,Substantivo,Determinante -> Verbo,Complemento
+Verbo,Sujeito -> Verbo,Complemento
