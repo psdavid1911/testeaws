@@ -1,4 +1,4 @@
-package NovoAnalisador;
+package AnalisadorSintatico;
 
 import EstruturasDeDados.Grafo;
 import EstruturasDeDados.Lista;

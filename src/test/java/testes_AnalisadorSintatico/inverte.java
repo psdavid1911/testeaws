@@ -1,7 +1,7 @@
 package testes_AnalisadorSintatico;
 
 import AnalisadorSintatico.Parsing;
-import NovoAnalisador.ManipuladorGrafo;
+import AnalisadorSintatico.ManipuladorGrafo;
 import org.junit.Test;
 
 /**

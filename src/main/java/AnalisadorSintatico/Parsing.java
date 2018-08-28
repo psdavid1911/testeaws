@@ -1,32 +1,30 @@
 package AnalisadorSintatico;
 
-import EstruturasDeDados.Grafo;
 import EstruturasDeDados.Lista;
-import NovoAnalisador.ManipuladorGrafo;
 import Strings_Tokens.Separador;
 
 public class Parsing{
 
     public Lista<String> falha=new Lista<String>();
-    public Grafo<Lista<String>> gramatica;
+    public ManipuladorGrafo gramatica;
     public ManipuladorGrafo lexico;
     public Lista<String> meta=new Lista<String>();
     public Lista<String> procedimento;
 
     public Parsing(String caminhoDaGramatica){
-        gramatica=Gramatica.pegaGramatica(caminhoDaGramatica);
+        gramatica=new ManipuladorGrafo(caminhoDaGramatica);
     }
 
     public Parsing(String caminhoDaGramatica, String caminhoDoLexico){
-        gramatica=Gramatica.pegaGramatica(caminhoDaGramatica);
+        gramatica=new ManipuladorGrafo(caminhoDaGramatica);
         this.lexico=new ManipuladorGrafo(caminhoDoLexico);
     }
 
     public String configuraTesta(String meta, String falha, String original){
         procedimento=new Lista<String>();
         Lista<String> conversaoInicial=new Lista<String>();
-        Lista<String> inicial = Separador.separa(original);
-        procedimento.add("\n       Inicial: " + inicial.toString());
+        Lista<String> inicial=Separador.separa(original);
+        procedimento.add("\n       Inicial: "+inicial.toString());
         for(String palavra:inicial)conversaoInicial.add(lexico.pegaPrimeiraAdjascencia(new Lista<String>(palavra)));
         this.meta=new Lista<String>(meta);
         this.falha=new Lista<String>(falha);
@@ -70,7 +68,7 @@ public class Parsing{
             for(int j=estadoInicial.size()-1; j>=0; j--){
                 if(i>j)break;
                 Lista<String> sublista=estadoInicial.subLista(i, j+1);
-                Lista<Lista<String>> transicaoEncapsulada=gramatica.pegaAdjascentes(sublista);
+                Lista<Lista<String>> transicaoEncapsulada=gramatica.pegaAdjascencias(sublista);
                 if(transicaoEncapsulada!=null&&!transicaoEncapsulada.isEmpty()){
                     Lista<String> transicao=transicaoEncapsulada.get(0);
                     if(transicao!=null&&!transicao.isEmpty())
