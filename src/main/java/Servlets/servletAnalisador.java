@@ -21,7 +21,7 @@ public class servletAnalisador extends HttpServlet{
         url=url.replaceFirst(uri,"");// url = "http://server.name:8080"
         response.setContentType("text/html");
         String original=request.getParameter("entrada");
-        analisador.configuraTesta("Período","Agramatical",original);
+        analisador.testa("Período","Agramatical",original);
         response.getWriter().print(analisador);
     }
 

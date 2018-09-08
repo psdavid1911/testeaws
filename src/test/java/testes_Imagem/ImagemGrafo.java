@@ -1,7 +1,7 @@
 package testes_Imagem;
-import EstruturasDeDados.Grafo8;
+import EstruturasDeDados.Grafo;
 import EstruturasDeDados.Lista;
-import EstruturasDeDados.Par8;
+import EstruturasDeDados.Par;
 import EstruturasDeDados.V;
 import Imagem.Imagem;
 import java.awt.Color;
@@ -11,7 +11,7 @@ import org.junit.Test;
 
 public class ImagemGrafo{
 
-    Grafo8<V<String>> grafo=new Grafo8<V<String>>();
+    Grafo<V<String>> grafo=new Grafo<V<String>>();
     Imagem imagem;
     int dimx=1000;
     int dimy=1000;
@@ -152,8 +152,8 @@ public class ImagemGrafo{
 //            for(String vertice : grafo.pegaAdjascentes(verticeFixado)){ // percorre as adjascencias do vertice
 //                if(vertice.equals(verticeFixado))
 //                    continue;
-//                parSimples<Integer> v = new parSimples<>(coordenadas.get(verticeFixado).getX(), coordenadas.get(verticeFixado).getY());
-//                parSimples<Integer> u = new parSimples<>(coordenadas.get(vertice).getX(), coordenadas.get(vertice).getY());
+//                parSimples<Integer> v = new parSimples<>(coordenadas.get(verticeFixado).X(), coordenadas.get(verticeFixado).Y());
+//                parSimples<Integer> u = new parSimples<>(coordenadas.get(vertice).X(), coordenadas.get(vertice).Y());
 //                distancia = Math.sqrt(Math.pow(v.x-u.x, 2)+Math.pow(v.y-u.y, 2));
 //                forcaDeAtracao += Math.pow(distancia, 2)/k;
 //            }
@@ -163,8 +163,8 @@ public class ImagemGrafo{
 //            for(String vertice : grafo.pegaVertices()){
 //                if(vertice.equals(verticeFixado))
 //                    continue;
-//                parSimples<Integer> v = new parSimples<>(coordenadas.get(verticeFixado).getX(), coordenadas.get(verticeFixado).getY());
-//                parSimples<Integer> u = new parSimples<>(coordenadas.get(vertice).getX(), coordenadas.get(vertice).getY());
+//                parSimples<Integer> v = new parSimples<>(coordenadas.get(verticeFixado).X(), coordenadas.get(verticeFixado).Y());
+//                parSimples<Integer> u = new parSimples<>(coordenadas.get(vertice).X(), coordenadas.get(vertice).Y());
 //                distancia = Math.sqrt(Math.pow(v.x-u.x, 2)+Math.pow(v.y-u.y, 2));
 //                forcaDeRepulsao += (-Math.pow(k, 2))/distancia;
 //            }
@@ -175,8 +175,8 @@ public class ImagemGrafo{
 //            /**
 //             * FAZ O "PASSO"
 //             */
-//            int novissimoX = new Double(coordenadas.pega(verticeFixado).getX()+(constante*forcaDoVertice)).intValue();
-//            int novissimoY = new Double(coordenadas.pega(verticeFixado).getY()+(constante*forcaDoVertice)).intValue();
+//            int novissimoX = new Double(coordenadas.pega(verticeFixado).X()+(constante*forcaDoVertice)).intValue();
+//            int novissimoY = new Double(coordenadas.pega(verticeFixado).Y()+(constante*forcaDoVertice)).intValue();
 //            coordenadas.pega(verticeFixado).setX(novissimoX);
 //            coordenadas.pega(verticeFixado).setY(novissimoY);
 //        }); // Fim do percorrimento dos vértices
@@ -205,10 +205,10 @@ public class ImagemGrafo{
 //             */
 //            String vertice = par.getKey();
 //            double raio = 50+5*Math.toRadians(angulo); // espiral de arquimedes
-//            Par8<Integer, Integer> coordenadas = coordCartesianas(raio, angulo);
+//            Par<Integer, Integer> coordenadas = coordCartesianas(raio, angulo);
 //            int xNovo, yNovo;
-//            xNovo = coordenadas.getX()+xDoCentro;
-//            yNovo = coordenadas.getY()+yDoCentro;
+//            xNovo = coordenadas.X()+xDoCentro;
+//            yNovo = coordenadas.Y()+yDoCentro;
 //            /**
 //             * Impressao da bola
 //             */
@@ -234,11 +234,11 @@ public class ImagemGrafo{
             imprime(Integer.toString(a.nextInt(10)));
     }
 
-    public Par8<Integer,Integer> coordCartesianas(double raio,double angulo){
+    public Par<Integer,Integer> coordCartesianas(double raio,double angulo){
         Integer x, y;
         x=new Double(raio*Math.cos(angulo)).intValue();
         y=new Double(raio*Math.sin(angulo)).intValue();
-        return new Par8<Integer,Integer>(x,y);
+        return new Par<Integer,Integer>(x,y);
     }
 
     //@Test
@@ -254,9 +254,9 @@ public class ImagemGrafo{
         imagem.desenhaEixoCentral(dimx,dimy);
         imagem.desenhaLinha(Color.red,posVerX,posVerY,posVerX2,posVerY2);
         imagem.desenhaCircu(Color.white,posVerX,posVerY,imagem.larguraDoTexto(texto)+10);
-        imagem.desenhaTexto(Color.black,texto,posVerX,posVerY).getX();
+        imagem.desenhaTexto(Color.black,texto,posVerX,posVerY).X();
         imagem.desenhaCircu(Color.white,posVerX2,posVerY2,imagem.larguraDoTexto(texto2)+10);
-        imagem.desenhaTexto(Color.black,texto2,posVerX2,posVerY2).getX();
+        imagem.desenhaTexto(Color.black,texto2,posVerX2,posVerY2).X();
         imagem.salvaNoArquivo("imagemgrafo.jpg");
     }
 }

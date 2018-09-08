@@ -1,4 +1,5 @@
 package EstruturasDeDados;
+
 import java.util.Objects;
 
 /**
@@ -13,7 +14,7 @@ public class V<T extends Comparable<T>> implements Comparable<V<T>>{
     public int x;
     public int y;
 
-    public V(T elemento,int x,int y){
+    public V(T elemento, int x, int y){
         this.elemento=elemento;
         this.x=x;
         this.y=y;
@@ -54,7 +55,7 @@ public class V<T extends Comparable<T>> implements Comparable<V<T>>{
             return false;
         if(this.y!=other.y)
             return false;
-        if(!Objects.equals(this.elemento,other.elemento))
+        if(!Objects.equals(this.elemento, other.elemento))
             return false;
         return true;
     }

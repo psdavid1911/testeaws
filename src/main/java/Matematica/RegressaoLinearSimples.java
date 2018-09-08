@@ -1,6 +1,6 @@
 package Matematica;
 import EstruturasDeDados.Lista;
-import EstruturasDeDados.Par8;
+import EstruturasDeDados.Par;
 import EstruturasDeDados.TabelaHash8;
 import java.util.Map.Entry;
 import org.apache.commons.math3.stat.regression.SimpleRegression;
@@ -36,9 +36,9 @@ public class RegressaoLinearSimples{
         return regressaoLinear.predict(x);
     }
 
-    public void adicionaDados(Lista<Par8<Double,Double>> dados){
-        for(Par8<Double,Double> par:dados)
-            regressaoLinear.addData(par.getX(),par.getY());
+    public void adicionaDados(Lista<Par<Double,Double>> dados){
+        for(Par<Double,Double> par:dados)
+            regressaoLinear.addData(par.X(),par.Y());
     }
 
     public void adicionaDados(TabelaHash8<Double,Double> dados){

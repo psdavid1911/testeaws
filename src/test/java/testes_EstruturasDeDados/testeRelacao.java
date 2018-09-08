@@ -1,5 +1,5 @@
 package testes_EstruturasDeDados;
-import EstruturasDeDados.Par8;
+import EstruturasDeDados.Par;
 import EstruturasDeDados.Relacao8;
 import org.junit.Test;
 
@@ -11,6 +11,6 @@ public class testeRelacao{
         r.adiciona(1,"ola");
         r.adiciona(2,"bem vindo");
         Relacao8<String,Integer> nova=r.inversa();
-        for(Par8<String,Integer> entrada:nova) System.out.println(entrada.getX()+": "+entrada.getY());
+        for(Par<String,Integer> entrada:nova) System.out.println(entrada.X()+": "+entrada.Y());
     }
 }

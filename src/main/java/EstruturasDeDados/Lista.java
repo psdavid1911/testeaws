@@ -1,4 +1,5 @@
 package EstruturasDeDados;
+
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
@@ -18,7 +19,7 @@ import static java.util.Arrays.asList;
  * @author david
  * @param <T>
  */
-public class Lista<T extends Comparable<T>> extends ArrayList<T> implements Iterable<T>,Comparable<Lista<T>>{
+public class Lista<T extends Comparable<T>> extends ArrayList<T> implements Iterable<T>, Comparable<Lista<T>>{
 
     public Lista(T... elementos){
         super(asList(elementos));
@@ -107,8 +108,8 @@ public class Lista<T extends Comparable<T>> extends ArrayList<T> implements Iter
         return get(indiceDoElemento(elemento));
     }
 
-    public Lista<T> subLista(int posicaoInicial,int posicaoFinal){
-        return new Lista<T>(subList(posicaoInicial,posicaoFinal));
+    public Lista<T> subLista(int posicaoInicial, int posicaoFinal){
+        return new Lista<T>(subList(posicaoInicial, posicaoFinal));
     }
 
     public int indiceDoElemento(T elemento){
@@ -125,8 +126,8 @@ public class Lista<T extends Comparable<T>> extends ArrayList<T> implements Iter
      * @param valorAleatorio
      */
     public void embaralha(Random valorAleatorio){
-        for(int i=size();i>1;i--)
-            trocaElementos(i-1,valorAleatorio.nextInt(i));
+        for(int i=size(); i>1; i--)
+            trocaElementos(i-1, valorAleatorio.nextInt(i));
     }
 
     /**
@@ -135,10 +136,10 @@ public class Lista<T extends Comparable<T>> extends ArrayList<T> implements Iter
      * @param posicao1
      * @param posicao2
      */
-    public void trocaElementos(int posicao1,int posicao2){
+    public void trocaElementos(int posicao1, int posicao2){
         T tmp=get(posicao1);
-        set(posicao1,get(posicao2));
-        set(posicao2,tmp);
+        set(posicao1, get(posicao2));
+        set(posicao2, tmp);
     }
 
     /**
@@ -149,8 +150,8 @@ public class Lista<T extends Comparable<T>> extends ArrayList<T> implements Iter
      * @param elemento1
      * @param elemento2
      */
-    public void trocaElementos(T elemento1,T elemento2){
-        trocaElementos(indiceDoElemento(elemento1),indiceDoElemento(elemento2));
+    public void trocaElementos(T elemento1, T elemento2){
+        trocaElementos(indiceDoElemento(elemento1), indiceDoElemento(elemento2));
     }
 
     public void preenche(){
@@ -164,7 +165,7 @@ public class Lista<T extends Comparable<T>> extends ArrayList<T> implements Iter
     }
 
     public void ordena(Comparator comparador){
-        Collections.sort(this,comparador);
+        Collections.sort(this, comparador);
     }
 
     public List original(){
@@ -194,7 +195,7 @@ public class Lista<T extends Comparable<T>> extends ArrayList<T> implements Iter
     public void paraCada(Consumer<? super T> expressaoLambda){
         forEach(expressaoLambda);
     }
-    
+
     public T subtraiElemento(int indice){
         return remove(indice);
     }

@@ -17,14 +17,14 @@ public class ParsingTestesFalha{
 
     @Test public void testeFalha001(){
         String original="casa a é bonita";
-        String resultado=analisador.configuraTesta("Período", "Agramatical", original);
+        String resultado=analisador.testa("Período", "Agramatical", original);
         analisador.imprime();
         assertEquals("Agramatical", resultado);
     }
 
     @Test public void testeFalha002(){
         String original="joão gosta de maçã comer";
-        String resultado=analisador.configuraTesta("Período", "Agramatical", original);
+        String resultado=analisador.testa("Período", "Agramatical", original);
         analisador.imprime();
         assertEquals("Agramatical", resultado);
     }

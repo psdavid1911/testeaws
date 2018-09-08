@@ -1,5 +1,5 @@
 package Imagem;
-import EstruturasDeDados.Par8;
+import EstruturasDeDados.Par;
 import FluxoDeArquivos.GerenciadorDeArquivo;
 import java.awt.Color;
 import java.awt.Font;
@@ -63,12 +63,12 @@ public class Imagem{
         pincel.fillRect(x,y,largura,altura);
     }
 
-    public Par8<Integer,Integer> desenhaTexto(Color cor,String texto,int x,int y){
+    public Par<Integer,Integer> desenhaTexto(Color cor,String texto,int x,int y){
         pincel.setColor(cor);
         x-=larguraDoTexto(texto)/2;
         y+=alturaDaFonte()/2;
         pincel.drawString(texto,x,y);
-        return new Par8<Integer,Integer>(larguraDoTexto(texto),alturaDaFonte());
+        return new Par<Integer,Integer>(larguraDoTexto(texto),alturaDaFonte());
     }
 
     /**
@@ -139,10 +139,10 @@ public class Imagem{
         double angulo=0;
         for(int i=0;i<quantidadePontos;i++) {
             double raio=50+5*Math.toRadians(angulo); // espiral de arquimedes // a + b angulo // a buraco do meio // b espaco entre linhas
-            Par8<Integer,Integer> coordenadas=coordCartesianas(raio,angulo);
+            Par<Integer,Integer> coordenadas=coordCartesianas(raio,angulo);
             int xNovo, yNovo;
-            xNovo=coordenadas.getX()+xDoCentro;
-            yNovo=coordenadas.getY()+yDoCentro;
+            xNovo=coordenadas.X()+xDoCentro;
+            yNovo=coordenadas.Y()+yDoCentro;
             //System.out.println("x "+Integer.toString(xNovo)+"   y "+Integer.toString(yNovo));
             desenhaLinha(Color.red,xAnterior,yAnterior,xNovo,yNovo);
             angulo+=57; // aumenta ou diminue a precisao em graus 0 - 180
@@ -151,11 +151,11 @@ public class Imagem{
         }
     }
 
-    public Par8<Integer,Integer> coordCartesianas(double raio,double angulo){
+    public Par<Integer,Integer> coordCartesianas(double raio,double angulo){
         Integer x, y;
         x=new Double(raio*Math.cos(angulo)).intValue();
         y=new Double(raio*Math.sin(angulo)).intValue();
-        return new Par8<Integer,Integer>(x,y);
+        return new Par<Integer,Integer>(x,y);
     }
 
     public void salvaNoArquivo(String caminhoArquivo){

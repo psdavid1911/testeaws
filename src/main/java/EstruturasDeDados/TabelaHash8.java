@@ -1,4 +1,5 @@
 package EstruturasDeDados;
+
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map.Entry;
@@ -11,7 +12,7 @@ import java.util.function.BiConsumer;
  * @param <CHAVE>
  * @param <VALOR>
  */
-public class TabelaHash8<CHAVE,VALOR> extends HashMap<CHAVE,VALOR>{
+public class TabelaHash8<CHAVE, VALOR> extends HashMap<CHAVE, VALOR>{
 
     public boolean contemValor(VALOR valor){
         return containsValue(valor);
@@ -25,7 +26,7 @@ public class TabelaHash8<CHAVE,VALOR> extends HashMap<CHAVE,VALOR>{
         return isEmpty();
     }
 
-    public Set<Entry<CHAVE,VALOR>> conjunto(){
+    public Set<Entry<CHAVE, VALOR>> conjunto(){
         return entrySet();
     }
 
@@ -41,8 +42,8 @@ public class TabelaHash8<CHAVE,VALOR> extends HashMap<CHAVE,VALOR>{
      *
      * @return
      */
-    public VALOR adiciona(CHAVE chave,VALOR valor){
-        return put(chave,valor);
+    public VALOR adiciona(CHAVE chave, VALOR valor){
+        return put(chave, valor);
     }
 
     public void limpa(){
@@ -64,11 +65,11 @@ public class TabelaHash8<CHAVE,VALOR> extends HashMap<CHAVE,VALOR>{
         return values();
     }
 
-    public HashMap<CHAVE,VALOR> original(){
+    public HashMap<CHAVE, VALOR> original(){
         return this;
     }
 
-    public void paraCada(BiConsumer<? super CHAVE,? super VALOR> expressaoLambda){
+    public void paraCada(BiConsumer<? super CHAVE, ? super VALOR> expressaoLambda){
         forEach(expressaoLambda);
     }
 
@@ -80,25 +81,25 @@ public class TabelaHash8<CHAVE,VALOR> extends HashMap<CHAVE,VALOR>{
      * @param chave
      * @param valor
      */
-    public void adicionaSomando(CHAVE chave,VALOR valor){
+    public void adicionaSomando(CHAVE chave, VALOR valor){
         if(valor instanceof Number){
             // SE FOR INTEIRO
             if(valor.getClass().getName().equals(Double.class.getName())){
-                Double valorAnterior=(Double)adiciona(chave,valor);
+                Double valorAnterior=(Double)adiciona(chave, valor);
                 if(valorAnterior!=null){
                     Double novoValor=((Number)valor).doubleValue()+valorAnterior;
-                    adiciona(chave,(VALOR)novoValor);
+                    adiciona(chave, (VALOR)novoValor);
                 }
             }
             // SE FOR DOUBLE
             if(valor.getClass().getName().equals(Integer.class.getName())){
-                Integer valorAnterior=(Integer)adiciona(chave,valor);
+                Integer valorAnterior=(Integer)adiciona(chave, valor);
                 if(valorAnterior!=null){
                     Integer novoValor=((Number)valor).intValue()+valorAnterior;
-                    adiciona(chave,(VALOR)novoValor);
+                    adiciona(chave, (VALOR)novoValor);
                 }
             }
         }else
-            adiciona(chave,valor);
+            adiciona(chave, valor);
     }
 }
