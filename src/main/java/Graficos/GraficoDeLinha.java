@@ -1,7 +1,8 @@
 package Graficos;
+
 import EstruturasDeDados.Lista;
 import EstruturasDeDados.Par;
-import EstruturasDeDados.TabelaHash8;
+import EstruturasDeDados.TabelaHash;
 import java.io.*;
 import java.util.Map.Entry;
 import java.util.logging.Level;
@@ -12,28 +13,28 @@ import org.jfree.chart.JFreeChart;
 import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.data.category.DefaultCategoryDataset;
 
-public class GraficoDeLinha<TIPOX extends Comparable<TIPOX>,TIPOY extends Number>{
+public class GraficoDeLinha<TIPOX extends Comparable<TIPOX>, TIPOY extends Number>{
 
     DefaultCategoryDataset conjuntoDeDados=new DefaultCategoryDataset();
 
-    public void adicionaConjuntoDeDados(TabelaHash8<TIPOX,TIPOY> dados,String NomeDaSerie){
-        for(Entry<TIPOX,TIPOY> entrada:dados.conjunto())
-            conjuntoDeDados.addValue(entrada.getValue(),NomeDaSerie,entrada.getKey());
+    public void adicionaConjuntoDeDados( TabelaHash<TIPOX, TIPOY> dados, String NomeDaSerie ){
+        for( Entry<TIPOX, TIPOY> entrada:dados.conjunto() )
+            conjuntoDeDados.addValue(entrada.getValue(), NomeDaSerie, entrada.getKey());
     }
 
-    public void adicionaConjuntoDeDados(Lista<Par<TIPOX,TIPOY>> dados,String NomeDaSerie){
-        for(Par<TIPOX,TIPOY> par:dados)
-            conjuntoDeDados.addValue(par.Y(),NomeDaSerie,par.X());
+    public void adicionaConjuntoDeDados( Lista<Par<TIPOX, TIPOY>> dados, String NomeDaSerie ){
+        for( Par<TIPOX, TIPOY> par:dados )
+            conjuntoDeDados.addValue(par.Y(), NomeDaSerie, par.X());
     }
 
-    public void criaGrafico(TabelaHash8<TIPOX,TIPOY> dados,String NomeDaSerie,String rotuloX,String rotuloY,String titulo){
-        adicionaConjuntoDeDados(dados,NomeDaSerie);
+    public void criaGrafico( TabelaHash<TIPOX, TIPOY> dados, String NomeDaSerie, String rotuloX, String rotuloY, String titulo ){
+        adicionaConjuntoDeDados(dados, NomeDaSerie);
         JFreeChart lineChartObject=ChartFactory.createLineChart(titulo,
                 rotuloX,
                 rotuloY,
                 conjuntoDeDados,
                 PlotOrientation.VERTICAL,
-                true,true,false
+                true, true, false
         );
         int largura=800;
         /*
@@ -43,21 +44,22 @@ public class GraficoDeLinha<TIPOX extends Comparable<TIPOX>,TIPOY extends Number
         /*
          * Height of the image
          */
-        File arquivo=new File(titulo+".jpeg");
+        File arquivo=new File(titulo + ".jpeg");
         try{
-            ChartUtilities.saveChartAsJPEG(arquivo,lineChartObject,largura,altura);
-        }catch(IOException ex){
-            Logger.getLogger(GraficoDeLinha.class.getName()).log(Level.SEVERE,null,ex);
+            ChartUtilities.saveChartAsJPEG(arquivo, lineChartObject, largura, altura);
+        }
+        catch( IOException ex ){
+            Logger.getLogger(GraficoDeLinha.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
-    public void criaGrafico(String rotuloX,String rotuloY,String titulo){
+    public void criaGrafico( String rotuloX, String rotuloY, String titulo ){
         JFreeChart lineChartObject=ChartFactory.createLineChart(titulo,
                 rotuloX,
                 rotuloY,
                 conjuntoDeDados,
                 PlotOrientation.VERTICAL,
-                true,true,false
+                true, true, false
         );
         int largura=800;
         /*
@@ -67,11 +69,12 @@ public class GraficoDeLinha<TIPOX extends Comparable<TIPOX>,TIPOY extends Number
         /*
          * Height of the image
          */
-        File arquivo=new File(titulo+".jpeg");
+        File arquivo=new File(titulo + ".jpeg");
         try{
-            ChartUtilities.saveChartAsJPEG(arquivo,lineChartObject,largura,altura);
-        }catch(IOException ex){
-            Logger.getLogger(GraficoDeLinha.class.getName()).log(Level.SEVERE,null,ex);
+            ChartUtilities.saveChartAsJPEG(arquivo, lineChartObject, largura, altura);
+        }
+        catch( IOException ex ){
+            Logger.getLogger(GraficoDeLinha.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 }

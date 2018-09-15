@@ -14,26 +14,26 @@ public class V<T extends Comparable<T>> implements Comparable<V<T>>{
     public int x;
     public int y;
 
-    public V(T elemento, int x, int y){
+    public V( T elemento, int x, int y ){
         this.elemento=elemento;
         this.x=x;
         this.y=y;
     }
 
-    public V(T elemento){
+    public V( T elemento ){
         this.elemento=elemento;
         this.x=0;
         this.y=0;
     }
 
     @Override
-    public int compareTo(V<T> o){
+    public int compareTo( V<T> o ){
         return this.elemento.compareTo(o.elemento);
     }
 
     @Override
     public String toString(){
-        return "V{"+"elemento="+elemento+", x="+x+", y="+y+'}';
+        return "V{" + "elemento=" + elemento + ", x=" + x + ", y=" + y + '}';
     }
 
     @Override
@@ -43,19 +43,19 @@ public class V<T extends Comparable<T>> implements Comparable<V<T>>{
     }
 
     @Override
-    public boolean equals(Object obj){
-        if(this==obj)
+    public boolean equals( Object obj ){
+        if( this == obj )
             return true;
-        if(obj==null)
+        if( obj == null )
             return false;
-        if(getClass()!=obj.getClass())
+        if( getClass() != obj.getClass() )
             return false;
         final V<?> other=(V<?>)obj;
-        if(this.x!=other.x)
+        if( this.x != other.x )
             return false;
-        if(this.y!=other.y)
+        if( this.y != other.y )
             return false;
-        if(!Objects.equals(this.elemento, other.elemento))
+        if( !Objects.equals(this.elemento, other.elemento) )
             return false;
         return true;
     }

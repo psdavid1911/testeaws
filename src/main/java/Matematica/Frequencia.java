@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package Matematica;
+
 import EstruturasDeDados.Lista;
 import org.apache.commons.math3.stat.Frequency;
 
@@ -21,9 +22,9 @@ public class Frequencia< T extends Comparable<T>>{
      *
      * @return
      */
-    public double frequenciaAbsoluta(Lista<T> conjunto,T elemento){
+    public double frequenciaAbsoluta( Lista<T> conjunto, T elemento ){
         Frequency frequencia=new Frequency();
-        for(T valor:conjunto)
+        for( T valor:conjunto )
             frequencia.addValue(valor);
         return frequencia.getCount(elemento);
     }
@@ -37,9 +38,9 @@ public class Frequencia< T extends Comparable<T>>{
      *
      * @return
      */
-    public double frequenciaPercentual(Lista<T> conjunto,T elemento){
+    public double frequenciaPercentual( Lista<T> conjunto, T elemento ){
         Frequency frequencia=new Frequency();
-        for(T valor:conjunto)
+        for( T valor:conjunto )
             frequencia.addValue(valor);
         return frequencia.getPct(elemento);
     }
@@ -51,12 +52,12 @@ public class Frequencia< T extends Comparable<T>>{
      *
      * @return
      */
-    public Lista<T> moda(Lista<T> conjunto){
+    public Lista<T> moda( Lista<T> conjunto ){
         Frequency frequencia=new Frequency();
         Lista<T> moda=new Lista<T>();
-        for(T valor:conjunto)
+        for( T valor:conjunto )
             frequencia.addValue(valor);
-        for(Comparable d:frequencia.getMode()) // Não tenho certeza se isto esta certo
+        for( Comparable d:frequencia.getMode() ) // Não tenho certeza se isto esta certo
             moda.adiciona((T)d);
         return moda;
     }
@@ -70,9 +71,9 @@ public class Frequencia< T extends Comparable<T>>{
      *
      * @return
      */
-    public double frequenciaAcumuladaAbsoluta(Lista<T> conjunto,T elemento){
+    public double frequenciaAcumuladaAbsoluta( Lista<T> conjunto, T elemento ){
         Frequency frequencia=new Frequency();
-        for(T valor:conjunto)
+        for( T valor:conjunto )
             frequencia.addValue(valor);
         return frequencia.getCumFreq(elemento);
     }
@@ -86,9 +87,9 @@ public class Frequencia< T extends Comparable<T>>{
      *
      * @return
      */
-    public double frequenciaAcumuladaPercentual(Lista<T> conjunto,T elemento){
+    public double frequenciaAcumuladaPercentual( Lista<T> conjunto, T elemento ){
         Frequency frequencia=new Frequency();
-        for(T valor:conjunto)
+        for( T valor:conjunto )
             frequencia.addValue(valor);
         return frequencia.getCumPct(elemento);
     }
@@ -100,9 +101,9 @@ public class Frequencia< T extends Comparable<T>>{
      *
      * @return
      */
-    public double somaDasFrequencias(Lista<T> conjunto){
+    public double somaDasFrequencias( Lista<T> conjunto ){
         Frequency frequencia=new Frequency();
-        for(T valor:conjunto)
+        for( T valor:conjunto )
             frequencia.addValue(valor);
         return frequencia.getSumFreq();
     }
@@ -114,9 +115,9 @@ public class Frequencia< T extends Comparable<T>>{
      *
      * @return
      */
-    public double numeroDeElementosDistintos(Lista<T> conjunto){
+    public double numeroDeElementosDistintos( Lista<T> conjunto ){
         Frequency frequencia=new Frequency();
-        for(T valor:conjunto)
+        for( T valor:conjunto )
             frequencia.addValue(valor);
         return frequencia.getUniqueCount();
     }

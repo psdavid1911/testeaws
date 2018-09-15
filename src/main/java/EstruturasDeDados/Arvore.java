@@ -1,4 +1,4 @@
-package Servlets.EstruturasDeDados8;
+package EstruturasDeDados;
 
 import java.util.Iterator;
 
@@ -6,7 +6,7 @@ import java.util.Iterator;
  *
  * @author david
  */
-public class Arvore8<T> implements Iterable<T>{
+public class Arvore<T> implements Iterable<T>{
 
     @Override
     public Iterator<T> iterator(){

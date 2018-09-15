@@ -18,7 +18,7 @@ public class AgenteAntigo implements Comparable<AgenteAntigo>{
         return numeral;
     }
 
-    public void setNumeral(int numeral){
+    public void setNumeral( int numeral ){
         this.numeral=numeral;
     }
 
@@ -26,7 +26,7 @@ public class AgenteAntigo implements Comparable<AgenteAntigo>{
         return nome;
     }
 
-    public void setNome(String nome){
+    public void setNome( String nome ){
         this.nome=nome;
     }
 
@@ -34,11 +34,11 @@ public class AgenteAntigo implements Comparable<AgenteAntigo>{
         return servicos;
     }
 
-    public void setServicos(Lista<Servico> servicos){
+    public void setServicos( Lista<Servico> servicos ){
         this.servicos=servicos;
     }
 
-    public void addServico(Servico servico){
+    public void addServico( Servico servico ){
         this.servicos.adiciona(servico);
     }
 
@@ -46,16 +46,16 @@ public class AgenteAntigo implements Comparable<AgenteAntigo>{
         return escala;
     }
 
-    public void setEscala(Tipo_de_escala escala){
+    public void setEscala( Tipo_de_escala escala ){
         this.escala=escala;
     }
 
-    public void adicionaServico(Servico servico){
-        if(!servicos.contem(servico))
+    public void adicionaServico( Servico servico ){
+        if( !servicos.contem(servico) )
             servicos.adiciona(servico);
     }
 
-    public void removeServico(Servico servico){
+    public void removeServico( Servico servico ){
         servicos.remove(servico);
     }
 
@@ -63,23 +63,23 @@ public class AgenteAntigo implements Comparable<AgenteAntigo>{
         return contato;
     }
 
-    public void setContato(String contato){
+    public void setContato( String contato ){
         this.contato=contato;
     }
 
     @Override
-    public int compareTo(AgenteAntigo outroAgente){
+    public int compareTo( AgenteAntigo outroAgente ){
         return Integer.compare(numeral, outroAgente.getNumeral());
     }
 
     // esse método só precisa de 3 testes com o início
-    public boolean disponibilidadeDoHorario(DataHora horaInicio, DataHora horaFim){
-        for(Servico servico:servicos)
-            if(servico.fim.getHora().isBefore(horaInicio.getHora()));else if(servico.fim.getHora().isAfter(horaInicio.getHora())&&servico.fim.getHora().isBefore(horaFim.getHora()))
+    public boolean disponibilidadeDoHorario( DataHora horaInicio, DataHora horaFim ){
+        for( Servico servico:servicos )
+            if( servico.fim.getHora().isBefore(horaInicio.getHora()) );else if( servico.fim.getHora().isAfter(horaInicio.getHora()) && servico.fim.getHora().isBefore(horaFim.getHora()) )
                 return false;
-            else if(servico.inicio.getHora().isAfter(horaInicio.getHora())&&servico.inicio.getHora().isBefore(horaFim.getHora()))
+            else if( servico.inicio.getHora().isAfter(horaInicio.getHora()) && servico.inicio.getHora().isBefore(horaFim.getHora()) )
                 return false;
-            else if(servico.inicio.getHora().isAfter(horaFim.getHora()));
+            else if( servico.inicio.getHora().isAfter(horaFim.getHora()) );
         return true;
     }
 
@@ -92,25 +92,25 @@ public class AgenteAntigo implements Comparable<AgenteAntigo>{
      * @param escala
      * @return
      */
-    public boolean disponibildiade(DataHora inicioDeServico, DataHora fimDeServico, Tipo_de_escala escala){
+    public boolean disponibildiade( DataHora inicioDeServico, DataHora fimDeServico, Tipo_de_escala escala ){
         LocalDate datainicial=inicioDeServico.getHora().toLocalDate();
         LocalDate dataIngresso=this.ingresso.getHora().toLocalDate();
-        int momentoDaEscala=Period.between(datainicial, dataIngresso).getDays()%escala.getDias_do_ciclo(); // mudar depois para uma funcao q use a escala generica
-        if(momentoDaEscala<escala.getDias_trabalhados())
+        int momentoDaEscala=Period.between(datainicial, dataIngresso).getDays() % escala.getDias_do_ciclo(); // mudar depois para uma funcao q use a escala generica
+        if( momentoDaEscala < escala.getDias_trabalhados() )
             return disponibilidadeDoHorario(inicioDeServico, fimDeServico);
         return true;
     }
 
     @Override
     public String toString(){
-        return "\nAgente{"+"numeral="+numeral+", ingresso="+ingresso+", nome="+nome+", contato="+contato+", escala="+escala+", servicos="+servicos+'}';
+        return "\nAgente{" + "numeral=" + numeral + ", ingresso=" + ingresso + ", nome=" + nome + ", contato=" + contato + ", escala=" + escala + ", servicos=" + servicos + '}';
     }
 
     public DataHora getIngresso(){
         return ingresso;
     }
 
-    public void setIngresso(DataHora ingresso){
+    public void setIngresso( DataHora ingresso ){
         this.ingresso=ingresso;
     }
 }

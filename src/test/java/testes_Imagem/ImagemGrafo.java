@@ -1,4 +1,5 @@
 package testes_Imagem;
+
 import EstruturasDeDados.Grafo;
 import EstruturasDeDados.Lista;
 import EstruturasDeDados.Par;
@@ -15,31 +16,31 @@ public class ImagemGrafo{
     Imagem imagem;
     int dimx=1000;
     int dimy=1000;
-    int xDoCentro=dimx/2;
-    int yDoCentro=dimy/2;
+    int xDoCentro=dimx / 2;
+    int yDoCentro=dimy / 2;
 
     /**
      * Inicializa grafo e imagem
      */
     public ImagemGrafo(){
-        imagem=new Imagem(dimx,dimy);
+        imagem=new Imagem(dimx, dimy);
         imagem.corDoFundo(Color.black);
-        imagem.desenhaEixoCentral(dimx,dimy);
+        imagem.desenhaEixoCentral(dimx, dimy);
         //imagem.desenhaEspiralDeArquimedes(xDoCentro, yDoCentro, 1000);
         /**
          * CRIA O GRAFO
          */
-        grafo.adicionaAresta(new V("Vertice1"),new V("Vertice2"));
-        grafo.adicionaAresta(new V("Vertice2"),new V("Vertice3"));
-        grafo.adicionaAresta(new V("Vertice3"),new V("Vertice4"));
-        grafo.adicionaAresta(new V("Vertice3"),new V("Vertice3"));
-        grafo.adicionaAresta(new V("Vertice3"),new V("Vertice2"));
-        grafo.adicionaAresta(new V("Vertice3"),new V("Vertice1"));
-        grafo.adicionaAresta(new V("Vertice5"),new V("Vertice2"));
-        grafo.adicionaAresta(new V("Vertice2"),new V("Vertice1"));
-        grafo.adicionaAresta(new V("Vertice3"),new V("Vertice3"));
-        grafo.adicionaAresta(new V("Vertice6"),new V("Vertice5"));
-        grafo.adicionaAresta(new V("Vertice3"),new V("Vertice5"));
+        grafo.adicionaAresta(new V("Vertice1"), new V("Vertice2"));
+        grafo.adicionaAresta(new V("Vertice2"), new V("Vertice3"));
+        grafo.adicionaAresta(new V("Vertice3"), new V("Vertice4"));
+        grafo.adicionaAresta(new V("Vertice3"), new V("Vertice3"));
+        grafo.adicionaAresta(new V("Vertice3"), new V("Vertice2"));
+        grafo.adicionaAresta(new V("Vertice3"), new V("Vertice1"));
+        grafo.adicionaAresta(new V("Vertice5"), new V("Vertice2"));
+        grafo.adicionaAresta(new V("Vertice2"), new V("Vertice1"));
+        grafo.adicionaAresta(new V("Vertice3"), new V("Vertice3"));
+        grafo.adicionaAresta(new V("Vertice6"), new V("Vertice5"));
+        grafo.adicionaAresta(new V("Vertice3"), new V("Vertice5"));
         grafo.adicionaVertice(new V("Vertice0"));
         imprime(grafo.toString());
     }
@@ -55,17 +56,17 @@ public class ImagemGrafo{
          * MUITO CUIDADO!!! CUIDADO!!!! OS VALORES DA LISTA INTERNA DO GRAFO NÃO
          * ESTAO SENDO MODIFICADOS MELHORAR!!!!!!!!!!!!
          */
-        for(Entry<V<String>,Lista<V<String>>> entrada:grafo.conjunto())
-            for(Entry<V<String>,Lista<V<String>>> entrada2:grafo.conjunto())
-                for(V<String> verticeAdjascente:grafo.pegaVertices())
-                    if(grafo.existeAresta(verticeAdjascente,entrada.getKey()))
-                        imagem.desenhaLinha(Color.yellow,entrada.getKey().x,entrada.getKey().y,verticeAdjascente.x,verticeAdjascente.y);
-        for(Entry<V<String>,Lista<V<String>>> entrada:grafo.conjunto()) {
+        for( Entry<V<String>, Lista<V<String>>> entrada:grafo.conjunto() )
+            for( Entry<V<String>, Lista<V<String>>> entrada2:grafo.conjunto() )
+                for( V<String> verticeAdjascente:grafo.pegaVertices() )
+                    if( grafo.existeAresta(verticeAdjascente, entrada.getKey()) )
+                        imagem.desenhaLinha(Color.yellow, entrada.getKey().x, entrada.getKey().y, verticeAdjascente.x, verticeAdjascente.y);
+        for( Entry<V<String>, Lista<V<String>>> entrada:grafo.conjunto() ){
             /**
              * Impressao da bola
              */
-            imagem.desenhaCircu(Color.blue,entrada.getKey().x,entrada.getKey().y,imagem.larguraDoTexto(entrada.getKey().elemento));
-            imagem.desenhaTexto(Color.white,entrada.getKey().elemento,entrada.getKey().x,entrada.getKey().y);
+            imagem.desenhaCircu(Color.blue, entrada.getKey().x, entrada.getKey().y, imagem.larguraDoTexto(entrada.getKey().elemento));
+            imagem.desenhaTexto(Color.white, entrada.getKey().elemento, entrada.getKey().x, entrada.getKey().y);
         }
         imagem.salvaNoArquivo("novografo.jpg");
     }
@@ -78,12 +79,12 @@ public class ImagemGrafo{
          */
         int distanciaMinima=25; // arbitra uma distancia minima em px
         int distanciaMaxima=100; // arbitra uma distancia maxima em px
-        while(contador<100){
+        while( contador < 100 ){
             contador++;
             /**
              * Itera por todas as posicoes Atribuindo valores aleatorios
              */
-            for(Entry<V<String>,Lista<V<String>>> entrada:grafo.conjunto()) {
+            for( Entry<V<String>, Lista<V<String>>> entrada:grafo.conjunto() ){
                 V<String> vertice=entrada.getKey();
                 Lista<V<String>> adjascencias=entrada.getValue();
                 vertice.x=aleatorioMenorQueMetadeX();
@@ -92,12 +93,12 @@ public class ImagemGrafo{
                 /**
                  * Verifica as distancias com os adjascentes
                  */
-                for(V<String> verticeAdjascente:adjascencias) {
+                for( V<String> verticeAdjascente:adjascencias ){
                     double distancia;
-                    distancia=Math.pow(verticeAdjascente.x-vertice.x,2);
-                    distancia+=Math.pow(verticeAdjascente.y-vertice.y,2);
+                    distancia=Math.pow(verticeAdjascente.x - vertice.x, 2);
+                    distancia+=Math.pow(verticeAdjascente.y - vertice.y, 2);
                     distancia=Math.sqrt(distancia);
-                    if(distancia<distanciaMinima||distancia>distanciaMaxima){
+                    if( distancia < distanciaMinima || distancia > distanciaMaxima ){
                         verticeAdjascente.x=aleatorioMenorQueMetadeX();
                         verticeAdjascente.y=aleatorioMenorQueMetadeY();
                     }
@@ -105,12 +106,12 @@ public class ImagemGrafo{
                 /**
                  * Verifica as distancias com os não adjascentes
                  */
-                for(V<String> verticeNaoAdjascente:grafo.pegaNaoAdjascentes(vertice)) {
+                for( V<String> verticeNaoAdjascente:grafo.pegaNaoAdjascentes(vertice) ){
                     double distancia;
-                    distancia=Math.pow(verticeNaoAdjascente.x-vertice.x,2);
-                    distancia+=Math.pow(verticeNaoAdjascente.y-vertice.y,2);
+                    distancia=Math.pow(verticeNaoAdjascente.x - vertice.x, 2);
+                    distancia+=Math.pow(verticeNaoAdjascente.y - vertice.y, 2);
                     distancia=Math.sqrt(distancia);
-                    if(distancia<distanciaMinima){
+                    if( distancia < distanciaMinima ){
                         verticeNaoAdjascente.x=aleatorioMenorQueMetadeX();
                         verticeNaoAdjascente.y=aleatorioMenorQueMetadeY();
                     }
@@ -119,19 +120,19 @@ public class ImagemGrafo{
         }
     }
 
-    public void imprime(String s){
+    public void imprime( String s ){
         System.out.println(s);
     }
 
     public int aleatorioMenorQueMetadeX(){
         int ale=new Random().nextInt(xDoCentro);
-        imprime(""+ale);
+        imprime("" + ale);
         return ale;
     }
 
     public int aleatorioMenorQueMetadeY(){
         int ale=new Random().nextInt(yDoCentro);
-        imprime(""+ale);
+        imprime("" + ale);
         return ale;
     }
 
@@ -230,15 +231,15 @@ public class ImagemGrafo{
     //@Test
     public void aleatorio(){
         Random a=new Random();
-        for(int i=0;i<100;i++)
+        for( int i=0; i < 100; i++ )
             imprime(Integer.toString(a.nextInt(10)));
     }
 
-    public Par<Integer,Integer> coordCartesianas(double raio,double angulo){
+    public Par<Integer, Integer> coordCartesianas( double raio, double angulo ){
         Integer x, y;
-        x=new Double(raio*Math.cos(angulo)).intValue();
-        y=new Double(raio*Math.sin(angulo)).intValue();
-        return new Par<Integer,Integer>(x,y);
+        x=new Double(raio * Math.cos(angulo)).intValue();
+        y=new Double(raio * Math.sin(angulo)).intValue();
+        return new Par<Integer, Integer>(x, y);
     }
 
     //@Test
@@ -247,16 +248,16 @@ public class ImagemGrafo{
         String texto2="teste2";
         int posVerX=xDoCentro;
         int posVerY=yDoCentro;
-        int posVerX2=xDoCentro-50;
-        int posVerY2=yDoCentro-50;
-        imagem=new Imagem(dimx,dimy);
+        int posVerX2=xDoCentro - 50;
+        int posVerY2=yDoCentro - 50;
+        imagem=new Imagem(dimx, dimy);
         imagem.corDoFundo(Color.black);
-        imagem.desenhaEixoCentral(dimx,dimy);
-        imagem.desenhaLinha(Color.red,posVerX,posVerY,posVerX2,posVerY2);
-        imagem.desenhaCircu(Color.white,posVerX,posVerY,imagem.larguraDoTexto(texto)+10);
-        imagem.desenhaTexto(Color.black,texto,posVerX,posVerY).X();
-        imagem.desenhaCircu(Color.white,posVerX2,posVerY2,imagem.larguraDoTexto(texto2)+10);
-        imagem.desenhaTexto(Color.black,texto2,posVerX2,posVerY2).X();
+        imagem.desenhaEixoCentral(dimx, dimy);
+        imagem.desenhaLinha(Color.red, posVerX, posVerY, posVerX2, posVerY2);
+        imagem.desenhaCircu(Color.white, posVerX, posVerY, imagem.larguraDoTexto(texto) + 10);
+        imagem.desenhaTexto(Color.black, texto, posVerX, posVerY).X();
+        imagem.desenhaCircu(Color.white, posVerX2, posVerY2, imagem.larguraDoTexto(texto2) + 10);
+        imagem.desenhaTexto(Color.black, texto2, posVerX2, posVerY2).X();
         imagem.salvaNoArquivo("imagemgrafo.jpg");
     }
 }

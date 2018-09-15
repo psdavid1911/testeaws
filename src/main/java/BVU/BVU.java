@@ -63,12 +63,12 @@ public class BVU extends Application{
 
     @Override public void start( Stage palco ){
         Button b1=new Button("Inicia");
-        b1.setOnAction( x ->{
-            int delayInicial = 1 ; // ms
+        b1.setOnAction(x->{
+            int delayInicial=1; // ms
             int tempoDeExecucao=9 * delayLa;
             int delay=1000;   // delay de 5 seg.
             int interval=tempoDeExecucao + 1000;  // intervalo de 1 seg.
-            ScheduledExecutorService  e = Executors.newScheduledThreadPool(30); // 10 tempo de vida ???
+            ScheduledExecutorService e=Executors.newScheduledThreadPool(30); // 10 tempo de vida ???
             e.scheduleAtFixedRate(()->MacroSalva(delay), delayInicial, tempoDeExecucao, TimeUnit.MILLISECONDS);
         });
         Button b2=new Button("Inicia n");

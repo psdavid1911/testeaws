@@ -8,8 +8,7 @@ public enum Quadrante{
         return valor;
     }
 
-    Quadrante(int valor){
+    Quadrante( int valor ){
         this.valor=valor;
     }
-    
 }

@@ -1,4 +1,5 @@
 package PM;
+
 import Tempo.DataHora;
 
 public class Escalacao implements Comparable<Escalacao>{
@@ -10,7 +11,7 @@ public class Escalacao implements Comparable<Escalacao>{
     private String contato;
 
     @Override
-    public int compareTo(Escalacao escalacao){
+    public int compareTo( Escalacao escalacao ){
         return this.posto.compareTo(escalacao.getPosto());
     }
 
@@ -18,7 +19,7 @@ public class Escalacao implements Comparable<Escalacao>{
         return pm;
     }
 
-    public void setPm(String pm){
+    public void setPm( String pm ){
         this.pm=pm;
     }
 
@@ -26,7 +27,7 @@ public class Escalacao implements Comparable<Escalacao>{
         return posto;
     }
 
-    public void setPosto(String posto){
+    public void setPosto( String posto ){
         this.posto=posto;
     }
 
@@ -34,7 +35,7 @@ public class Escalacao implements Comparable<Escalacao>{
         return horaInicial;
     }
 
-    public void setHoraInicial(DataHora horaInicial){
+    public void setHoraInicial( DataHora horaInicial ){
         this.horaInicial=horaInicial;
     }
 
@@ -42,20 +43,20 @@ public class Escalacao implements Comparable<Escalacao>{
         return contato;
     }
 
-    public void setContato(String contato){
+    public void setContato( String contato ){
         this.contato=contato;
     }
 
     @Override
     public String toString(){
-        return "\nEscalacao{"+"pm="+pm+", posto="+posto+", qtr="+horaInicial+", contato="+contato+'}';
+        return "\nEscalacao{" + "pm=" + pm + ", posto=" + posto + ", qtr=" + horaInicial + ", contato=" + contato + '}';
     }
 
     public DataHora getHoraFinal(){
         return horaFinal;
     }
 
-    public void setHoraFinal(DataHora horaFinal){
+    public void setHoraFinal( DataHora horaFinal ){
         this.horaFinal=horaFinal;
     }
 }

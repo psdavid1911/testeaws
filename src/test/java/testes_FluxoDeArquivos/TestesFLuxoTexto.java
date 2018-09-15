@@ -1,4 +1,5 @@
 package testes_FluxoDeArquivos;
+
 import EstruturasDeDados.Lista;
 import FluxoDeArquivos.FluxoDeTexto;
 import java.util.Arrays;
@@ -11,7 +12,7 @@ public class TestesFLuxoTexto{
         FluxoDeTexto es;
         es=new FluxoDeTexto("test/lixo/TesteFluxoDeTexto2.txt");
         Lista<String> linhas=new Lista<String>(Arrays.asList(
-                "Linha 1","Linha 2","Linha 3"
+                "Linha 1", "Linha 2", "Linha 3"
         ));
         es.escreve(linhas);
         //es.apaga();

@@ -1,9 +1,10 @@
 package testes_Imagem;
+
+import EstruturasDeDados.Dupla;
 import EstruturasDeDados.Grafo;
 import EstruturasDeDados.Lista;
 import EstruturasDeDados.Par;
-import EstruturasDeDados.TabelaHash8;
-import EstruturasDeDados.Dupla;
+import EstruturasDeDados.TabelaHash;
 import Imagem.Imagem;
 import java.awt.Color;
 import java.util.Map.Entry;
@@ -13,51 +14,51 @@ import org.junit.Test;
 public class ImagemGrafo2{
 
     Grafo<String> grafo=new Grafo<String>();
-    TabelaHash8<String,Par<Integer,Integer>> coordenadas=new TabelaHash8<String,Par<Integer,Integer>>();
-    TabelaHash8<String,Par<Integer,Integer>> passoDoGrafo=new TabelaHash8<String,Par<Integer,Integer>>();
+    TabelaHash<String, Par<Integer, Integer>> coordenadas=new TabelaHash<String, Par<Integer, Integer>>();
+    TabelaHash<String, Par<Integer, Integer>> passoDoGrafo=new TabelaHash<String, Par<Integer, Integer>>();
     Imagem imagem;
     int dimx=1000;
     int dimy=1000;
-    int xDoCentro=dimx/2;
-    int yDoCentro=dimy/2;
+    int xDoCentro=dimx / 2;
+    int yDoCentro=dimy / 2;
     double constante=0.01;
-    int area=xDoCentro*yDoCentro;
+    int area=xDoCentro * yDoCentro;
     double k;
 
     public ImagemGrafo2(){
-        imagem=new Imagem(dimx,dimy);
+        imagem=new Imagem(dimx, dimy);
         imagem.corDoFundo(Color.black);
-        imagem.desenhaEixoCentral(dimx,dimy);
+        imagem.desenhaEixoCentral(dimx, dimy);
         //imagem.desenhaEspiralDeArquimedes(xDoCentro, yDoCentro, 1000);
         /**
          * CRIA O GRAFO
          */
-        grafo.adicionaAresta("Vertice1","Vertice2");
-        grafo.adicionaAresta("Vertice2","Vertice3");
-        grafo.adicionaAresta("Vertice3","Vertice4");
-        grafo.adicionaAresta("Vertice3","Vertice3");
-        grafo.adicionaAresta("Vertice3","Vertice2");
-        grafo.adicionaAresta("Vertice3","Vertice1");
-        grafo.adicionaAresta("Vertice5","Vertice2");
-        grafo.adicionaAresta("Vertice2","Vertice1");
-        grafo.adicionaAresta("Vertice3","Vertice3");
-        grafo.adicionaAresta("Vertice6","Vertice5");
-        grafo.adicionaAresta("Vertice3","Vertice5");
+        grafo.adicionaAresta("Vertice1", "Vertice2");
+        grafo.adicionaAresta("Vertice2", "Vertice3");
+        grafo.adicionaAresta("Vertice3", "Vertice4");
+        grafo.adicionaAresta("Vertice3", "Vertice3");
+        grafo.adicionaAresta("Vertice3", "Vertice2");
+        grafo.adicionaAresta("Vertice3", "Vertice1");
+        grafo.adicionaAresta("Vertice5", "Vertice2");
+        grafo.adicionaAresta("Vertice2", "Vertice1");
+        grafo.adicionaAresta("Vertice3", "Vertice3");
+        grafo.adicionaAresta("Vertice6", "Vertice5");
+        grafo.adicionaAresta("Vertice3", "Vertice5");
         grafo.adicionaVertice("Vertice0");
         /**
          * Termina de criar variáveis úteis
          */
-        k=Math.sqrt(area/grafo.tamanho());
+        k=Math.sqrt(area / grafo.tamanho());
         /**
          * Inicializa o manipulador de coordenadas do grafo
          */
-        for(Entry<String,Lista<String>> entrada:grafo.conjunto()) {
+        for( Entry<String, Lista<String>> entrada:grafo.conjunto() ){
             String vertice=entrada.getKey();
             Lista<String> listaDeAdjascencias=entrada.getValue();
             //coordenadasDoGrafo.adiciona(vertice, new Par(0,0));
-            coordenadas.adiciona(vertice,new Par(new Random().nextInt(xDoCentro)-xDoCentro/2,new Random().nextInt(yDoCentro)-xDoCentro/2));
-            System.out.println("\nPosicao Inicial: "+coordenadas.pega(vertice).X()+" : "+coordenadas.pega(vertice).Y());
-            passoDoGrafo.adiciona(vertice,new Par(0,0));
+            coordenadas.adiciona(vertice, new Par(new Random().nextInt(xDoCentro) - xDoCentro / 2, new Random().nextInt(yDoCentro) - xDoCentro / 2));
+            System.out.println("\nPosicao Inicial: " + coordenadas.pega(vertice).X() + " : " + coordenadas.pega(vertice).Y());
+            passoDoGrafo.adiciona(vertice, new Par(0, 0));
         }
     }
 
@@ -67,41 +68,41 @@ public class ImagemGrafo2{
         calculaPosicoes();
         // Visualizacao pelo terminal terminal
         imprime(grafo.toString());
-        for(Entry<String,Lista<String>> entrada:grafo.conjunto()) {
+        for( Entry<String, Lista<String>> entrada:grafo.conjunto() ){
             int xNovo=coordenadas.pega(entrada.getKey()).X();
             int yNovo=coordenadas.pega(entrada.getKey()).Y();
-            for(String v:entrada.getValue()) {
+            for( String v:entrada.getValue() ){
                 int xf=coordenadas.get(v).X();
                 int yf=coordenadas.get(v).Y();
-                imagem.desenhaLinha(Color.yellow,xNovo+xDoCentro,yNovo+yDoCentro,xf+xDoCentro,yf+yDoCentro);
+                imagem.desenhaLinha(Color.yellow, xNovo + xDoCentro, yNovo + yDoCentro, xf + xDoCentro, yf + yDoCentro);
             }
         }
-        for(Entry<String,Lista<String>> entrada:grafo.conjunto()) {
+        for( Entry<String, Lista<String>> entrada:grafo.conjunto() ){
             int xNovo=coordenadas.pega(entrada.getKey()).X();
             int yNovo=coordenadas.pega(entrada.getKey()).Y();
-            System.out.println("\nCoordenada: "+(xNovo+xDoCentro)+" : "+(yNovo+yDoCentro));
+            System.out.println("\nCoordenada: " + (xNovo + xDoCentro) + " : " + (yNovo + yDoCentro));
             /**
              * Impressao da bola
              */
-            imagem.desenhaCircu(Color.blue,xNovo+xDoCentro,yNovo+yDoCentro,imagem.larguraDoTexto(entrada.getKey()));
-            imagem.desenhaTexto(Color.white,entrada.getKey(),xNovo+xDoCentro,yNovo+yDoCentro);
+            imagem.desenhaCircu(Color.blue, xNovo + xDoCentro, yNovo + yDoCentro, imagem.larguraDoTexto(entrada.getKey()));
+            imagem.desenhaTexto(Color.white, entrada.getKey(), xNovo + xDoCentro, yNovo + yDoCentro);
         }
         imagem.salvaNoArquivo("novografo.jpg");
     }
 
     public void calculaPosicoes(){
         int distanciaIdeal=25; // arbitra uma distancia ideal em px
-        TabelaHash8<String,Dupla<Integer>> coordenadas=new TabelaHash8<String,Dupla<Integer>>();
-        while(true)
+        TabelaHash<String, Dupla<Integer>> coordenadas=new TabelaHash<String, Dupla<Integer>>();
+        while( true )
             /**
              * Itera por todas as posicoes Atribuindo valores aleatorios
              */
-            for(Entry<String,Lista<String>> entradas:grafo.conjunto()) {
+            for( Entry<String, Lista<String>> entradas:grafo.conjunto() ){
                 String vertice=entradas.getKey();
                 Lista<String> adjascencias=entradas.getValue();
                 coordenadas.pega(vertice).X=aleatorioMenorQueMetadeX();
                 coordenadas.pega(vertice).Y=aleatorioMenorQueMetadeY();
-                for(String s:adjascencias) {
+                for( String s:adjascencias ){
                     /**
                      * Itera pelos adjascentes Verifica se a distancia entre
                      * eles esta maior ou menor Calcula o passo
@@ -213,15 +214,15 @@ public class ImagemGrafo2{
     //@Test
     public void aleatorio(){
         Random a=new Random();
-        for(int i=0;i<100;i++)
+        for( int i=0; i < 100; i++ )
             imprime(Integer.toString(a.nextInt(10)));
     }
 
-    public Par<Integer,Integer> coordCartesianas(double raio,double angulo){
+    public Par<Integer, Integer> coordCartesianas( double raio, double angulo ){
         Integer x, y;
-        x=new Double(raio*Math.cos(angulo)).intValue();
-        y=new Double(raio*Math.sin(angulo)).intValue();
-        return new Par<Integer,Integer>(x,y);
+        x=new Double(raio * Math.cos(angulo)).intValue();
+        y=new Double(raio * Math.sin(angulo)).intValue();
+        return new Par<Integer, Integer>(x, y);
     }
 
     //@Test
@@ -230,20 +231,20 @@ public class ImagemGrafo2{
         String texto2="teste2";
         int posVerX=xDoCentro;
         int posVerY=yDoCentro;
-        int posVerX2=xDoCentro-50;
-        int posVerY2=yDoCentro-50;
-        imagem=new Imagem(dimx,dimy);
+        int posVerX2=xDoCentro - 50;
+        int posVerY2=yDoCentro - 50;
+        imagem=new Imagem(dimx, dimy);
         imagem.corDoFundo(Color.black);
-        imagem.desenhaEixoCentral(dimx,dimy);
-        imagem.desenhaLinha(Color.red,posVerX,posVerY,posVerX2,posVerY2);
-        imagem.desenhaCircu(Color.white,posVerX,posVerY,imagem.larguraDoTexto(texto)+10);
-        imagem.desenhaTexto(Color.black,texto,posVerX,posVerY).X();
-        imagem.desenhaCircu(Color.white,posVerX2,posVerY2,imagem.larguraDoTexto(texto2)+10);
-        imagem.desenhaTexto(Color.black,texto2,posVerX2,posVerY2).X();
+        imagem.desenhaEixoCentral(dimx, dimy);
+        imagem.desenhaLinha(Color.red, posVerX, posVerY, posVerX2, posVerY2);
+        imagem.desenhaCircu(Color.white, posVerX, posVerY, imagem.larguraDoTexto(texto) + 10);
+        imagem.desenhaTexto(Color.black, texto, posVerX, posVerY).X();
+        imagem.desenhaCircu(Color.white, posVerX2, posVerY2, imagem.larguraDoTexto(texto2) + 10);
+        imagem.desenhaTexto(Color.black, texto2, posVerX2, posVerY2).X();
         imagem.salvaNoArquivo("imagemgrafo.jpg");
     }
 
-    public void imprime(String s){
+    public void imprime( String s ){
         System.out.println(s);
     }
 }

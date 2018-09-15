@@ -15,7 +15,7 @@ public class Conjunto<T> implements Iterable<T>{
 
     Set<T> conjunto=new HashSet<T>();
 
-    public void adiciona(T elemento){
+    public void adiciona( T elemento ){
         conjunto.add(elemento);
     }
 
@@ -32,11 +32,11 @@ public class Conjunto<T> implements Iterable<T>{
         return conjunto.size();
     }
 
-    public void remove(T elemento){
+    public void remove( T elemento ){
         conjunto.remove(elemento);
     }
 
-    public boolean contem(T elemento){
+    public boolean contem( T elemento ){
         return conjunto.contains(elemento);
     }
 
@@ -51,7 +51,7 @@ public class Conjunto<T> implements Iterable<T>{
      *
      * @param colecao
      */
-    public void adicionaTodos(Collection<T> colecao){
+    public void adicionaTodos( Collection<T> colecao ){
         conjunto.addAll(colecao);
     }
 
@@ -61,7 +61,7 @@ public class Conjunto<T> implements Iterable<T>{
      *
      * @param colecao
      */
-    public boolean contemTodos(Collection<T> colecao){
+    public boolean contemTodos( Collection<T> colecao ){
         return conjunto.containsAll(colecao);
     }
 
@@ -72,15 +72,15 @@ public class Conjunto<T> implements Iterable<T>{
      *
      * @param colecao
      */
-    public void uneCom(Collection<T> colecao){
+    public void uneCom( Collection<T> colecao ){
         conjunto.addAll(colecao);
     }
 
-    public void intersecaoCom(Collection<T> colecao){
+    public void intersecaoCom( Collection<T> colecao ){
         conjunto.retainAll(colecao);
     }
 
-    public void diferencaCom(Collection<T> colecao){
+    public void diferencaCom( Collection<T> colecao ){
         conjunto.removeAll(colecao);
     }
 
@@ -103,7 +103,7 @@ public class Conjunto<T> implements Iterable<T>{
      *
      * @return
      */
-    public boolean eSubconjunto(Collection<T> colecao){
+    public boolean eSubconjunto( Collection<T> colecao ){
         return conjunto.containsAll(colecao);
     }
 
@@ -114,7 +114,7 @@ public class Conjunto<T> implements Iterable<T>{
      *
      * @return
      */
-    public Set<T> diferencaSimetrica(Collection<T> colecao){
+    public Set<T> diferencaSimetrica( Collection<T> colecao ){
         Set<T> conjuntoDiferecaSimetrica=conjunto;
         conjuntoDiferecaSimetrica.addAll(colecao);
         Set<T> tmp=conjunto;
@@ -131,11 +131,11 @@ public class Conjunto<T> implements Iterable<T>{
      *
      * @return
      */
-    public Set<T> unicos(Collection<T> colecao){
+    public Set<T> unicos( Collection<T> colecao ){
         Set<T> unicos=new HashSet<T>();
         Set<T> duplicados=new HashSet<T>();
-        for(T elemento:colecao)
-            if(!unicos.add(elemento))
+        for( T elemento:colecao )
+            if( !unicos.add(elemento) )
                 duplicados.add(elemento);
         unicos.removeAll(duplicados);
         return unicos;
@@ -149,11 +149,11 @@ public class Conjunto<T> implements Iterable<T>{
      *
      * @return
      */
-    public Set<T> duplicados(Collection<T> colecao){
+    public Set<T> duplicados( Collection<T> colecao ){
         Set<T> unicos=new HashSet<T>();
         Set<T> duplicados=new HashSet<T>();
-        for(T elemento:colecao)
-            if(!unicos.add(elemento))
+        for( T elemento:colecao )
+            if( !unicos.add(elemento) )
                 duplicados.add(elemento);
         return duplicados;
     }
@@ -162,7 +162,7 @@ public class Conjunto<T> implements Iterable<T>{
         return conjunto;
     }
 
-    public void paraCada(Consumer<? super T> expressaoLambda){
+    public void paraCada( Consumer<? super T> expressaoLambda ){
         conjunto.forEach(expressaoLambda);
     }
 
@@ -173,6 +173,6 @@ public class Conjunto<T> implements Iterable<T>{
 
     @Override
     public String toString(){
-        return "Conjunto{"+"conjunto="+conjunto+'}';
+        return "Conjunto{" + "conjunto=" + conjunto + '}';
     }
 }

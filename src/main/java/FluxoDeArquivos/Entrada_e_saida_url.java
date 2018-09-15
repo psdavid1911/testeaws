@@ -1,4 +1,5 @@
 package FluxoDeArquivos;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -10,7 +11,7 @@ public class Entrada_e_saida_url{
 
     String uriDaURL;
 
-    public Entrada_e_saida_url(String uriDaURL){
+    public Entrada_e_saida_url( String uriDaURL ){
         this.uriDaURL=uriDaURL;
     }
 
@@ -19,28 +20,32 @@ public class Entrada_e_saida_url{
         URL url;
         try{
             url=new URL(uriDaURL);
-        }catch(MalformedURLException ex){
+        }
+        catch( MalformedURLException ex ){
             System.err.println("Não pude criar a url informada.");
             return null;
         }
         BufferedReader in;
         try{
             in=new BufferedReader(new InputStreamReader(url.openStream()));
-        }catch(IOException ex){
+        }
+        catch( IOException ex ){
             System.err.println("Não pude criar a stream de dados.");
             return null;
         }
         String inputLine;
         try{
-            while((inputLine=in.readLine())!=null)
+            while( (inputLine=in.readLine()) != null )
                 linhasDoHTML.add(inputLine);
-        }catch(IOException ex){
+        }
+        catch( IOException ex ){
             System.err.println("Houve um erro ao ler");
             return null;
         }
         try{
             in.close();
-        }catch(IOException ex){
+        }
+        catch( IOException ex ){
             System.err.println("Não pude fechar o buffer.");
             return linhasDoHTML;
         }

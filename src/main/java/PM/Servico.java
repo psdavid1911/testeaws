@@ -1,4 +1,5 @@
 package PM;
+
 import Tempo.DataHora;
 import java.util.Objects;
 
@@ -12,7 +13,7 @@ public class Servico implements Comparable<Servico>{
         return inicio;
     }
 
-    public void setInicio(DataHora inicio){
+    public void setInicio( DataHora inicio ){
         this.inicio=inicio;
     }
 
@@ -20,7 +21,7 @@ public class Servico implements Comparable<Servico>{
         return fim;
     }
 
-    public void setFim(DataHora fim){
+    public void setFim( DataHora fim ){
         this.fim=fim;
     }
 
@@ -28,18 +29,18 @@ public class Servico implements Comparable<Servico>{
         return posto;
     }
 
-    public void setPosto(String posto){
+    public void setPosto( String posto ){
         this.posto=posto;
     }
 
     @Override
-    public int compareTo(Servico t){
+    public int compareTo( Servico t ){
         return inicio.getHora().compareTo(t.getInicio().getHora());
     }
 
     @Override
     public String toString(){
-        return "Servico{"+"inicio="+inicio+", fim="+fim+", posto="+posto+'}';
+        return "Servico{" + "inicio=" + inicio + ", fim=" + fim + ", posto=" + posto + '}';
     }
 
     @Override
@@ -49,19 +50,19 @@ public class Servico implements Comparable<Servico>{
     }
 
     @Override
-    public boolean equals(Object obj){
-        if(this==obj)
+    public boolean equals( Object obj ){
+        if( this == obj )
             return true;
-        if(obj==null)
+        if( obj == null )
             return false;
-        if(getClass()!=obj.getClass())
+        if( getClass() != obj.getClass() )
             return false;
         final Servico other=(Servico)obj;
-        if(!Objects.equals(this.posto,other.posto))
+        if( !Objects.equals(this.posto, other.posto) )
             return false;
-        if(!Objects.equals(this.inicio,other.inicio))
+        if( !Objects.equals(this.inicio, other.inicio) )
             return false;
-        if(!Objects.equals(this.fim,other.fim))
+        if( !Objects.equals(this.fim, other.fim) )
             return false;
         return true;
     }

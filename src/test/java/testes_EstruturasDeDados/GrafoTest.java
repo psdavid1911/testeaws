@@ -1,6 +1,6 @@
 package testes_EstruturasDeDados;
 
-import EstruturasDeDados.Conjunto8;
+import EstruturasDeDados.Conjunto;
 import EstruturasDeDados.Grafo;
 import EstruturasDeDados.Lista;
 import org.junit.Test;
@@ -27,11 +27,11 @@ public class GrafoTest{
         grafo.adicionaAresta("aresta2", "aresta4");
         grafo.adicionaAresta("aresta2", "aresta5");
         imprime(grafo.toString());
-        Conjunto8<String> conjunto=grafo.pegaNaoAdjascentes("aresta3");
+        Conjunto<String> conjunto=grafo.pegaNaoAdjascentes("aresta3");
         System.out.println(conjunto.toString());
         //assertEquals("aresta1      [aresta2]\n" + "aresta2      []\n" +"", grafo.toString());
     }
-    
+
     @Test
     public void testeAdjascentesAresta(){
         System.out.println("Teste adjascentes...\n\n");
@@ -58,7 +58,7 @@ public class GrafoTest{
         assertEquals("Novo teste!      []\n", grafo.toString());
     }
 
-    void imprime(String s){
+    void imprime( String s ){
         System.out.println(s);
     }
 }

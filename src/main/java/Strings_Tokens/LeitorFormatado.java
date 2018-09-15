@@ -1,4 +1,5 @@
 package Strings_Tokens;
+
 import EstruturasDeDados.Lista;
 import Internet.PaginaHTML;
 
@@ -9,12 +10,12 @@ public class LeitorFormatado{
      * cabeçalho
      *
      * @param arquivoWeb
-     * @return 
+     * @return
      */
-    public EstruturasDeDados.Lista<String> LeitorFormatado(String arquivoWeb){
+    public EstruturasDeDados.Lista<String> LeitorFormatado( String arquivoWeb ){
         EstruturasDeDados.Lista<String> linhasDoDocumento=PaginaHTML.pegaURL(arquivoWeb);
         EstruturasDeDados.Lista<String> linhasEditadas=new Lista<String>();
-        for(String linha:linhasDoDocumento) linhasEditadas.adiciona(RemoverdorDeEspacos.duplosParaSimples(linha));
+        for( String linha:linhasDoDocumento )linhasEditadas.adiciona(RemoverdorDeEspacos.duplosParaSimples(linha));
         return linhasEditadas;
     }
 }

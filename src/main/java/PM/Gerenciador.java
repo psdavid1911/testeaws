@@ -10,7 +10,7 @@ public class Gerenciador{
      *
      * @param endereco
      */
-    public Gerenciador(String endereco){
+    public Gerenciador( String endereco ){
         Lista<String> agentes=PaginaHTML.pegaURL(endereco);
         simplifica();
     }

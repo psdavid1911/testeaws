@@ -8,8 +8,8 @@
     <div class="coluna">
       <div id="menu" class="linha menu"></div>
       <div class="linha titulo">Gerador de trabalhos</div>
-      
-      
+
+
       <div id="rodape" class="linha rodape"></div>
     </div>
   </body>

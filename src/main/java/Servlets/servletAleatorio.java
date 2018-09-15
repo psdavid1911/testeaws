@@ -1,4 +1,5 @@
 package Servlets;
+
 import java.io.IOException;
 import java.util.Random;
 import javax.servlet.ServletException;
@@ -11,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 public class servletAleatorio extends HttpServlet{
 
     @Override
-    protected void doGet(HttpServletRequest request,HttpServletResponse response) throws ServletException,IOException{
+    protected void doGet( HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException{
         response.setContentType("text/html");
         response.getWriter().print(aleatorio());
     }

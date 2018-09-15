@@ -1,11 +1,12 @@
 package PM;
+
 import EstruturasDeDados.Lista;
 import Tempo.DataHora;
 import java.time.Month;
 
 public class Gerar{
 
-    public static Servico servico(DataHora inicio,DataHora fim,String posto){
+    public static Servico servico( DataHora inicio, DataHora fim, String posto ){
         Servico servico=new Servico();
         servico.setInicio(inicio);
         servico.setFim(fim);
@@ -13,18 +14,18 @@ public class Gerar{
         return servico;
     }
 
-    public static AgenteAntigo agente(String contato,Tipo_de_escala escala,String nome,int numeral,Lista<Servico> servicos,String ingresso){
+    public static AgenteAntigo agente( String contato, Tipo_de_escala escala, String nome, int numeral, Lista<Servico> servicos, String ingresso ){
         AgenteAntigo agente=new AgenteAntigo();
         agente.setContato(contato);
         agente.setEscala(escala);
         agente.setNome(nome);
         agente.setNumeral(numeral);
         agente.setServicos(servicos);
-        agente.setIngresso(new DataHora(1,Month.JANUARY,2018,0,0));
+        agente.setIngresso(new DataHora(1, Month.JANUARY, 2018, 0, 0));
         return agente;
     }
 
-    public static Escalacao escalacao(String contato,DataHora horaInicial,DataHora horaFinal,String pm,String posto){
+    public static Escalacao escalacao( String contato, DataHora horaInicial, DataHora horaFinal, String pm, String posto ){
         Escalacao escalacao=new Escalacao();
         escalacao.setContato(contato);
         escalacao.setHoraFinal(horaFinal);
@@ -34,7 +35,7 @@ public class Gerar{
         return escalacao;
     }
 
-    public static Tipo_de_escala tipo_de_escala(int dias_trabalhados,int dias_descansados){
+    public static Tipo_de_escala tipo_de_escala( int dias_trabalhados, int dias_descansados ){
         Tipo_de_escala t=new Tipo_de_escala();
         t.setDias_trabalhados(dias_trabalhados);
         t.setDias_descansados(dias_descansados);

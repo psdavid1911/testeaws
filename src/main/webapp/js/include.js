@@ -20,14 +20,14 @@ function pegaCookie(nomeDoCookie) {
 }
 
 function checaCookie(nomeDoCookie) {
-    var valorDoCookie=pegaCookie(nomeDoCookie);
+    var valorDoCookie = pegaCookie(nomeDoCookie);
     if (valorDoCookie !== "") {
         // Acao com o valor do cookie
     } else {
-       // Ações se não encontrar o cookie
-       if (valorDoCookie !== "" && valorDoCookie !== null) {
-           novoCookie("username", valorDoCookie, 30);
-       }
+        // Ações se não encontrar o cookie
+        if (valorDoCookie !== "" && valorDoCookie !== null) {
+            novoCookie("username", valorDoCookie, 30);
+        }
     }
 }
 

@@ -1,10 +1,10 @@
-package Servlets.EstruturasDeDados8;
+package EstruturasDeDados;
 
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class Fila8<T> implements Iterable<T>{
+public class Fila<T> implements Iterable<T>{
 
     Queue<T> fila=new LinkedList<T>();
 
@@ -14,7 +14,7 @@ public class Fila8<T> implements Iterable<T>{
      *
      * @param elemento
      */
-    public void adiciona(T elemento){
+    public void adiciona( T elemento ){
         fila.add(elemento);
     }
 
@@ -25,7 +25,7 @@ public class Fila8<T> implements Iterable<T>{
      *
      * @return Falso se não pode inserir o elemento na fila.
      */
-    public boolean adiciona2(T elemento){
+    public boolean adiciona2( T elemento ){
         return fila.offer(elemento);
     }
 

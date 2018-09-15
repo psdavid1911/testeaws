@@ -24,11 +24,11 @@ public class Aplicacao extends Application{
     Double ALTURA=600.;
     Double LARGURA=800.;
     Double RAIO=5.;
-    Double XCENTRAL=LARGURA/2;
-    Double YCENTRAL=ALTURA/2;
+    Double XCENTRAL=LARGURA / 2;
+    Double YCENTRAL=ALTURA / 2;
     TabelaHash<Lista<String>, Path> caminhosLongo=new TabelaHash<Lista<String>, Path>();
     ForcasGrafo iterador=new ForcasGrafo(
-            new ManipuladorGrafo("file:///C:/Users/psdav/Documents/NetBeansProjects/testeaws/src/test/java/DesenhaGrafo/testeDesenhaGrafo.txt"), 
+            new ManipuladorGrafo("file:///C:/Users/psdav/Documents/NetBeansProjects/testeaws/src/test/java/DesenhaGrafo/testeDesenhaGrafo.txt"),
             new Dupla<Double>(XCENTRAL, YCENTRAL),
             LARGURA,
             ALTURA
@@ -47,9 +47,9 @@ public class Aplicacao extends Application{
     }
 
     public void criaCaminho() throws Exception{
-        for(int i=0; i<3; i++){
+        for( int i=0; i < 3; i++ ){
             iterador.itera();
-            for(Entry<Lista<String>, Path> elemento:caminhosLongo.conjunto()){
+            for( Entry<Lista<String>, Path> elemento:caminhosLongo.conjunto() ){
                 Dupla<Double> c=iterador.VERTICES.pega(elemento.getKey());
                 elemento.getValue().getElements().add(new LineTo(c.X, c.Y));
             }
@@ -57,16 +57,16 @@ public class Aplicacao extends Application{
     }
 
     public void inicializaCaminho(){
-        for(Entry<Lista<String>, Dupla<Double>> entrada:iterador.VERTICES.conjunto())
+        for( Entry<Lista<String>, Dupla<Double>> entrada:iterador.VERTICES.conjunto() )
             caminhosLongo.adiciona(entrada.getKey(), new Path(new MoveTo(entrada.getValue().X, entrada.getValue().Y)));
     }
 
     @Override
-    public void start(Stage palco) throws Exception{
+    public void start( Stage palco ) throws Exception{
         inicializaCaminho();
         criaCaminho();
         ParallelTransition pt=new ParallelTransition();
-        for(Lista<String> vertice:iterador.VERTICES.keySet()){
+        for( Lista<String> vertice:iterador.VERTICES.keySet() ){
             Circle c=circulo();
             PathTransition t=new PathTransition();
             t.setNode(c);
@@ -76,18 +76,16 @@ public class Aplicacao extends Application{
             tela.getChildren().add(c);
             pt.getChildren().add(t);
         }
-        
         Scene cena=new Scene(tela, LARGURA, ALTURA);
         palco.setScene(cena);
         palco.setTitle("Manipulador de Grafo");
         palco.setResizable(false);
         palco.setAlwaysOnTop(true);
-        
         pt.play();
         palco.show();
     }
 
-    public static void main(String args[]){
+    public static void main( String args[] ){
         launch(args);
     }
 }

@@ -9,7 +9,7 @@ public class Dimensao{
         return largura;
     }
 
-    public void setLargura(int largura){
+    public void setLargura( int largura ){
         this.largura=largura;
     }
 
@@ -17,7 +17,7 @@ public class Dimensao{
         return altura;
     }
 
-    public void setAltura(int altura){
+    public void setAltura( int altura ){
         this.altura=altura;
     }
 }

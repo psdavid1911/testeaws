@@ -1,4 +1,5 @@
 package Matematica;
+
 import EstruturasDeDados.Lista;
 import org.apache.commons.math3.stat.*;
 import org.apache.commons.math3.stat.descriptive.DescriptiveStatistics;
@@ -10,16 +11,16 @@ import org.apache.commons.math3.stat.descriptive.DescriptiveStatistics;
  */
 public class EstatisticaDescritiva{
 
-    public double mediaAritimetica(Lista<Double> conjunto){
+    public double mediaAritimetica( Lista<Double> conjunto ){
         DescriptiveStatistics estatistica=new DescriptiveStatistics();
-        for(Double valor:conjunto)
+        for( Double valor:conjunto )
             estatistica.addValue(valor);
         return estatistica.getMean();
     }
 
-    public double mediaGeometrica(Lista<Double> conjunto){
+    public double mediaGeometrica( Lista<Double> conjunto ){
         DescriptiveStatistics estatistica=new DescriptiveStatistics();
-        for(Double valor:conjunto)
+        for( Double valor:conjunto )
             estatistica.addValue(valor);
         return estatistica.getGeometricMean();
     }
@@ -32,9 +33,9 @@ public class EstatisticaDescritiva{
      *
      * @return
      */
-    public double mediaQuadratica(Lista<Double> conjunto){
+    public double mediaQuadratica( Lista<Double> conjunto ){
         DescriptiveStatistics estatistica=new DescriptiveStatistics();
-        for(Double valor:conjunto)
+        for( Double valor:conjunto )
             estatistica.addValue(valor);
         return estatistica.getQuadraticMean();
     }
@@ -50,9 +51,9 @@ public class EstatisticaDescritiva{
      *
      * @return
      */
-    public double desvioPadrao(Lista<Double> conjunto){
+    public double desvioPadrao( Lista<Double> conjunto ){
         DescriptiveStatistics estatistica=new DescriptiveStatistics();
-        for(Double valor:conjunto)
+        for( Double valor:conjunto )
             estatistica.addValue(valor);
         return estatistica.getStandardDeviation();
     }
@@ -66,9 +67,9 @@ public class EstatisticaDescritiva{
      *
      * @return
      */
-    public double mediana(Lista<Double> conjunto){
+    public double mediana( Lista<Double> conjunto ){
         DescriptiveStatistics estatistica=new DescriptiveStatistics();
-        for(Double valor:conjunto)
+        for( Double valor:conjunto )
             estatistica.addValue(valor);
         return estatistica.getMean();
     }
@@ -79,9 +80,9 @@ public class EstatisticaDescritiva{
      *
      * @return O maior valor do conjunto de dados informado.
      */
-    public double maximo(Lista<Double> conjunto){
+    public double maximo( Lista<Double> conjunto ){
         DescriptiveStatistics estatistica=new DescriptiveStatistics();
-        for(Double valor:conjunto)
+        for( Double valor:conjunto )
             estatistica.addValue(valor);
         return estatistica.getMax();
     }
@@ -92,30 +93,30 @@ public class EstatisticaDescritiva{
      *
      * @return O menor valor do conjunto de dados informado.
      */
-    public double minimo(Lista<Double> conjunto){
+    public double minimo( Lista<Double> conjunto ){
         DescriptiveStatistics estatistica=new DescriptiveStatistics();
-        for(Double valor:conjunto)
+        for( Double valor:conjunto )
             estatistica.addValue(valor);
         return estatistica.getMin();
     }
 
-    public long numeroDeTermos(Lista<Double> conjunto){
+    public long numeroDeTermos( Lista<Double> conjunto ){
         DescriptiveStatistics estatistica=new DescriptiveStatistics();
-        for(Double valor:conjunto)
+        for( Double valor:conjunto )
             estatistica.addValue(valor);
         return estatistica.getN();
     }
 
-    public double soma(Lista<Double> conjunto){
+    public double soma( Lista<Double> conjunto ){
         DescriptiveStatistics estatistica=new DescriptiveStatistics();
-        for(Double valor:conjunto)
+        for( Double valor:conjunto )
             estatistica.addValue(valor);
         return estatistica.getSum();
     }
 
-    public double somaDosQuadrados(Lista<Double> conjunto){
+    public double somaDosQuadrados( Lista<Double> conjunto ){
         DescriptiveStatistics estatistica=new DescriptiveStatistics();
-        for(Double valor:conjunto)
+        for( Double valor:conjunto )
             estatistica.addValue(valor);
         return estatistica.getSumsq();
     }
@@ -132,9 +133,9 @@ public class EstatisticaDescritiva{
      *
      * @return
      */
-    public double varianciaDaAmostra(Lista<Double> conjunto){
+    public double varianciaDaAmostra( Lista<Double> conjunto ){
         DescriptiveStatistics estatistica=new DescriptiveStatistics();
-        for(Double valor:conjunto)
+        for( Double valor:conjunto )
             estatistica.addValue(valor.doubleValue());
         return estatistica.getVariance();
     }
@@ -149,9 +150,9 @@ public class EstatisticaDescritiva{
      *
      * @return
      */
-    public double varianciaDaPopulacao(Lista<Double> conjunto){
+    public double varianciaDaPopulacao( Lista<Double> conjunto ){
         DescriptiveStatistics estatistica=new DescriptiveStatistics();
-        for(Double valor:conjunto)
+        for( Double valor:conjunto )
             estatistica.addValue(valor);
         return estatistica.getPopulationVariance();
     }
@@ -165,26 +166,26 @@ public class EstatisticaDescritiva{
      *
      * @return
      */
-    public double assimetria(Lista<Double> conjunto){
+    public double assimetria( Lista<Double> conjunto ){
         DescriptiveStatistics estatistica=new DescriptiveStatistics();
-        for(Double valor:conjunto)
+        for( Double valor:conjunto )
             estatistica.addValue(valor);
         return estatistica.getSkewness();
     }
 
-    public Lista<Double> valoresOrdenados(Lista<Double> conjunto){
+    public Lista<Double> valoresOrdenados( Lista<Double> conjunto ){
         DescriptiveStatistics estatistica=new DescriptiveStatistics();
         Lista<Double> valores=new Lista<Double>();
-        for(Double valor:conjunto)
+        for( Double valor:conjunto )
             estatistica.addValue(valor.doubleValue());
-        for(double valor:estatistica.getSortedValues())
+        for( double valor:estatistica.getSortedValues() )
             valores.adiciona(valor);
         return valores;
     }
 
-    public double percentil(Lista<Double> conjunto,Double percentil){
+    public double percentil( Lista<Double> conjunto, Double percentil ){
         DescriptiveStatistics estatistica=new DescriptiveStatistics();
-        for(Double valor:conjunto)
+        for( Double valor:conjunto )
             estatistica.addValue(valor);
         return estatistica.getPercentile(percentil);
     }
@@ -196,9 +197,9 @@ public class EstatisticaDescritiva{
      *
      * @return
      */
-    public double curtose(Lista<Double> conjunto){
+    public double curtose( Lista<Double> conjunto ){
         DescriptiveStatistics estatistica=new DescriptiveStatistics();
-        for(Double valor:conjunto)
+        for( Double valor:conjunto )
             estatistica.addValue(valor);
         return estatistica.getKurtosis();
     }
@@ -211,9 +212,9 @@ public class EstatisticaDescritiva{
      *
      * @return
      */
-    public long frequenciaAbsoluta(Lista<Double> conjunto,Double elemento){
+    public long frequenciaAbsoluta( Lista<Double> conjunto, Double elemento ){
         Frequency frequencia=new Frequency();
-        for(Double valor:conjunto)
+        for( Double valor:conjunto )
             frequencia.addValue(valor);
         return frequencia.getCount(elemento);
     }
@@ -227,9 +228,9 @@ public class EstatisticaDescritiva{
      *
      * @return
      */
-    public double frequenciaPercentual(Lista<Double> conjunto,Double elemento){
+    public double frequenciaPercentual( Lista<Double> conjunto, Double elemento ){
         Frequency frequencia=new Frequency();
-        for(Double valor:conjunto)
+        for( Double valor:conjunto )
             frequencia.addValue(valor);
         return frequencia.getPct(elemento);
     }
@@ -241,12 +242,12 @@ public class EstatisticaDescritiva{
      *
      * @return
      */
-    public Lista<Double> moda(Lista<Double> conjunto){
+    public Lista<Double> moda( Lista<Double> conjunto ){
         Frequency frequencia=new Frequency();
         Lista<Double> moda=new Lista<Double>();
-        for(Double valor:conjunto)
+        for( Double valor:conjunto )
             frequencia.addValue(valor);
-        for(Comparable d:frequencia.getMode())
+        for( Comparable d:frequencia.getMode() )
             moda.adiciona((Double)d);
         return moda;
     }
@@ -260,9 +261,9 @@ public class EstatisticaDescritiva{
      *
      * @return
      */
-    public long frequenciaAcumuladaAbsoluta(Lista<Double> conjunto,Double elemento){
+    public long frequenciaAcumuladaAbsoluta( Lista<Double> conjunto, Double elemento ){
         Frequency frequencia=new Frequency();
-        for(Double valor:conjunto)
+        for( Double valor:conjunto )
             frequencia.addValue(valor);
         return frequencia.getCumFreq(elemento.doubleValue());
     }
@@ -276,9 +277,9 @@ public class EstatisticaDescritiva{
      *
      * @return
      */
-    public double frequenciaAcumuladaPercentual(Lista<Double> conjunto,Double elemento){
+    public double frequenciaAcumuladaPercentual( Lista<Double> conjunto, Double elemento ){
         Frequency frequencia=new Frequency();
-        for(Double valor:conjunto)
+        for( Double valor:conjunto )
             frequencia.addValue(valor);
         return frequencia.getCumPct(elemento);
     }
@@ -290,9 +291,9 @@ public class EstatisticaDescritiva{
      *
      * @return
      */
-    public long somaDasFrequencias(Lista<Double> conjunto){
+    public long somaDasFrequencias( Lista<Double> conjunto ){
         Frequency frequencia=new Frequency();
-        for(Double valor:conjunto)
+        for( Double valor:conjunto )
             frequencia.addValue(valor);
         return frequencia.getSumFreq();
     }
@@ -304,9 +305,9 @@ public class EstatisticaDescritiva{
      *
      * @return
      */
-    public int numeroDeElementosDistintos(Lista<Double> conjunto){
+    public int numeroDeElementosDistintos( Lista<Double> conjunto ){
         Frequency frequencia=new Frequency();
-        for(Double valor:conjunto)
+        for( Double valor:conjunto )
             frequencia.addValue(valor);
         return frequencia.getUniqueCount();
     }

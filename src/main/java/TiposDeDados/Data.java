@@ -1,4 +1,5 @@
 package TiposDeDados;
+
 import java.time.*;
 import java.time.format.DateTimeFormatter;
 
@@ -6,15 +7,16 @@ public class Data implements Comparable<Data>{
 
     LocalDate data;
 
-    public Data(int dia,int mes,int ano){
+    public Data( int dia, int mes, int ano ){
         try{
-            data=LocalDate.of(ano,mes,dia);
-        }catch(Exception e){
+            data=LocalDate.of(ano, mes, dia);
+        }
+        catch( Exception e ){
             System.out.println("A data informada esta invalida.");
         }
     }
 
-    public Data(LocalDate data){
+    public Data( LocalDate data ){
         this.data=data;
     }
 
@@ -35,7 +37,7 @@ public class Data implements Comparable<Data>{
     }
 
     @Override
-    public int compareTo(Data outraData){
+    public int compareTo( Data outraData ){
         return data.compareTo(outraData.original());
     }
 

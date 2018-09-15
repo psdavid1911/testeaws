@@ -20,7 +20,8 @@ public class NewEmptyJUnitTest{
         Dupla<Double> d2=new Dupla<Double>(3., 4.);
         try{
             d1.menos(d2).imprime();
-        }catch(Exception ex){
+        }
+        catch( Exception ex ){
             Logger.getLogger(NewEmptyJUnitTest.class.getName()).log(Level.SEVERE, null, ex);
         }
     }

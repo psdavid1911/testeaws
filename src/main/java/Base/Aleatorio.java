@@ -14,16 +14,16 @@ public class Aleatorio{
      * @return - Uma lista com tamanho informado, preenchida com numeros
      * aleatórios de 0 até o número informado
      */
-    public static Lista<Integer> novaLista(int tamanhoDaLista, int valorMinimo, int valorMaximo){
+    public static Lista<Integer> novaLista( int tamanhoDaLista, int valorMinimo, int valorMaximo ){
         Lista<Integer> lista=new Lista<Integer>();
-        for(int i=0; i<tamanhoDaLista; i++)
+        for( int i=0; i < tamanhoDaLista; i++ )
             lista.add(novoNumero(valorMinimo, valorMaximo));
         return lista;
     }
 
-    public static Lista<Integer> novaListaPiorCaso(int tamanhoDaLista, int valorMaximo){
+    public static Lista<Integer> novaListaPiorCaso( int tamanhoDaLista, int valorMaximo ){
         Lista<Integer> lista=new Lista<Integer>();
-        for(int i=0; i<tamanhoDaLista; i++)
+        for( int i=0; i < tamanhoDaLista; i++ )
             lista.add(--valorMaximo);
         return lista;
     }
@@ -36,7 +36,7 @@ public class Aleatorio{
      * @param valorMaximo - Limite superior do numero aleatório
      * @return - O número gerado
      */
-    public static int novoNumero(int valorMinimo, int valorMaximo){
-        return new Random().nextInt((valorMaximo-valorMinimo)+1)+valorMinimo;
+    public static int novoNumero( int valorMinimo, int valorMaximo ){
+        return new Random().nextInt((valorMaximo - valorMinimo) + 1) + valorMinimo;
     }
 }
