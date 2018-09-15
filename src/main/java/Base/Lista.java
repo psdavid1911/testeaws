@@ -1,9 +1,8 @@
-package EstruturasDeDados;
+package Base;
 
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 import java.util.Random;
 import java.util.function.Consumer;
@@ -67,6 +66,7 @@ public class Lista<T extends Comparable<T>> extends ArrayList<T> implements Iter
      * pertencem à Collections, ver hieraquia na documentação do java.
      *
      * @param colecao
+     * @return
      */
     public boolean contemTodos(Collection<T> colecao){
         return containsAll(colecao);
@@ -109,12 +109,17 @@ public class Lista<T extends Comparable<T>> extends ArrayList<T> implements Iter
         clear();
     }
 
-    public void ordena(){
-        sort(null);
+    public int maiorLargura(){
+        int largura=0;
+        for(T elemelemento:this){
+            int aux=elemelemento.toString().length();
+            largura=aux>largura?aux:largura;
+        }
+        return largura;
     }
 
-    public void ordena(Comparator comparador){
-        Collections.sort(this, comparador);
+    public void ordena(){
+        sort();
     }
 
     public List original(){

@@ -1,8 +1,8 @@
-package Servlets.KultaVendas;
+package KultaVendas;
 import KultaEnumeracoes.COR;
 import KultaEnumeracoes.NOME;
 import KultaEnumeracoes.TAMANHO;
-import Servlets.TiposDeDados.Data;
+import TiposDeDados.Data;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;

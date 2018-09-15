@@ -1,5 +1,5 @@
 package testes_PDF;
-import Servlets.PDF.PDF;
+import PDF.PDF;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;

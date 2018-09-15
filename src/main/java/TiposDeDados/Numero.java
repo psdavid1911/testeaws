@@ -1,4 +1,4 @@
-package Servlets.TiposDeDados;
+package TiposDeDados;
 
 public class Numero extends Number implements Comparable<Number>{
 

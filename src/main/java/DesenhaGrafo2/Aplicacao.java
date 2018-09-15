@@ -27,8 +27,12 @@ public class Aplicacao extends Application{
     Double XCENTRAL=LARGURA/2;
     Double YCENTRAL=ALTURA/2;
     TabelaHash<Lista<String>, Path> caminhosLongo=new TabelaHash<Lista<String>, Path>();
-    String gramatica="file:///C:/Users/psdav/Documents/NetBeansProjects/testeaws/src/test/java/DesenhaGrafo/testeDesenhaGrafo.txt";
-    ForcasGrafo iterador=new ForcasGrafo(new ManipuladorGrafo(gramatica), new Dupla<Double>(XCENTRAL, YCENTRAL));
+    ForcasGrafo iterador=new ForcasGrafo(
+            new ManipuladorGrafo("file:///C:/Users/psdav/Documents/NetBeansProjects/testeaws/src/test/java/DesenhaGrafo/testeDesenhaGrafo.txt"), 
+            new Dupla<Double>(XCENTRAL, YCENTRAL),
+            LARGURA,
+            ALTURA
+    );
     Group tela=new Group();
 
     public Circle circulo(){
@@ -42,9 +46,9 @@ public class Aplicacao extends Application{
         return c;
     }
 
-    public void criaCaminho(){
+    public void criaCaminho() throws Exception{
         for(int i=0; i<3; i++){
-            iterador.itera(new Dupla<Double>(XCENTRAL, YCENTRAL));
+            iterador.itera();
             for(Entry<Lista<String>, Path> elemento:caminhosLongo.conjunto()){
                 Dupla<Double> c=iterador.VERTICES.pega(elemento.getKey());
                 elemento.getValue().getElements().add(new LineTo(c.X, c.Y));
@@ -72,12 +76,14 @@ public class Aplicacao extends Application{
             tela.getChildren().add(c);
             pt.getChildren().add(t);
         }
-
-        pt.play();
+        
         Scene cena=new Scene(tela, LARGURA, ALTURA);
         palco.setScene(cena);
         palco.setTitle("Manipulador de Grafo");
         palco.setResizable(false);
+        palco.setAlwaysOnTop(true);
+        
+        pt.play();
         palco.show();
     }
 
