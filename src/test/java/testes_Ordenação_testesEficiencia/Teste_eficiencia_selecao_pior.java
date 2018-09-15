@@ -1,13 +1,13 @@
 package testes_Ordenação_testesEficiencia;
 
 import Base.Aleatorio;
-import Base.Par;
-import Base.Serie;
+import Estruturas.Par;
+import Estruturas.Serie;
 import EstruturasDeDados.Lista;
 import Ordenacao.Bolha;
 import java.util.ArrayList;
 import org.junit.Test;
-import static Base.Grafico.criaGrafico;
+import static Graficos.Grafico.criaGrafico;
 
 public class Teste_eficiencia_selecao_pior{
 

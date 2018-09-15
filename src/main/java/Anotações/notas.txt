@@ -1,0 +1,20 @@
+Páginas 532 - 574
+
+OK	515 - Definição de sintaxe
+OK	515 - Definição de parsing
+517 - Regras de derivação
+517 - Gramáticas Livres de Contexto
+OK	517 - Definição de léxico
+OK 	517 - Substituições, cadeias terminais e não terminais
+518 - Árvore sintática
+518 - Possíveis problemas do parsing (Fim da páginas)
+518 - Analisador Earley - Um tipo de algoritmo.
+518 - Citação do corretor ortográfico
+518 - Apresentação de outro problema e possivel solução por (PD - programação dinâmica)
+519 - Estrutura de dado tabela
+521 - Lista Estados (Gramática Regular Livre De Contexto Modelada Computacionalmente Por Automatos de Estados)
+
+
+artigos funcionam como adjuntos (bechara 160)
+inserir locuções prepositivas (bechara 321)
+

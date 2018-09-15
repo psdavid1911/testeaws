@@ -1,0 +1,35 @@
+public static void _0bolha( ArrayList<Integer> l ){
+        for( int i=0; i < l.size(); i++ )
+            for( int j=0; j < l.size(); j++ )
+                if( l(i) < l(j) )troca(i, j);
+    }
+
+    public static void _1selecao( ArrayList<Integer> l ){
+        troca(0, l.indexOf(Collections.min(l)));
+        for( int i=0; i < l.size(); i++ ) // vetor ordenado
+            for( int j=i + 1; j < l.size(); j++ ) // vetor nao ordenado
+                if( l(i + 1) > l(j) )troca(i + 1, j);
+    }
+
+    public static void _2insercao( ArrayList<Integer> l ){
+        for( int i=0; i < l.size(); i++ )
+            for( int j=i + 1; j >= 0; j-- ){
+                if( i + 1 < l.size() )
+                    if( l(i) > l(i + 1) )
+                        troca(i, i + 1);
+                if( j - 1 >= 0 && j < l.size() )
+                    if( l(j) < l(j - 1) )
+                        troca(j, j - 1);
+            }
+    }
+
+    public static void _3rapido( ArrayList<Integer> l, int iniVetor, int fimVetor ){
+        int i=iniVetor, j=fimVetor, pivo=(i + j) / 2;
+        while( i <= j ){
+            while( l(i) < l(pivo) )i++;
+            while( l(j) > l(pivo) )j--;
+            if( i <= j )troca(i++, j--);
+        }
+        if( iniVetor < j )_3rapido(l, iniVetor, j);
+        if( i < fimVetor )_3rapido(l, i, fimVetor);
+    }
