@@ -1,7 +1,7 @@
 package testes_Ordenacao_testesDeUnidade;
 
 import Base.Aleatorio;
-import Base.Lista;
+import EstruturasDeDados.Lista;
 import org.junit.Test;
 
 public class Teste_unidade_insercao{

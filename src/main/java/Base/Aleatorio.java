@@ -1,5 +1,6 @@
 package Base;
 
+import EstruturasDeDados.Lista;
 import java.util.Random;
 
 public class Aleatorio{

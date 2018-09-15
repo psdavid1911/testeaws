@@ -2,9 +2,9 @@ package testes_Ordenação_testesEficiencia;
 
 import Base.Aleatorio;
 import Base.Grafico;
-import Base.Lista;
 import Base.Par;
 import Base.Serie;
+import EstruturasDeDados.Lista;
 import Ordenacao.Selecao;
 import java.util.ArrayList;
 import org.junit.Test;

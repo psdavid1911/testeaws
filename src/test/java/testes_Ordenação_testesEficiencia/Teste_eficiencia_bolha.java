@@ -1,9 +1,9 @@
 package testes_Ordenação_testesEficiencia;
 
 import Base.Aleatorio;
-import Base.Lista;
 import Base.Par;
 import Base.Serie;
+import EstruturasDeDados.Lista;
 import Ordenacao.Bolha;
 import java.util.ArrayList;
 import org.junit.Test;

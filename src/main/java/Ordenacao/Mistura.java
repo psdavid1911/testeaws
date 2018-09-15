@@ -1,6 +1,6 @@
 package Ordenacao;
 
-import Base.Lista;
+import EstruturasDeDados.Lista;
 
 public class Mistura{
 

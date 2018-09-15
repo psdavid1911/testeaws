@@ -1,6 +1,6 @@
 package Ordenacao;
 
-import Base.Lista;
+import EstruturasDeDados.Lista;
 import java.util.TreeMap;
 
 public class Raiz{
