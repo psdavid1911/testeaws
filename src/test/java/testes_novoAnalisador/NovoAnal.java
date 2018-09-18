@@ -1,4 +1,4 @@
-package analisador;
+package testes_novoAnalisador;
 
 import AnalisadorSintatico.Parsing;
 import org.junit.Test;

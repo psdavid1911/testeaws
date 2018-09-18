@@ -1,5 +1,7 @@
-package GeometriaAnalitica;
+package testes_GeometriaAnalitica;
 
+import GeometriaAnalitica.Ponto;
+import GeometriaAnalitica.Reta;
 import org.junit.Test;
 import static Definicoes.Print.println;
 

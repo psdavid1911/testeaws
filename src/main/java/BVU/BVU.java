@@ -27,10 +27,12 @@ public class BVU extends Application{
             robo=new Robot();
             robo.mouseMove(MEIA_LARGURA, 250);
             robo.delay(delay);
-            robo.mousePress(InputEvent.BUTTON1_MASK);
-            robo.mouseRelease(InputEvent.BUTTON1_MASK);
-            robo.mousePress(InputEvent.BUTTON1_MASK);
-            robo.mouseRelease(InputEvent.BUTTON1_MASK);
+            //robo.mousePress(InputEvent.BUTTON1_DOWN_MASK);
+            //robo.mousePress(InputEvent.BUTTON1_DOWN_MASK);
+            robo.mousePress(InputEvent.BUTTON1_DOWN_MASK);
+            robo.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
+            robo.mousePress(InputEvent.BUTTON1_DOWN_MASK);
+            robo.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
             robo.delay(delay);
             robo.delay(delay);
             robo.delay(delay);
@@ -39,21 +41,21 @@ public class BVU extends Application{
             robo.mouseMove(MEIA_LARGURA, MEIA_ALTURA);
             robo.delay(delay);
             robo.keyPress(KeyEvent.VK_SHIFT);
-            robo.mousePress(InputEvent.BUTTON1_MASK);
-            robo.mouseRelease(InputEvent.BUTTON1_MASK);
-            robo.mousePress(InputEvent.BUTTON1_MASK);
-            robo.mouseRelease(InputEvent.BUTTON1_MASK);
+            robo.mousePress(InputEvent.BUTTON1_DOWN_MASK);
+            robo.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
+            robo.mousePress(InputEvent.BUTTON1_DOWN_MASK);
+            robo.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
             robo.keyRelease(KeyEvent.VK_SHIFT);
             robo.mouseMove(MEIA_LARGURA, 250);
             robo.delay(delay);
-            robo.mousePress(InputEvent.BUTTON1_MASK);
-            robo.mouseRelease(InputEvent.BUTTON1_MASK);
-            robo.mousePress(InputEvent.BUTTON1_MASK);
-            robo.mouseRelease(InputEvent.BUTTON1_MASK);
+            robo.mousePress(InputEvent.BUTTON1_DOWN_MASK);
+            robo.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
+            robo.mousePress(InputEvent.BUTTON1_DOWN_MASK);
+            robo.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
             robo.mouseMove(LARGURA, MEIA_ALTURA);
             robo.delay(delay);
-            robo.mousePress(InputEvent.BUTTON1_MASK);
-            robo.mouseRelease(InputEvent.BUTTON1_MASK);
+            robo.mousePress(InputEvent.BUTTON1_DOWN_MASK);
+            robo.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
             robo.delay(delay);
         }
         catch( AWTException ex ){

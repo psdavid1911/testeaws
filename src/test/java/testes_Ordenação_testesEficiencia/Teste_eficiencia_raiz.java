@@ -20,7 +20,7 @@ public class Teste_eficiencia_raiz{
         for( int i=0; i < listas.size(); i++ ){
             Long temp=System.currentTimeMillis();
             Raiz.ordena(listas.get(i));
-            pares.add(new Par(new Integer(tamanhos.get(i)).doubleValue(), new Long(System.currentTimeMillis() - temp).doubleValue()));
+            pares.add(new Par((double)tamanhos.get(i), (double)System.currentTimeMillis() - temp));
         }
         criaGrafico(
                 new Serie("Tempos(ms)", pares),

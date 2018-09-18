@@ -20,7 +20,7 @@ public class Teste_eficiencia_bolha{
         for( int i=0; i < listas.size(); i++ ){
             Long temp=System.currentTimeMillis();
             Bolha.ordena(listas.get(i));
-            pares.add(new Par(new Integer(tamanhos.get(i)).doubleValue(), new Long(System.currentTimeMillis() - temp).doubleValue()));
+            pares.add(new Par((int)(tamanhos.get(i)), (long)(System.currentTimeMillis() - temp)));
         }
         criaGrafico(
                 new Serie("Tempos(ms)", pares),

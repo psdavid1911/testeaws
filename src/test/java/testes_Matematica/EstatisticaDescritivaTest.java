@@ -14,7 +14,7 @@ public class EstatisticaDescritivaTest{
     public void testMediaAritimetica(){
         System.out.println("mediaAritimetica");
         Lista<Double> conjunto=new Lista(
-                new Double(1), new Double(2), new Double(3), new Double(4), new Double(5), new Double(6)
+                (double)(1), (double)(2), (double)(3), (double)(4), (double)(5), (double)(6)
         );
         EstatisticaDescritiva instance=new EstatisticaDescritiva();
         double expResult=3.5;
@@ -27,7 +27,7 @@ public class EstatisticaDescritivaTest{
     public void testMediaGeometrica(){
         System.out.println("mediaGeometrica");
         Lista<Double> conjunto=new Lista(
-                new Double(1), new Double(2), new Double(3), new Double(4), new Double(5), new Double(6)
+                (double)(1), (double)(2), (double)(3), (double)(4), (double)(5), (double)(6)
         );
         EstatisticaDescritiva instance=new EstatisticaDescritiva();
         double expResult=2.993795165523909;
@@ -39,7 +39,7 @@ public class EstatisticaDescritivaTest{
     public void testMediaQuadratica(){
         System.out.println("mediaQuadratica");
         Lista<Double> conjunto=new Lista(
-                new Double(1), new Double(2), new Double(3), new Double(4), new Double(5), new Double(6)
+                (double)(1), (double)(2), (double)(3), (double)(4), (double)(5), (double)(6)
         );
         EstatisticaDescritiva instance=new EstatisticaDescritiva();
         double expResult=3.8944404818493075;
@@ -51,7 +51,7 @@ public class EstatisticaDescritivaTest{
     public void testDesvioPadrao(){
         System.out.println("desvioPadrao");
         Lista<Double> conjunto=new Lista(
-                new Double(1), new Double(2), new Double(3), new Double(4), new Double(5), new Double(6)
+                (double)(1), (double)(2), (double)(3), (double)(4), (double)(5), (double)(6)
         );
         EstatisticaDescritiva instance=new EstatisticaDescritiva();
         double expResult=1.8708286933869707;
@@ -63,7 +63,7 @@ public class EstatisticaDescritivaTest{
     public void testMediana(){
         System.out.println("mediana");
         Lista<Double> conjunto=new Lista(
-                new Double(1), new Double(2), new Double(3), new Double(4), new Double(5), new Double(6)
+                (double)(1), (double)(2), (double)(3), (double)(4), (double)(5), (double)(6)
         );
         EstatisticaDescritiva instance=new EstatisticaDescritiva();
         double expResult=3.5;
@@ -75,7 +75,7 @@ public class EstatisticaDescritivaTest{
     public void testMaximo(){
         System.out.println("maximo");
         Lista<Double> conjunto=new Lista(
-                new Double(1), new Double(2), new Double(3), new Double(4), new Double(5), new Double(6)
+                (double)(1), (double)(2), (double)(3), (double)(4), (double)(5), (double)(6)
         );
         EstatisticaDescritiva instance=new EstatisticaDescritiva();
         double expResult=6.0;
@@ -87,7 +87,7 @@ public class EstatisticaDescritivaTest{
     public void testMinimo(){
         System.out.println("minimo");
         Lista<Double> conjunto=new Lista(
-                new Double(1), new Double(2), new Double(3), new Double(4), new Double(5), new Double(6)
+                (double)(1), (double)(2), (double)(3), (double)(4), (double)(5), (double)(6)
         );
         EstatisticaDescritiva instance=new EstatisticaDescritiva();
         double expResult=1.0;
@@ -99,7 +99,7 @@ public class EstatisticaDescritivaTest{
     public void testNumeroDeTermos(){
         System.out.println("numeroDeTermos");
         Lista<Double> conjunto=new Lista(
-                new Double(1), new Double(2), new Double(3), new Double(4), new Double(5), new Double(6)
+                (double)(1), (double)(2), (double)(3), (double)(4), (double)(5), (double)(6)
         );
         EstatisticaDescritiva instance=new EstatisticaDescritiva();
         long expResult=6L;
@@ -111,7 +111,7 @@ public class EstatisticaDescritivaTest{
     public void testSoma(){
         System.out.println("soma");
         Lista<Double> conjunto=new Lista(
-                new Double(1), new Double(2), new Double(3), new Double(4), new Double(5), new Double(6)
+                (double)(1), (double)(2), (double)(3), (double)(4), (double)(5), (double)(6)
         );
         EstatisticaDescritiva instance=new EstatisticaDescritiva();
         double expResult=21.0;
@@ -123,7 +123,7 @@ public class EstatisticaDescritivaTest{
     public void testSomaDosQuadrados(){
         System.out.println("somaDosQuadrados");
         Lista<Double> conjunto=new Lista(
-                new Double(1), new Double(2), new Double(3), new Double(4), new Double(5), new Double(6)
+                (double)(1), (double)(2), (double)(3), (double)(4), (double)(5), (double)(6)
         );
         EstatisticaDescritiva instance=new EstatisticaDescritiva();
         double expResult=91.0;
@@ -135,7 +135,7 @@ public class EstatisticaDescritivaTest{
     public void testVarianciaDaAmostra(){
         System.out.println("varianciaDaAmostra");
         Lista<Double> conjunto=new Lista(
-                new Double(1), new Double(2), new Double(3), new Double(4), new Double(5), new Double(6)
+                (double)(1), (double)(2), (double)(3), (double)(4), (double)(5), (double)(6)
         );
         EstatisticaDescritiva instance=new EstatisticaDescritiva();
         double expResult=3.5;
@@ -147,7 +147,7 @@ public class EstatisticaDescritivaTest{
     public void testVarianciaDaPopulacao(){
         System.out.println("varianciaDaPopulacao");
         Lista<Double> conjunto=new Lista(
-                new Double(1), new Double(2), new Double(3), new Double(4), new Double(5), new Double(6)
+                (double)(1), (double)(2), (double)(3), (double)(4), (double)(5), (double)(6)
         );
         EstatisticaDescritiva instance=new EstatisticaDescritiva();
         double expResult=2.9166666666666665;
@@ -159,7 +159,7 @@ public class EstatisticaDescritivaTest{
     public void testAssimetria(){
         System.out.println("assimetria");
         Lista<Double> conjunto=new Lista(
-                new Double(1), new Double(2), new Double(3), new Double(4), new Double(5), new Double(6)
+                (double)(1), (double)(2), (double)(3), (double)(4), (double)(5), (double)(6)
         );
         EstatisticaDescritiva instance=new EstatisticaDescritiva();
         double expResult=0.0;
@@ -171,11 +171,11 @@ public class EstatisticaDescritivaTest{
     public void testValoresOrdenados(){
         System.out.println("valoresOrdenados");
         Lista<Double> conjunto=new Lista(
-                new Double(6), new Double(2), new Double(3), new Double(4), new Double(5), new Double(1)
+                (double)(6), (double)(2), (double)(3), (double)(4), (double)(5), (double)(1)
         );
         EstatisticaDescritiva instance=new EstatisticaDescritiva();
         Lista<Double> expResult=new Lista(
-                new Double(1), new Double(2), new Double(3), new Double(4), new Double(5), new Double(6)
+                (double)(1), (double)(2), (double)(3), (double)(4), (double)(5), (double)(6)
         );
         Lista<Double> result=instance.valoresOrdenados(conjunto);
         assertEquals(expResult, result);
@@ -185,7 +185,7 @@ public class EstatisticaDescritivaTest{
     public void testPercentil(){
         System.out.println("percentil");
         Lista<Double> conjunto=new Lista(
-                new Double(6), new Double(2), new Double(3), new Double(4), new Double(5), new Double(1)
+                (double)(6), (double)(2), (double)(3), (double)(4), (double)(5), (double)(1)
         );
         Double percentil=10D;
         EstatisticaDescritiva instance=new EstatisticaDescritiva();
@@ -198,7 +198,7 @@ public class EstatisticaDescritivaTest{
     public void testCurtose(){
         System.out.println("curtose");
         Lista<Double> conjunto=new Lista(
-                new Double(6), new Double(2), new Double(3), new Double(4), new Double(5), new Double(1)
+                (double)(6), (double)(2), (double)(3), (double)(4), (double)(5), (double)(1)
         );
         EstatisticaDescritiva instance=new EstatisticaDescritiva();
         double expResult=-1.2000000000000002;
@@ -210,7 +210,7 @@ public class EstatisticaDescritivaTest{
     public void testFrequenciaAbsoluta(){
         System.out.println("frequenciaAbsoluta");
         Lista<Double> conjunto=new Lista(
-                new Double(6), new Double(2), new Double(3), new Double(4), new Double(5), new Double(1)
+                (double)(6), (double)(2), (double)(3), (double)(4), (double)(5), (double)(1)
         );
         Double elemento=1D;
         EstatisticaDescritiva instance=new EstatisticaDescritiva();
@@ -223,7 +223,7 @@ public class EstatisticaDescritivaTest{
     public void testFrequenciaPercentual(){
         System.out.println("frequenciaPercentual");
         Lista<Double> conjunto=new Lista(
-                new Double(1), new Double(2), new Double(3), new Double(4), new Double(5)
+                (double)(1), (double)(2), (double)(3), (double)(4), (double)(5)
         );
         Double elemento=1.0;
         EstatisticaDescritiva instance=new EstatisticaDescritiva();
@@ -236,11 +236,11 @@ public class EstatisticaDescritivaTest{
     public void testModa(){
         System.out.println("moda");
         Lista<Double> conjunto=new Lista(
-                new Double(1), new Double(2), new Double(3), new Double(4), new Double(5)
+                (double)(1), (double)(2), (double)(3), (double)(4), (double)(5)
         );
         EstatisticaDescritiva instance=new EstatisticaDescritiva();
         Lista<Double> expResult=new Lista(
-                new Double(1), new Double(2), new Double(3), new Double(4), new Double(5)
+                (double)(1), (double)(2), (double)(3), (double)(4), (double)(5)
         );
         Lista<Double> result=instance.moda(conjunto);
         assertEquals(expResult, result);
@@ -250,7 +250,7 @@ public class EstatisticaDescritivaTest{
     public void testFrequenciaAcumuladaAbsoluta(){
         System.out.println("frequenciaAcumuladaAbsoluta");
         Lista<Double> conjunto=new Lista(
-                new Double(1), new Double(2), new Double(3), new Double(4), new Double(5)
+                (double)(1), (double)(2), (double)(3), (double)(4), (double)(5)
         );
         Double elemento=1.0;
         EstatisticaDescritiva instance=new EstatisticaDescritiva();
@@ -263,7 +263,7 @@ public class EstatisticaDescritivaTest{
     public void testFrequenciaAcumuladaPercentual(){
         System.out.println("frequenciaAcumuladaPercentual");
         Lista<Double> conjunto=new Lista(
-                new Double(1), new Double(2), new Double(3), new Double(4), new Double(5)
+                (double)(1), (double)(2), (double)(3), (double)(4), (double)(5)
         );
         Double elemento=1D;
         EstatisticaDescritiva instance=new EstatisticaDescritiva();
@@ -276,7 +276,7 @@ public class EstatisticaDescritivaTest{
     public void testSomaDasFrequencias(){
         System.out.println("somaDasFrequencias");
         Lista<Double> conjunto=new Lista(
-                new Double(1), new Double(2), new Double(3), new Double(4), new Double(5)
+                (double)(1), (double)(2), (double)(3), (double)(4), (double)(5)
         );
         EstatisticaDescritiva instance=new EstatisticaDescritiva();
         long expResult=5L;
@@ -288,7 +288,7 @@ public class EstatisticaDescritivaTest{
     public void testNumeroDeElementosDistintos(){
         System.out.println("numeroDeElementosDistintos");
         Lista<Double> conjunto=new Lista(
-                new Double(1), new Double(2), new Double(3), new Double(4), new Double(5)
+                (double)(1), (double)(2), (double)(3), (double)(4), (double)(5)
         );
         EstatisticaDescritiva instance=new EstatisticaDescritiva();
         int expResult=5;

@@ -1,7 +1,7 @@
 package testes_Imagem;
 
 import EstruturasDeDados.Dupla;
-import EstruturasDeDados.Grafo;
+import EstruturasDeDados.GrafoBaixoAcoplamento;
 import EstruturasDeDados.Lista;
 import EstruturasDeDados.Par;
 import EstruturasDeDados.TabelaHash;
@@ -13,7 +13,7 @@ import org.junit.Test;
 
 public class ImagemGrafo2{
 
-    Grafo<String> grafo=new Grafo<String>();
+    GrafoBaixoAcoplamento<String> grafo=new GrafoBaixoAcoplamento<String>();
     TabelaHash<String, Par<Integer, Integer>> coordenadas=new TabelaHash<String, Par<Integer, Integer>>();
     TabelaHash<String, Par<Integer, Integer>> passoDoGrafo=new TabelaHash<String, Par<Integer, Integer>>();
     Imagem imagem;
@@ -220,8 +220,8 @@ public class ImagemGrafo2{
 
     public Par<Integer, Integer> coordCartesianas( double raio, double angulo ){
         Integer x, y;
-        x=new Double(raio * Math.cos(angulo)).intValue();
-        y=new Double(raio * Math.sin(angulo)).intValue();
+        x=(int)(raio * Math.cos(angulo));
+        y=(int)(raio * Math.sin(angulo));
         return new Par<Integer, Integer>(x, y);
     }
 

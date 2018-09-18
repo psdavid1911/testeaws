@@ -88,9 +88,9 @@ public class Calculadora{
         while( pilha.tamanho() > 1 ){
             Double temp2;
             // Cuidado com essa ordem
-            double operando1=new Double(pilha.desempilha());
+            double operando1= Double.parseDouble(pilha.desempilha());
             char operador=pilha.desempilha().charAt(0);
-            double operando2=new Double(pilha.desempilha());
+            double operando2=Double.parseDouble(pilha.desempilha());
             switch( operador ){
                 case '^':
                     temp2=Math.pow(operando2, operando1);

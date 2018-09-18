@@ -1,6 +1,6 @@
 package AnalisadorSintatico;
 
-import EstruturasDeDados.Grafo;
+import EstruturasDeDados.GrafoBaixoAcoplamento;
 import EstruturasDeDados.Lista;
 import FluxoDeArquivos.FluxoDeTexto;
 import Internet.PaginaHTML;
@@ -9,7 +9,7 @@ public class ManipuladorGrafo{
 
     private Lista<String> arquivo=new Lista<String>();
     private final String caminhoDoArquivo;
-    private Grafo<Lista<String>> grafo=new Grafo<Lista<String>>();
+    private GrafoBaixoAcoplamento<Lista<String>> grafo=new GrafoBaixoAcoplamento<Lista<String>>();
 
     public ManipuladorGrafo( String caminhoDoArquivo ){
         this.caminhoDoArquivo=caminhoDoArquivo;
@@ -35,7 +35,7 @@ public class ManipuladorGrafo{
         return caminhoDoArquivo;
     }
 
-    public Grafo<Lista<String>> getGrafo(){
+    public GrafoBaixoAcoplamento<Lista<String>> getGrafo(){
         return grafo;
     }
 

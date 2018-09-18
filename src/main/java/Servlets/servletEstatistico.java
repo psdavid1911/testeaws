@@ -32,7 +32,7 @@ public class servletEstatistico extends HttpServlet{
         else if( entrada.contains("\\s") )
             nova=entrada.split("\\s");
         for( String s:nova )
-            conjunto.add(new Double(s));
+            conjunto.add( Double.parseDouble(s));
         String s=""
                 + "<h1>Média Aritmética</h1><br>"
                 + "Média aritmética de dois ou mais termos é o quociente do resultado da divisão da soma dos números dados pela quantidade de números somados.<br>"

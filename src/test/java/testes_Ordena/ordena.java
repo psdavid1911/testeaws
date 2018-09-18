@@ -1,3 +1,5 @@
+package testes_Ordena;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Random;
@@ -37,6 +39,11 @@ public class ordena{
         System.out.println("\n" + l);
         _3rapido(l, 0, l.size() - 1);
         System.out.println(l);
+        //---------------------
+        l=listaAleatoria(9, 50);
+        System.out.println("\n" + l);
+        _4novo(l);
+        System.out.println(l);
     }
 
     public static void troca( int i, int j ){
@@ -75,5 +82,13 @@ public class ordena{
         }
         if( iniVetor < j )_3rapido(l, iniVetor, j);
         if( i < fimVetor )_3rapido(l, i, fimVetor);
+    }
+
+    private static void _4novo( ArrayList<Integer> l ){
+        for( int i=0; i < l.size()-1; i++ )
+            if( e(i) > e(i + 1) ){
+                troca(i, i + 1);
+                i=-1;
+            }
     }
 }

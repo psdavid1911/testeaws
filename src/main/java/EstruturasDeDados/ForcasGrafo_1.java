@@ -10,7 +10,7 @@ public class ForcasGrafo_1{
     public Double K;
     public Double TOLERANCIA;
     public TabelaHash<Lista<String>, Dupla<Double>> VERTICES;
-    public Grafo<Lista<String>> grafo;
+    public GrafoBaixoAcoplamento<Lista<String>> grafo;
     public Double progresso=0d;
     public Double t;
 

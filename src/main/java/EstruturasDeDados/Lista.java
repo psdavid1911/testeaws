@@ -20,6 +20,8 @@ import static java.util.Arrays.asList;
  * @param <T>
  */
 public class Lista<T extends Comparable<T>> extends ArrayList<T> implements Iterable<T>, Comparable<Lista<T>>{
+    
+    public ArrayList<Dupla<Integer>> historicoDeTrocas = new ArrayList<>();
 
     public Lista( T... elementos ){
         super(asList(elementos));
@@ -211,6 +213,7 @@ public class Lista<T extends Comparable<T>> extends ArrayList<T> implements Iter
         T tmp=get(posicao1);
         set(posicao1, get(posicao2));
         set(posicao2, tmp);
+        historicoDeTrocas.add(new Dupla<>(posicao1, posicao2));
     }
 
     /**
@@ -222,7 +225,9 @@ public class Lista<T extends Comparable<T>> extends ArrayList<T> implements Iter
      * @param elemento2
      */
     public void trocaElementos( T elemento1, T elemento2 ){
-        trocaElementos(indiceDoElemento(elemento1), indiceDoElemento(elemento2));
+        int i1 = indiceDoElemento(elemento1);
+        int i2 = indiceDoElemento(elemento2);
+        trocaElementos( i1, i2);
     }
 
     public T valorMaximo(){

@@ -23,11 +23,11 @@ public class paginaA4{
     int margemCabecalhoPX=mm_px_porDPI(margemCabecalho, dpi);
 
     static public int cm_px_porDPI( double valor, int dpi ){
-        return new Double(valor * (dpi / 2.54d)).intValue();
+        return (int)(valor * (dpi / 2.54d));
     }
 
     static public int mm_px_porDPI( double valor, int dpi ){
-        return new Double((valor / 10) * (dpi / 2.54d)).intValue();
+        return (int)((valor / 10) * (dpi / 2.54d));
     }
 
     public paginaA4( String tamanho ){

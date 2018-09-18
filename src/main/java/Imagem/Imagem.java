@@ -155,8 +155,8 @@ public class Imagem{
 
     public Par<Integer, Integer> coordCartesianas( double raio, double angulo ){
         Integer x, y;
-        x=new Double(raio * Math.cos(angulo)).intValue();
-        y=new Double(raio * Math.sin(angulo)).intValue();
+        x= (int)( raio * Math.cos(angulo));
+        y= (int)( raio * Math.sin(angulo));
         return new Par<Integer, Integer>(x, y);
     }
 

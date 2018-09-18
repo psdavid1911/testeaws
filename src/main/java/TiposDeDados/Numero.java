@@ -30,6 +30,8 @@ public class Numero extends Number implements Comparable<Number>{
 
     @Override
     public int compareTo( Number outro ){
-        return new Long(numero.longValue()).compareTo(outro.longValue());
+        Long l1 = numero.longValue();
+        Long l2 = outro.longValue();
+        return l1.compareTo(l2);
     }
 }

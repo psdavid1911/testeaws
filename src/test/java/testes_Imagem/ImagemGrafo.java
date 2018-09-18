@@ -1,6 +1,6 @@
 package testes_Imagem;
 
-import EstruturasDeDados.Grafo;
+import EstruturasDeDados.GrafoBaixoAcoplamento;
 import EstruturasDeDados.Lista;
 import EstruturasDeDados.Par;
 import EstruturasDeDados.V;
@@ -12,7 +12,7 @@ import org.junit.Test;
 
 public class ImagemGrafo{
 
-    Grafo<V<String>> grafo=new Grafo<V<String>>();
+    GrafoBaixoAcoplamento<V<String>> grafo=new GrafoBaixoAcoplamento<V<String>>();
     Imagem imagem;
     int dimx=1000;
     int dimy=1000;
@@ -237,8 +237,8 @@ public class ImagemGrafo{
 
     public Par<Integer, Integer> coordCartesianas( double raio, double angulo ){
         Integer x, y;
-        x=new Double(raio * Math.cos(angulo)).intValue();
-        y=new Double(raio * Math.sin(angulo)).intValue();
+        x=(int)(raio * Math.cos(angulo));
+        y=(int)(raio * Math.sin(angulo));
         return new Par<Integer, Integer>(x, y);
     }
 

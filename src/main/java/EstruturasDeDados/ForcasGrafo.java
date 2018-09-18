@@ -9,7 +9,7 @@ public class ForcasGrafo{
     public Double DISTANCIA_MINIMA;
     public Double FORCA_DE_TOLERANCIA;
     public TabelaHash<Lista<String>, Dupla<Double>> VERTICES;
-    public Grafo<Lista<String>> grafo;
+    public GrafoBaixoAcoplamento<Lista<String>> grafo;
 
     public ForcasGrafo( ManipuladorGrafo g, Dupla<Double> coordenadasIniciais, Double LARGURA, Double ALTURA ){
         this.CONSTANTE_MOLAR=1.;
