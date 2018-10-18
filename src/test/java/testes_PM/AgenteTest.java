@@ -16,7 +16,7 @@ import static org.junit.Assert.*;
  */
 public class AgenteTest{
 
-    AgenteAntigo agente=new AgenteAntigo();
+    AgenteAntigo agente = new AgenteAntigo();
 
     @Before
     public void setUp(){
@@ -33,41 +33,41 @@ public class AgenteTest{
     @Test
     public void testGetNumeral(){
         System.out.println("getNumeral");
-        Integer expResult=32711;
-        Integer result=agente.getNumeral();
+        Integer expResult = 32711;
+        Integer result = agente.getNumeral();
         assertEquals(expResult, result);
     }
 
     @Test
     public void testGetNome(){
         System.out.println("getNome");
-        String expResult="David";
-        String result=agente.getNome();
+        String expResult = "David";
+        String result = agente.getNome();
         assertEquals(expResult, result);
     }
 
     @Test
     public void testGetServicos(){
         System.out.println("getServicos");
-        Lista<Servico> expResult=new Lista<Servico>(
+        Lista<Servico> expResult = new Lista<Servico>(
                 Gerar.servico(new DataHora(7, 30), new DataHora(14, 30), "Caça e pesca"),
                 Gerar.servico(new DataHora(10, 00), new DataHora(17, 0), "Tia")
         );
-        Lista<Servico> result=agente.getServicos();
+        Lista<Servico> result = agente.getServicos();
         assertEquals(expResult.toString(), result.toString());
     }
 
     @Test
     public void testAddServico(){
         System.out.println("addServico");
-        Servico servico=Gerar.servico(new DataHora(0, 0), new DataHora(0, 0), "Arapao");
+        Servico servico = Gerar.servico(new DataHora(0, 0), new DataHora(0, 0), "Arapao");
         agente.addServico(servico);
-        Lista<Servico> expResult=new Lista<Servico>(
+        Lista<Servico> expResult = new Lista<Servico>(
                 Gerar.servico(new DataHora(7, 30), new DataHora(14, 30), "Caça e pesca"),
                 Gerar.servico(new DataHora(10, 00), new DataHora(17, 0), "Tia"),
                 Gerar.servico(new DataHora(0, 0), new DataHora(0, 0), "Arapao")
         );
-        Lista<PM.Servico> result=agente.getServicos();
+        Lista<PM.Servico> result = agente.getServicos();
         assertEquals(expResult.toString(), result.toString());
     }
 
@@ -77,8 +77,8 @@ public class AgenteTest{
     @Test
     public void testGetEscala(){
         System.out.println("getEscala");
-        Tipo_de_escala expResult=Gerar.tipo_de_escala(4, 2);
-        Tipo_de_escala result=agente.getEscala();
+        Tipo_de_escala expResult = Gerar.tipo_de_escala(4, 2);
+        Tipo_de_escala result = agente.getEscala();
         assertEquals(expResult, result);
     }
 
@@ -88,14 +88,14 @@ public class AgenteTest{
     @Test
     public void testAdicionaServico(){
         System.out.println("adicionaServico"); // verificar diferencas depois
-        Servico servico=Gerar.servico(new DataHora(0, 0), new DataHora(0, 0), "Arapao");
+        Servico servico = Gerar.servico(new DataHora(0, 0), new DataHora(0, 0), "Arapao");
         agente.addServico(servico);
-        Lista<Servico> expResult=new Lista<Servico>(
+        Lista<Servico> expResult = new Lista<Servico>(
                 Gerar.servico(new DataHora(7, 30), new DataHora(14, 30), "Caça e pesca"),
                 Gerar.servico(new DataHora(10, 00), new DataHora(17, 0), "Tia"),
                 Gerar.servico(new DataHora(0, 0), new DataHora(0, 0), "Arapao")
         );
-        Lista<Servico> result=agente.getServicos();
+        Lista<Servico> result = agente.getServicos();
         assertEquals(expResult.toString(), result.toString());
     }
 
@@ -106,10 +106,10 @@ public class AgenteTest{
     public void testRemoveServico(){
         System.out.println("removeServico");
         agente.removeServico(Gerar.servico(new DataHora(10, 00), new DataHora(17, 0), "Tia"));
-        Lista<Servico> expResult=new Lista<Servico>(
+        Lista<Servico> expResult = new Lista<Servico>(
                 Gerar.servico(new DataHora(7, 30), new DataHora(14, 30), "Caça e pesca")
         );
-        Lista<Servico> result=agente.getServicos();
+        Lista<Servico> result = agente.getServicos();
         System.out.println(agente.getServicos().toString());
         assertEquals(expResult.toString(), result.toString());
     }
@@ -120,8 +120,8 @@ public class AgenteTest{
     @Test
     public void testGetContato(){
         System.out.println("getContato");
-        String expResult="3333-3333";
-        String result=agente.getContato();
+        String expResult = "3333-3333";
+        String result = agente.getContato();
         assertEquals(expResult, result);
     }
 
@@ -131,9 +131,9 @@ public class AgenteTest{
     @Test
     public void testCompareTo(){
         System.out.println("compareTo");
-        AgenteAntigo outroAgente=Gerar.agente("", Gerar.tipo_de_escala(4, 2), "neo", 0, new Lista<Servico>(), "01/01/2018");
-        int expResult=1;
-        int result=agente.compareTo(outroAgente);
+        AgenteAntigo outroAgente = Gerar.agente("", Gerar.tipo_de_escala(4, 2), "neo", 0, new Lista<Servico>(), "01/01/2018");
+        int expResult = 1;
+        int result = agente.compareTo(outroAgente);
         assertEquals(expResult, result);
     }
 
@@ -143,11 +143,11 @@ public class AgenteTest{
     @Test
     public void testDisponibilidadeDoHorario(){
         System.out.println("disponibilidadeDoHorario");
-        boolean expResult=true;
-        boolean result=agente.disponibilidadeDoHorario(new DataHora(6, 30), new DataHora(6, 59));
+        boolean expResult = true;
+        boolean result = agente.disponibilidadeDoHorario(new DataHora(6, 30), new DataHora(6, 59));
         assertEquals(expResult, result);
-        expResult=false;
-        result=agente.disponibilidadeDoHorario(new DataHora(14, 01), new DataHora(15, 00));
+        expResult = false;
+        result = agente.disponibilidadeDoHorario(new DataHora(14, 01), new DataHora(15, 00));
         assertEquals(expResult, result);
     }
 }

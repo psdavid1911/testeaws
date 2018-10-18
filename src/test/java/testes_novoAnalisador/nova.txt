@@ -1,6 +1,0 @@
-maria -> gera mara
-mara -> estuda
-filha de maria -> estuda
-estuda -> passa
-jose -> passa
-joao -> passa

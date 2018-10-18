@@ -38,7 +38,7 @@ public class PDFTest{
     @Test
     public void testCriaPDF(){
         System.out.println("criaPDF");
-        PDF pdf=new PDF("novo.pdf");
+        PDF pdf = new PDF("novo.pdf");
         pdf.criaPDF();
     }
 }

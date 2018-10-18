@@ -7,9 +7,9 @@ import java.util.Stack;
 
 public class Pilha<T extends Comparable<T>> implements Iterable<T>{
 
-    Stack<T> pilha=new Stack<T>();
+    Stack<T> pilha = new Stack<T>();
 
-    public void adiciona( T elemento ){
+    public void adiciona(T elemento){
         pilha.add(elemento);
     }
 
@@ -21,7 +21,7 @@ public class Pilha<T extends Comparable<T>> implements Iterable<T>{
      *
      * @return
      */
-    public T adiciona2( T elemento ){
+    public T adiciona2(T elemento){
         return pilha.push(elemento);
     }
 
@@ -33,8 +33,7 @@ public class Pilha<T extends Comparable<T>> implements Iterable<T>{
     public T proximoDaPilha(){
         try{
             return pilha.pop();
-        }
-        catch( EmptyStackException ex ){
+        } catch (EmptyStackException ex){
             return null;
         }
     }
@@ -55,7 +54,7 @@ public class Pilha<T extends Comparable<T>> implements Iterable<T>{
      *
      * @return Retorna a posição do elemento na pilha.
      */
-    public int busca( T elemento ){
+    public int busca(T elemento){
         return pilha.search(elemento);
     }
 
@@ -80,7 +79,7 @@ public class Pilha<T extends Comparable<T>> implements Iterable<T>{
         return new Lista(Arrays.asList(pilha.toArray()));
     }
 
-    public void empilha( T elemento ){
+    public void empilha(T elemento){
         adiciona(elemento);
     }
 

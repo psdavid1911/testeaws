@@ -14,16 +14,16 @@ public class PDF{
 
     String nomeDoArquivo;
 
-    public PDF( String nomeDoArquivo ){
-        this.nomeDoArquivo=nomeDoArquivo;
+    public PDF(String nomeDoArquivo){
+        this.nomeDoArquivo = nomeDoArquivo;
     }
 
     public void criaPDF(){
         try{
-            PDDocument documento=new PDDocument();
-            PDPage pagina=new PDPage(PDRectangle.A4);
+            PDDocument documento = new PDDocument();
+            PDPage pagina = new PDPage(PDRectangle.A4);
             documento.addPage(pagina);
-            PDPageContentStream conteudo=new PDPageContentStream(documento, pagina);
+            PDPageContentStream conteudo = new PDPageContentStream(documento, pagina);
             conteudo.beginText();
             conteudo.setFont(PDType1Font.COURIER_OBLIQUE, 12);
             conteudo.newLineAtOffset(medidas.x_cm(1.5f), medidas.y_cm(3f));
@@ -33,8 +33,7 @@ public class PDF{
             documento.save(nomeDoArquivo);
             documento.close();
             System.out.print("arquivo criado em: " + System.getProperty("user.dir"));
-        }
-        catch( Exception e ){
+        } catch (Exception e){
             System.out.println(e.toString());
         }
     }

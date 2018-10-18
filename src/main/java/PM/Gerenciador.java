@@ -1,7 +1,7 @@
 package PM;
 
-import EstruturasDeDados.Lista;
 import Internet.PaginaHTML;
+import java.util.ArrayList;
 
 public class Gerenciador{
 
@@ -10,8 +10,8 @@ public class Gerenciador{
      *
      * @param endereco
      */
-    public Gerenciador( String endereco ){
-        Lista<String> agentes=PaginaHTML.pegaURL(endereco);
+    public Gerenciador(String endereco){
+        ArrayList<String> agentes = PaginaHTML.pegaURL(endereco);
         simplifica();
     }
 

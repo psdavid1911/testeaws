@@ -6,14 +6,14 @@ public class ResultadoRegex implements Comparable<ResultadoRegex>{
     public int posicaoInicial;
     public int tamanho;
 
-    public ResultadoRegex( String expressao, int posicaoInicial, int tamanho ){
-        this.expressao=expressao;
-        this.posicaoInicial=posicaoInicial;
-        this.tamanho=tamanho;
+    public ResultadoRegex(String expressao, int posicaoInicial, int tamanho){
+        this.expressao = expressao;
+        this.posicaoInicial = posicaoInicial;
+        this.tamanho = tamanho;
     }
 
     @Override
-    public int compareTo( ResultadoRegex o ){
+    public int compareTo(ResultadoRegex o){
         return this.expressao.compareTo(o.expressao);
     }
 

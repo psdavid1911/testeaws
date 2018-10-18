@@ -2,6 +2,7 @@ package Strings_Tokens;
 
 import EstruturasDeDados.Lista;
 import Internet.PaginaHTML;
+import java.util.ArrayList;
 
 public class LeitorFormatado{
 
@@ -12,10 +13,10 @@ public class LeitorFormatado{
      * @param arquivoWeb
      * @return
      */
-    public EstruturasDeDados.Lista<String> LeitorFormatado( String arquivoWeb ){
-        EstruturasDeDados.Lista<String> linhasDoDocumento=PaginaHTML.pegaURL(arquivoWeb);
-        EstruturasDeDados.Lista<String> linhasEditadas=new Lista<String>();
-        for( String linha:linhasDoDocumento )linhasEditadas.adiciona(RemoverdorDeEspacos.duplosParaSimples(linha));
+    public ArrayList<String> LeitorFormatado(String arquivoWeb){
+        ArrayList<String> linhasDoDocumento = PaginaHTML.pegaURL(arquivoWeb);
+        ArrayList<String> linhasEditadas = new Lista<String>();
+        for (String linha : linhasDoDocumento)linhasEditadas.add(RemoverdorDeEspacos.duplosParaSimples(linha));
         return linhasEditadas;
     }
 }

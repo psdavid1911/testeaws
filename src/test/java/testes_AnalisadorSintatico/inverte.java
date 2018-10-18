@@ -11,10 +11,10 @@ import org.junit.Test;
  */
 public class inverte{
 
-    String gramatica="file:///C:/Users/psdav/Documents/NetBeansProjects/testeaws/src/main/webapp/arquivos/gramatica.txt";
-    public Parsing analisador=new Parsing(gramatica);
-    String lexico="file:///C:/Users/psdav/Documents/NetBeansProjects/testeaws/src/main/webapp/arquivos/lexico.txt";
-    ManipuladorGrafo lex=new ManipuladorGrafo(lexico);
+    String gramatica = "file:///C:/Users/psdav/Documents/NetBeansProjects/testeaws/src/main/webapp/arquivos/gramatica.txt";
+    public Parsing analisador = new Parsing(gramatica);
+    String lexico = "file:///C:/Users/psdav/Documents/NetBeansProjects/testeaws/src/main/webapp/arquivos/lexico.txt";
+    ManipuladorGrafo lex = new ManipuladorGrafo(lexico);
 
     @Test public void teste000(){
         lex.inverteMembros();

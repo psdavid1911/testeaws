@@ -19,24 +19,24 @@ public class Reta{
      *
      * @param p2
      */
-    public Reta( Ponto p2 ){
-        p1=new Ponto();
-        this.p2=p2;
-        elevacao=p2.deltaY(p1);
-        passo=p2.deltaX(p1);
-        m_inclinacao=elevacao / passo;
-        alfa_coeficienteAngular=atan(m_inclinacao);
-        crescimento=m_inclinacao < 0 ? DECRESCENTE : CRESCENTE;
+    public Reta(Ponto p2){
+        p1 = new Ponto();
+        this.p2 = p2;
+        elevacao = p2.deltaY(p1);
+        passo = p2.deltaX(p1);
+        m_inclinacao = elevacao / passo;
+        alfa_coeficienteAngular = atan(m_inclinacao);
+        crescimento = m_inclinacao < 0 ? DECRESCENTE : CRESCENTE;
     }
 
-    public Reta( Ponto p1, Ponto p2 ){
-        this.p1=p1;
-        this.p2=p2;
-        elevacao=p2.deltaY(p1);
-        passo=p2.deltaX(p1);
-        m_inclinacao=elevacao / passo;
-        alfa_coeficienteAngular=atan(m_inclinacao);
-        crescimento=m_inclinacao < 0 ? DECRESCENTE : CRESCENTE;
+    public Reta(Ponto p1, Ponto p2){
+        this.p1 = p1;
+        this.p2 = p2;
+        elevacao = p2.deltaY(p1);
+        passo = p2.deltaX(p1);
+        m_inclinacao = elevacao / passo;
+        alfa_coeficienteAngular = atan(m_inclinacao);
+        crescimento = m_inclinacao < 0 ? DECRESCENTE : CRESCENTE;
     }
 
     public String equacaoDaReta(){
@@ -49,12 +49,12 @@ public class Reta{
      * @return
      */
     public String equacaoReduzidaDaReta(){
-        if( getP1().getX() == 0 )return "y=" + getM_inclinacao() + ".x+" + getP1().getY() + ")";
-        else if( getP2().getX() == 0 )return "y=" + getM_inclinacao() + ".x+" + getP2().getY() + ")";
+        if (getP1().getX() == 0)return "y=" + getM_inclinacao() + ".x+" + getP1().getY() + ")";
+        else if (getP2().getX() == 0)return "y=" + getM_inclinacao() + ".x+" + getP2().getY() + ")";
         else throw new Error("Esta reta aparentemente não intercepta o eixo x.");
     }
 
-    public Double getY( Double x ){
+    public Double getY(Double x){
         return getM_inclinacao() * (x - getP1().getX()) + getP1().getY();
     }
 

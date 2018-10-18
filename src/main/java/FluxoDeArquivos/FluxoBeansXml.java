@@ -16,33 +16,31 @@ public class FluxoBeansXml<T>{
 
     GerenciadorDeArquivo uriArquivo;
 
-    public FluxoBeansXml( String uriArquivo ){
-        this.uriArquivo=new GerenciadorDeArquivo(uriArquivo);
+    public FluxoBeansXml(String uriArquivo){
+        this.uriArquivo = new GerenciadorDeArquivo(uriArquivo);
     }
 
-    public void escreve( T objeto ){
+    public void escreve(T objeto){
         try{
-            XMLEncoder encoder=new XMLEncoder(
+            XMLEncoder encoder = new XMLEncoder(
                     new BufferedOutputStream(
                             new FileOutputStream(uriArquivo)));
             encoder.writeObject(objeto);
             encoder.close();
-        }
-        catch( FileNotFoundException ex ){
+        } catch (FileNotFoundException ex){
             System.err.println("Não pude escrever no arquivo pois não o encontrei");
         }
     }
 
     public T le(){
         try{
-            XMLDecoder decoder=new XMLDecoder(
+            XMLDecoder decoder = new XMLDecoder(
                     new BufferedInputStream(
                             new FileInputStream(uriArquivo)));
-            T o=(T)decoder.readObject();
+            T o = (T) decoder.readObject();
             decoder.close();
             return o;
-        }
-        catch( FileNotFoundException ex ){
+        } catch (FileNotFoundException ex){
             System.err.println("Não pude ler o arquivo pois não o encontrei");
             return null;
         }
@@ -51,8 +49,7 @@ public class FluxoBeansXml<T>{
     public void apaga(){
         try{
             Files.delete(Paths.get(uriArquivo.caminhoCompleto()));
-        }
-        catch( IOException ex ){
+        } catch (IOException ex){
             System.err.println("Não pude apagar o arquivo.");
         }
     }

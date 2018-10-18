@@ -8,7 +8,7 @@ import org.junit.Test;
 public class Teste_unidade_bolha{
 
     @Test public void bubble(){
-        Lista<Integer> l=Aleatorio.novaLista(50, -99, 99);
+        Lista<Integer> l = Aleatorio.novaLista(50, -99, 99);
         l.imprime();
         Bolha.ordena(l);
         l.imprime();

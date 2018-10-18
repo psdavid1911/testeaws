@@ -23,26 +23,26 @@ public class Ponto{
     private Double y;
 
     public Ponto(){
-        x=0.;
-        y=0.;
+        x = 0.;
+        y = 0.;
         setaQuadrante();
     }
 
-    public Ponto( Double x, Double y ){
-        this.x=x;
-        this.y=y;
+    public Ponto(Double x, Double y){
+        this.x = x;
+        this.y = y;
         setaQuadrante();
     }
 
-    public Double deltaX( Ponto extremoFinal ){
+    public Double deltaX(Ponto extremoFinal){
         return x - extremoFinal.x;
     }
 
-    public Double deltaY( Ponto extremoFinal ){
+    public Double deltaY(Ponto extremoFinal){
         return y - extremoFinal.y;
     }
 
-    public Double distanciaPara( Ponto extremidadeFinal ){
+    public Double distanciaPara(Ponto extremidadeFinal){
         return sqrt(this.deltaX(extremidadeFinal) * this.deltaX(extremidadeFinal)
                 + (this.deltaY(extremidadeFinal) * this.deltaY(extremidadeFinal)));
     }
@@ -55,8 +55,8 @@ public class Ponto{
         return x;
     }
 
-    public void setX( Double x ){
-        this.x=x;
+    public void setX(Double x){
+        this.x = x;
         setaQuadrante();
     }
 
@@ -64,8 +64,8 @@ public class Ponto{
         return y;
     }
 
-    public void setY( Double y ){
-        this.y=y;
+    public void setY(Double y){
+        this.y = y;
         setaQuadrante();
     }
 
@@ -73,11 +73,11 @@ public class Ponto{
         System.out.println(this);
     }
 
-    public Ponto pontoMedio( Ponto pFinal ){
+    public Ponto pontoMedio(Ponto pFinal){
         return new Ponto((x + pFinal.x) / 2, (y + pFinal.y) / 2);
     }
 
-    public Double razaoDeSeccao( Ponto pIntermediario, Ponto pFinal ){
+    public Double razaoDeSeccao(Ponto pIntermediario, Ponto pFinal){
         return this.deltaX(pIntermediario) / pIntermediario.deltaX(pFinal);
     }
 
@@ -100,9 +100,9 @@ public class Ponto{
     }
 
     private void setaQuadrante(){
-        if( getX() > 0 && getY() > 0 )q=PRIMEIRO;
-        else if( getX() < 0 && getY() > 0 )q=SEGUNDO;
-        else if( getX() < 0 && getY() < 0 )q=TERCEIRO;
-        else q=QUARTO;
+        if (getX() > 0 && getY() > 0)q = PRIMEIRO;
+        else if (getX() < 0 && getY() > 0)q = SEGUNDO;
+        else if (getX() < 0 && getY() < 0)q = TERCEIRO;
+        else q = QUARTO;
     }
 }

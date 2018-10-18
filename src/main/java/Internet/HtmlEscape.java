@@ -13,7 +13,7 @@ package Internet;
  */
 public class HtmlEscape{
 
-    private static char[] hex={'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'};
+    private static char[] hex = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'};
 
     /**
      * Method for html escaping a String, for use in a textarea
@@ -21,7 +21,7 @@ public class HtmlEscape{
      * @param original The String to escape
      * @return The escaped String
      */
-    public static String escapeTextArea( String original ){
+    public static String escapeTextArea(String original){
         return escapeSpecial(escapeTags(original));
     }
 
@@ -31,56 +31,56 @@ public class HtmlEscape{
      * @param original The original String
      * @return The escape String
      */
-    public static String escape( String original ){
+    public static String escape(String original){
         return escapeSpecial(escapeBr(escapeTags(original)));
     }
 
-    public static String escapeTags( String original ){
-        if( original == null )return "";
-        StringBuffer out=new StringBuffer("");
-        char[] chars=original.toCharArray();
-        for( int i=0; i < chars.length; i++ ){
-            boolean found=true;
-            switch( chars[i] ){
+    public static String escapeTags(String original){
+        if (original == null)return "";
+        StringBuffer out = new StringBuffer("");
+        char[] chars = original.toCharArray();
+        for (int i = 0; i < chars.length; i++){
+            boolean found = true;
+            switch (chars[i]){
                 case 60: out.append("&lt;");
                     break; //< 
                 case 62: out.append("&gt;");
                     break; //> 
                 case 34: out.append("&quot;");
                     break; //" 
-                default: found=false;
+                default: found = false;
                     break;
             }
-            if( !found )out.append(chars[i]);
+            if (!found)out.append(chars[i]);
         }
         return out.toString();
     }
 
-    public static String escapeBr( String original ){
-        if( original == null )return "";
-        StringBuffer out=new StringBuffer("");
-        char[] chars=original.toCharArray();
-        for( int i=0; i < chars.length; i++ ){
-            boolean found=true;
-            switch( chars[i] ){
+    public static String escapeBr(String original){
+        if (original == null)return "";
+        StringBuffer out = new StringBuffer("");
+        char[] chars = original.toCharArray();
+        for (int i = 0; i < chars.length; i++){
+            boolean found = true;
+            switch (chars[i]){
                 case '\n': out.append("<br/>");
                     break; //newline 
                 case '\r': break;
-                default: found=false;
+                default: found = false;
                     break;
             }
-            if( !found )out.append(chars[i]);
+            if (!found)out.append(chars[i]);
         }
         return out.toString();
     }
 
-    public static String escapeSpecial( String original ){
-        if( original == null )return "";
-        StringBuffer out=new StringBuffer("");
-        char[] chars=original.toCharArray();
-        for( int i=0; i < chars.length; i++ ){
-            boolean found=true;
-            switch( chars[i] ){
+    public static String escapeSpecial(String original){
+        if (original == null)return "";
+        StringBuffer out = new StringBuffer("");
+        char[] chars = original.toCharArray();
+        for (int i = 0; i < chars.length; i++){
+            boolean found = true;
+            switch (chars[i]){
                 case 38: out.append("&amp;");
                     break; //& 
                 case 198: out.append("&AElig;");
@@ -210,21 +210,21 @@ public class HtmlEscape{
                 case 162: out.append("&cent;");
                     break; //¢ 
                 default:
-                    found=false;
+                    found = false;
                     break;
             }
-            if( !found )
-                if( chars[i] > 127 ){
-                    char c=chars[i];
-                    int a4=c % 16;
-                    c=(char)(c / 16);
-                    int a3=c % 16;
-                    c=(char)(c / 16);
-                    int a2=c % 16;
-                    c=(char)(c / 16);
-                    int a1=c % 16;
+            if (!found)
+                if (chars[i] > 127){
+                    char c = chars[i];
+                    int a4 = c % 16;
+                    c = (char) (c / 16);
+                    int a3 = c % 16;
+                    c = (char) (c / 16);
+                    int a2 = c % 16;
+                    c = (char) (c / 16);
+                    int a1 = c % 16;
                     out.append("&#x" + hex[a1] + hex[a2] + hex[a3] + hex[a4] + ";");
-                }else
+                } else
                     out.append(chars[i]);
         }
         return out.toString();

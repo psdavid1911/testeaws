@@ -13,27 +13,25 @@ public class FluxoBeans<T>{
 
     GerenciadorDeArquivo arquivo;
 
-    public FluxoBeans( String caminhoNomeDoArquivo ){
-        arquivo=new GerenciadorDeArquivo(caminhoNomeDoArquivo);
+    public FluxoBeans(String caminhoNomeDoArquivo){
+        arquivo = new GerenciadorDeArquivo(caminhoNomeDoArquivo);
     }
 
-    public void escreve( T objeto ){
+    public void escreve(T objeto){
         // passo 1
-        FileOutputStream fos=null;
+        FileOutputStream fos = null;
         try{
-            fos=new FileOutputStream(arquivo);
-        }
-        catch( FileNotFoundException ex ){
+            fos = new FileOutputStream(arquivo);
+        } catch (FileNotFoundException ex){
         }
         // passo 2
         BufferedOutputStream bos;
-        bos=new BufferedOutputStream(fos);
+        bos = new BufferedOutputStream(fos);
         // passo 3
         ObjectOutputStream oos;
         try{
-            oos=new ObjectOutputStream(bos);
-        }
-        catch( IOException e ){
+            oos = new ObjectOutputStream(bos);
+        } catch (IOException e){
             erro(e.getMessage());
             e.printStackTrace();
             return;
@@ -41,8 +39,7 @@ public class FluxoBeans<T>{
         // escreve objeto na saida
         try{
             oos.writeObject(objeto);
-        }
-        catch( IOException e ){
+        } catch (IOException e){
             erro(e.getMessage());
             e.printStackTrace();
             return;
@@ -50,8 +47,7 @@ public class FluxoBeans<T>{
         // fecha
         try{
             oos.close();
-        }
-        catch( IOException e ){
+        } catch (IOException e){
             erro(e.getMessage());
             e.printStackTrace();
             return;
@@ -62,22 +58,20 @@ public class FluxoBeans<T>{
         // passo 1
         FileInputStream fis;
         try{
-            fis=new FileInputStream(arquivo);
-        }
-        catch( FileNotFoundException e ){
+            fis = new FileInputStream(arquivo);
+        } catch (FileNotFoundException e){
             erro(e.getMessage());
             e.printStackTrace();
             return null;
         }
         // passo 2
         BufferedInputStream bis;
-        bis=new BufferedInputStream(fis);
+        bis = new BufferedInputStream(fis);
         // passo 3
         ObjectInputStream ois;
         try{
-            ois=new ObjectInputStream(bis);
-        }
-        catch( IOException e ){
+            ois = new ObjectInputStream(bis);
+        } catch (IOException e){
             erro(e.getMessage());
             e.printStackTrace();
             return null;
@@ -85,14 +79,12 @@ public class FluxoBeans<T>{
         // le a entrada
         T entrada;
         try{
-            entrada=(T)ois.readObject();
-        }
-        catch( IOException e ){
+            entrada = (T) ois.readObject();
+        } catch (IOException e){
             erro(e.getMessage());
             e.printStackTrace();
             return null;
-        }
-        catch( ClassNotFoundException e ){
+        } catch (ClassNotFoundException e){
             erro(e.getMessage());
             e.printStackTrace();
             return null;
@@ -100,8 +92,7 @@ public class FluxoBeans<T>{
         // fecha
         try{
             ois.close();
-        }
-        catch( IOException e ){
+        } catch (IOException e){
             erro(e.getMessage());
             e.printStackTrace();
         }
@@ -121,7 +112,7 @@ public class FluxoBeans<T>{
         return arquivo.caminhoCompleto();
     }
 
-    private void erro( String erro ){
+    private void erro(String erro){
         System.out.println(erro);
     }
 }

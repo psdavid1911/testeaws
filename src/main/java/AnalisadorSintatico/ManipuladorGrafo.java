@@ -1,29 +1,34 @@
 package AnalisadorSintatico;
 
-import EstruturasDeDados.GrafoBaixoAcoplamento;
+import EstruturasDeDados.Grafo;
 import EstruturasDeDados.Lista;
 import FluxoDeArquivos.FluxoDeTexto;
 import Internet.PaginaHTML;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public class ManipuladorGrafo{
 
-    private Lista<String> arquivo=new Lista<String>();
-    private final String caminhoDoArquivo;
-    private GrafoBaixoAcoplamento<Lista<String>> grafo=new GrafoBaixoAcoplamento<Lista<String>>();
+    private Lista<String> arquivo = new Lista<>();
+    private Grafo<Lista<String>> grafo = new Grafo<>();
+    private final String uriArquivo;
 
-    public ManipuladorGrafo( String caminhoDoArquivo ){
-        this.caminhoDoArquivo=caminhoDoArquivo;
-        for( String linha:PaginaHTML.pegaURL(caminhoDoArquivo) ){
-            linha=linha.replaceAll(" -> ", "->");
-            linha=linha.replaceAll(" ->", "->");
-            linha=linha.replaceAll("-> ", "->");
-            linha=linha.replaceAll(" , ", ",");
-            linha=linha.replaceAll(", ", ",");
-            linha=linha.replaceAll(" ,", ",");
+    public ManipuladorGrafo(String caminhoDoArquivo){
+        this.uriArquivo = caminhoDoArquivo;
+        for (String linha : PaginaHTML.pegaURL(caminhoDoArquivo)){
+            linha = linha.replaceAll(" -> ", "->");
+            linha = linha.replaceAll(" ->", "->");
+            linha = linha.replaceAll("-> ", "->");
+            linha = linha.replaceAll(" , ", ",");
+            linha = linha.replaceAll(", ", ",");
+            linha = linha.replaceAll(" ,", ",");
             arquivo.add(linha);
-            String[] argumentos=linha.split("->");
-            for( int i=1; i < argumentos.length; i++ )
-                grafo.adicionaAresta(new Lista<String>(argumentos[0].split(",")), new Lista<String>(argumentos[i].split(",")));
+            String[] argumentos = linha.split("->");
+            for (int i = 1; i < argumentos.length; i++)
+                grafo.adicionaAresta(
+                        new Lista<>(Arrays.asList(argumentos[0].split(","))),
+                        new Lista<>(Arrays.asList(argumentos[i].split(",")))
+                );
         }
     }
 
@@ -32,32 +37,31 @@ public class ManipuladorGrafo{
     }
 
     public String getCaminhoDoArquivo(){
-        return caminhoDoArquivo;
+        return uriArquivo;
     }
 
-    public GrafoBaixoAcoplamento<Lista<String>> getGrafo(){
+    public Grafo<Lista<String>> getGrafo(){
         return grafo;
     }
 
     public void inverteMembros(){
-        Lista<String> nova=new Lista<String>();
-        FluxoDeTexto manipulador=new FluxoDeTexto(caminhoDoArquivo);
-        for( String linha:arquivo ){
-            String[] argumentos=linha.split("->");
-            nova.add(linha=argumentos[argumentos.length - 1] + "->" + argumentos[0]);
+        Lista<String> nova = new Lista<>();
+        FluxoDeTexto manipulador = new FluxoDeTexto(uriArquivo);
+        for (String linha : arquivo){
+            String[] argumentos = linha.split("->");
+            nova.add(linha = argumentos[argumentos.length - 1] + "->" + argumentos[0]);
         }
         manipulador.escreve(nova);
     }
 
-    public Lista<Lista<String>> pegaAdjascencias( Lista<String> no ){
-        return grafo.pegaAdjascentes(no);
+    public Lista<Lista<String>> pegaAdjascencias(Lista<String> no){
+        return grafo.adjascencias(no);
     }
 
-    public String pegaPrimeiraAdjascencia( Lista<String> no ){
+    public String pegaPrimeiraAdjascencia(Lista<String> no){
         try{
-            return grafo.pegaAdjascentes(no).pega(0).pega(0);
-        }
-        catch( NullPointerException ex ){
+            return grafo.adjascencias(no).get(0).get(0);
+        } catch (NullPointerException ex){
             System.out.print("\nNão encontrei: " + no.toString());
             return "";
         }

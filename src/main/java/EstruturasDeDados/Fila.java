@@ -6,7 +6,7 @@ import java.util.Queue;
 
 public class Fila<T> implements Iterable<T>{
 
-    Queue<T> fila=new LinkedList<T>();
+    Queue<T> fila = new LinkedList<T>();
 
     /**
      * Difere de adiciona2 apenas por retornar uma exceção se não for possível
@@ -14,7 +14,7 @@ public class Fila<T> implements Iterable<T>{
      *
      * @param elemento
      */
-    public void adiciona( T elemento ){
+    public void adiciona(T elemento){
         fila.add(elemento);
     }
 
@@ -25,7 +25,7 @@ public class Fila<T> implements Iterable<T>{
      *
      * @return Falso se não pode inserir o elemento na fila.
      */
-    public boolean adiciona2( T elemento ){
+    public boolean adiciona2(T elemento){
         return fila.offer(elemento);
     }
 

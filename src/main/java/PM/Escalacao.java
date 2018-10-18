@@ -11,7 +11,7 @@ public class Escalacao implements Comparable<Escalacao>{
     private String contato;
 
     @Override
-    public int compareTo( Escalacao escalacao ){
+    public int compareTo(Escalacao escalacao){
         return this.posto.compareTo(escalacao.getPosto());
     }
 
@@ -19,32 +19,32 @@ public class Escalacao implements Comparable<Escalacao>{
         return pm;
     }
 
-    public void setPm( String pm ){
-        this.pm=pm;
+    public void setPm(String pm){
+        this.pm = pm;
     }
 
     public String getPosto(){
         return posto;
     }
 
-    public void setPosto( String posto ){
-        this.posto=posto;
+    public void setPosto(String posto){
+        this.posto = posto;
     }
 
     public DataHora getHoraInicial(){
         return horaInicial;
     }
 
-    public void setHoraInicial( DataHora horaInicial ){
-        this.horaInicial=horaInicial;
+    public void setHoraInicial(DataHora horaInicial){
+        this.horaInicial = horaInicial;
     }
 
     public String getContato(){
         return contato;
     }
 
-    public void setContato( String contato ){
-        this.contato=contato;
+    public void setContato(String contato){
+        this.contato = contato;
     }
 
     @Override
@@ -56,7 +56,7 @@ public class Escalacao implements Comparable<Escalacao>{
         return horaFinal;
     }
 
-    public void setHoraFinal( DataHora horaFinal ){
-        this.horaFinal=horaFinal;
+    public void setHoraFinal(DataHora horaFinal){
+        this.horaFinal = horaFinal;
     }
 }

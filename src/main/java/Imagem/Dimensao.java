@@ -9,15 +9,15 @@ public class Dimensao{
         return largura;
     }
 
-    public void setLargura( int largura ){
-        this.largura=largura;
+    public void setLargura(int largura){
+        this.largura = largura;
     }
 
     public int getAltura(){
         return altura;
     }
 
-    public void setAltura( int altura ){
-        this.altura=altura;
+    public void setAltura(int altura){
+        this.altura = altura;
     }
 }

@@ -4,8 +4,8 @@ public class Numero extends Number implements Comparable<Number>{
 
     Number numero;
 
-    public Numero( Number numero ){
-        this.numero=numero;
+    public Numero(Number numero){
+        this.numero = numero;
     }
 
     @Override
@@ -29,7 +29,7 @@ public class Numero extends Number implements Comparable<Number>{
     }
 
     @Override
-    public int compareTo( Number outro ){
+    public int compareTo(Number outro){
         Long l1 = numero.longValue();
         Long l2 = outro.longValue();
         return l1.compareTo(l2);

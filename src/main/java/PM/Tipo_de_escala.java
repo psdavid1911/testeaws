@@ -9,16 +9,16 @@ public class Tipo_de_escala implements Comparable<Tipo_de_escala>{
         return dias_trabalhados;
     }
 
-    public void setDias_trabalhados( int dias_trabalhados ){
-        this.dias_trabalhados=dias_trabalhados;
+    public void setDias_trabalhados(int dias_trabalhados){
+        this.dias_trabalhados = dias_trabalhados;
     }
 
     public int getDias_descansados(){
         return dias_descansados;
     }
 
-    public void setDias_descansados( int dias_descansados ){
-        this.dias_descansados=dias_descansados;
+    public void setDias_descansados(int dias_descansados){
+        this.dias_descansados = dias_descansados;
     }
 
     public int getDias_do_ciclo(){
@@ -31,22 +31,22 @@ public class Tipo_de_escala implements Comparable<Tipo_de_escala>{
     }
 
     @Override
-    public int compareTo( Tipo_de_escala t ){
+    public int compareTo(Tipo_de_escala t){
         return toString().compareTo(t.toString());
     }
 
     @Override
-    public boolean equals( Object obj ){
-        if( this == obj )
+    public boolean equals(Object obj){
+        if (this == obj)
             return true;
-        if( obj == null )
+        if (obj == null)
             return false;
-        if( getClass() != obj.getClass() )
+        if (getClass() != obj.getClass())
             return false;
-        final Tipo_de_escala other=(Tipo_de_escala)obj;
-        if( this.dias_trabalhados != other.dias_trabalhados )
+        final Tipo_de_escala other = (Tipo_de_escala) obj;
+        if (this.dias_trabalhados != other.dias_trabalhados)
             return false;
-        if( this.dias_descansados != other.dias_descansados )
+        if (this.dias_descansados != other.dias_descansados)
             return false;
         return true;
     }

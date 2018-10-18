@@ -10,7 +10,7 @@ public class CodificadorTest{
      */
     @Test
     public void testCodifica(){
-        Codificador codificador=new Codificador("newfile.txt");
+        Codificador codificador = new Codificador("newfile.txt");
         codificador.codifica();
     }
 }
