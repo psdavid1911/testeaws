@@ -4,7 +4,6 @@ import EstruturasDeDados.Grafo;
 import EstruturasDeDados.Lista;
 import FluxoDeArquivos.FluxoDeTexto;
 import Internet.PaginaHTML;
-import java.util.ArrayList;
 import java.util.Arrays;
 
 public class ManipuladorGrafo{
@@ -16,19 +15,29 @@ public class ManipuladorGrafo{
     public ManipuladorGrafo(String caminhoDoArquivo){
         this.uriArquivo = caminhoDoArquivo;
         for (String linha : PaginaHTML.pegaURL(caminhoDoArquivo)){
-            linha = linha.replaceAll(" -> ", "->");
-            linha = linha.replaceAll(" ->", "->");
-            linha = linha.replaceAll("-> ", "->");
-            linha = linha.replaceAll(" , ", ",");
-            linha = linha.replaceAll(", ", ",");
-            linha = linha.replaceAll(" ,", ",");
-            arquivo.add(linha);
-            String[] argumentos = linha.split("->");
-            for (int i = 1; i < argumentos.length; i++)
-                grafo.adicionaAresta(
-                        new Lista<>(Arrays.asList(argumentos[0].split(","))),
-                        new Lista<>(Arrays.asList(argumentos[i].split(",")))
-                );
+            // Inicia formatacao do que foi lido
+            if (linha.contains("//"))linha = linha.substring(0, linha.indexOf("//")); // deve ser feito antes, pois pode retornar linha vazia, ignora comentarios de linha
+            if (linha.isEmpty())continue; // linha vazia ignora
+            linha = linha.replaceAll("\\s*,\\s*", ","); // remove espacos circundantes de uma virgula
+            linha = linha.replaceAll("\\s+", " "); // remove espacos sobressalentes em qualquer lugar
+            arquivo.add(linha); // salva a formatacao
+
+            // Inicia a criacao do grafo
+            Lista<String> aEsquerda, aDireita;
+            if (linha.contains("<->")){
+                linha = linha.replaceAll("\\s*<->\\s*", "<->"); // remove espacos circundantes ao operador
+                String[] argumentos = linha.split("<->");
+                aEsquerda = new Lista<>(Arrays.asList(argumentos[0].split(",")));
+                aDireita = new Lista<>(Arrays.asList(argumentos[1].split(",")));
+                grafo.adicionaAresta(aEsquerda, aDireita);
+                grafo.adicionaAresta(aDireita, aEsquerda);
+            } else if (linha.contains("->")){
+                linha = linha.replaceAll("\\s*->\\s*", "->"); // remove espacos circundantes ao operador
+                String[] argumentos = linha.split("->");
+                aEsquerda = new Lista<>(Arrays.asList(argumentos[0].split(",")));
+                aDireita = new Lista<>(Arrays.asList(argumentos[1].split(",")));
+                grafo.adicionaAresta(aEsquerda, aDireita);
+            }
         }
     }
 

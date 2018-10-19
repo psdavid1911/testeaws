@@ -1,0 +1,67 @@
+// -----------------------------------------------------------------------------
+// Resumo (Manual)
+// -----------------------------------------------------------------------------
+
+// Uma virgula representa um 'e', de tal forma que, quando encontrados termos 
+// do tipo termo1,termo2 ambos representam uma parte valida para subtituição.
+
+// Barras duplas são um comentário, ignorado até o fim da linha
+
+// colocar um termo entre virgulas significa dizer que ele pode ser substituido por
+// uma regra
+
+// Linhas em branco são ignoradas
+
+// -> adiciona aresta unidirecionada (leia-se: também é definido como)
+
+// <-> Adiciona aresta bidirecional (leia-se: é intercambiável com)
+
+// -----------------------------------------------------------------------------
+// Lexico
+// -----------------------------------------------------------------------------
+
+// Regras de substituição
+    programa -> bloco
+    bloco -> {, atribuicoes, declaracoes, }
+    atribuicoes -> atribuicao, atribuicao
+    atribuicoes -> conjunto vazio
+    atribuicao -> tipo, nome, =, valor
+    declaracao -> declaracao, declaracao
+    declaracao -> conjunto vazio
+    declaracao -> se, boleano, declaracao
+    declaracao -> se, boleano, declaracao, senao, declaracao
+    declaracao -> enquanto, boleano, declaracao
+    declaracao -> break
+    declaracao -> bloco
+
+// Operadores
+    | -> ou
+    & -> e
+    ! -> nao
+    = -> igual
+    != -> nao igual, diferente
+    < -> menor que
+    > -> maior que
+    <= -> menor ou igual a
+    >= -> maior ou igual a
+    % -> resto de
+    + -> mais
+    - -> menos
+
+// Palavras reservadas
+    se -> 
+    senao ->
+    enquanto ->
+    break ->
+    continue ->
+
+// Tipos primitivos
+    tipo <-> palavra
+    tipo <-> numero
+    tipo <-> boleano
+    tipo <-> vazio
+
+// Tipos 'fortes'
+    boleano -> verdadeiro
+    boleado -> falso
+    vazio -> falso

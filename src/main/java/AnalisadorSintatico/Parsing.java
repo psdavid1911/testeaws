@@ -2,7 +2,6 @@ package AnalisadorSintatico;
 
 import EstruturasDeDados.Lista;
 import Strings_Tokens.Separador;
-import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Parsing{
@@ -101,10 +100,10 @@ public class Parsing{
 
     @Override
     public String toString(){
-        StringBuilder b = new StringBuilder(getProcedimento().toString());
-        b.deleteCharAt(b.indexOf("["));
-        b.deleteCharAt(b.lastIndexOf("]"));
-        return b.toString();
+        String resultado = getProcedimento().toString();
+        resultado = resultado.replaceAll("^\\s*\\[", "");
+        resultado = resultado.replaceAll("\\]\\s*$", "");
+        return resultado;
     }
 
     private Lista<Lista<String>> transicoes(Lista<String> estadoInicial){
