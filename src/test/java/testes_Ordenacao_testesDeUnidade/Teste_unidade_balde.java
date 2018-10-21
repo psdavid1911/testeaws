@@ -1,9 +1,10 @@
 package testes_Ordenacao_testesDeUnidade;
 
+import org.junit.jupiter.api.Test;
+
 import Base.Aleatorio;
 import EstruturasDeDados.Lista;
 import Ordenacao.Balde;
-import org.junit.Test;
 
 public class Teste_unidade_balde{
 

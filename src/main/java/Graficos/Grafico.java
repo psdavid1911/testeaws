@@ -5,7 +5,7 @@ import Estruturas.Serie;
 import Estruturas.Series;
 import java.io.*;
 import org.jfree.chart.ChartFactory;
-import org.jfree.chart.ChartUtilities;
+import org.jfree.chart.ChartUtils;
 import org.jfree.chart.JFreeChart;
 import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.chart.renderer.xy.XYSplineRenderer;
@@ -18,7 +18,7 @@ public class Grafico{
         JFreeChart grafico = ChartFactory.createXYLineChart(nomeDoGrafico, nomeX, nomeY, criaColecaoDeSerie(serie), PlotOrientation.VERTICAL, true, true, true);
         grafico.getXYPlot().setRenderer(new XYSplineRenderer(1000)); // Suaviza as linhas
         try{
-            ChartUtilities.saveChartAsJPEG(new File(nomeArquivo + ".jpeg"), grafico, largura, altura);
+            ChartUtils.saveChartAsJPEG(new File(nomeArquivo + ".jpeg"), grafico, largura, altura);
         } catch (IOException ex){
             ex.printStackTrace();
         }
@@ -28,7 +28,7 @@ public class Grafico{
         JFreeChart grafico = ChartFactory.createXYLineChart(nomeDoGrafico, nomeX, nomeY, criaColecaoDeSeries(series), PlotOrientation.VERTICAL, true, true, true);
         grafico.getXYPlot().setRenderer(new XYSplineRenderer(1000)); // Suaviza as linhas
         try{
-            ChartUtilities.saveChartAsJPEG(new File(nomeArquivo + ".jpeg"), grafico, largura, altura);
+            ChartUtils.saveChartAsJPEG(new File(nomeArquivo + ".jpeg"), grafico, largura, altura);
         } catch (IOException ex){
             ex.printStackTrace();
         }

@@ -205,7 +205,7 @@ public class EstatisticaDescritiva{
         Lista<Double> moda = new Lista<Double>();
         for (Double valor : conjunto)
             frequencia.addValue(valor);
-        for (Comparable d : frequencia.getMode())
+        for (Comparable<?> d : frequencia.getMode())
             moda.add((Double) d);
         return moda;
     }

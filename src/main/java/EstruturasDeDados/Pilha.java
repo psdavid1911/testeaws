@@ -1,6 +1,5 @@
 package EstruturasDeDados;
 
-import java.util.Arrays;
 import java.util.EmptyStackException;
 import java.util.Iterator;
 import java.util.Stack;
@@ -76,7 +75,9 @@ public class Pilha<T extends Comparable<T>> implements Iterable<T>{
     }
 
     public Lista<T> pegaLista(){
-        return new Lista(Arrays.asList(pilha.toArray()));
+   	 Lista<T> lista = new Lista<>();
+   	 lista.addAll(pilha);
+        return lista;
     }
 
     public void empilha(T elemento){

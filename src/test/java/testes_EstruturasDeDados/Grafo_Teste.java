@@ -1,15 +1,15 @@
 package testes_EstruturasDeDados;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import java.util.ArrayList;
+
+import org.junit.jupiter.api.Test;
 import EstruturasDeDados.Conjunto;
 import EstruturasDeDados.Grafo;
-import java.util.ArrayList;
-import org.junit.FixMethodOrder;
-import org.junit.Test;
-import org.junit.runners.MethodSorters;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
 
-@FixMethodOrder(MethodSorters.NAME_ASCENDING)
+
 public class Grafo_Teste{
 
     @Test

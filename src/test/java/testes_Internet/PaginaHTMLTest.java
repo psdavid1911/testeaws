@@ -1,9 +1,10 @@
 package testes_Internet;
 
-import EstruturasDeDados.Lista;
-import Internet.PaginaHTML;
 import java.util.ArrayList;
-import org.junit.Test;
+
+import org.junit.jupiter.api.Test;
+
+import Internet.PaginaHTML;
 
 public class PaginaHTMLTest{
 

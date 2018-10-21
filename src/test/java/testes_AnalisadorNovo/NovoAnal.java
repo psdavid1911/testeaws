@@ -1,7 +1,9 @@
 package testes_AnalisadorNovo;
 
+import org.junit.jupiter.api.Test;
+
 import AnalisadorSintatico.Parsing;
-import org.junit.Test;
+
 
 public class NovoAnal{
 

@@ -1,9 +1,11 @@
 package testes_GeometriaAnalitica;
 
+import static Definicoes.Print.println;
+
+import org.junit.jupiter.api.Test;
+
 import GeometriaAnalitica.Ponto;
 import GeometriaAnalitica.Reta;
-import org.junit.Test;
-import static Definicoes.Print.println;
 
 public class RetaTest{
 

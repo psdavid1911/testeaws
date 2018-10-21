@@ -1,4 +1,7 @@
-numero x = 1
-numero y = 2
-palavra nome = este compilador é legal
+// Comentário
+x recebe 1
+y recebe 2
+nome recebe 'esta linguagem é muito permissiva.'
+se x > 1 então nome
+senao 'x não é maior que 1'
 

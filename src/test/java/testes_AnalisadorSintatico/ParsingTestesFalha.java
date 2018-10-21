@@ -1,8 +1,10 @@
 package testes_AnalisadorSintatico;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import org.junit.jupiter.api.Test;
+
 import AnalisadorSintatico.Parsing;
-import org.junit.Test;
-import static org.junit.Assert.assertEquals;
 
 /**
  * Não são usadas maiúsculas nos testes

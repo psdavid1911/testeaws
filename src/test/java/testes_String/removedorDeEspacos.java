@@ -1,14 +1,16 @@
 package testes_String;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 public class removedorDeEspacos{
 
     @Test
     public void removedor(){
-        String linha = "   [ [][]  ]   ";
-        linha = linha.replaceAll("^\\s*\\[", "");
-        linha = linha.replaceAll("\\]\\s*$", "");
-        System.out.println(linha);
+        String linha = "-20&72";
+        boolean resultado = linha.matches(""
+                + "-?[0-9]+(\\.|\\,)[0-9]*|-?[0-9]*(\\.|\\,)[0-9]+|-?[0-9]+"
+        );
+        
+        System.out.println(resultado);
     }
 }

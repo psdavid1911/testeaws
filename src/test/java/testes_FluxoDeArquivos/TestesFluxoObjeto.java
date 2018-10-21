@@ -1,11 +1,13 @@
 package testes_FluxoDeArquivos;
 
-import FluxoDeArquivos.FluxoBeans;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import java.util.ArrayList;
 import java.util.Arrays;
-import org.junit.Before;
-import org.junit.Test;
-import static org.junit.Assert.*;
+
+import org.junit.jupiter.api.Test;
+
+import FluxoDeArquivos.FluxoBeans;
 
 public class TestesFluxoObjeto{
 
@@ -15,9 +17,6 @@ public class TestesFluxoObjeto{
         fo = new FluxoBeans<Object>("teste");
     }
 
-    @Before
-    public void setUp(){
-    }
 
     @Test
     public void leEscreve1(){
@@ -29,7 +28,7 @@ public class TestesFluxoObjeto{
         System.out.println(s);
     }
 
-    @Test
+    @SuppressWarnings("unchecked") @Test
     public void leEscreve2(){
         String s1 = "Isso é um teste";
         String s2 = "Isso também é um teste";

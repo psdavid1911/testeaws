@@ -8,7 +8,7 @@ import java.util.TreeMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.jfree.chart.ChartFactory;
-import org.jfree.chart.ChartUtilities;
+import org.jfree.chart.ChartUtils;
 import org.jfree.chart.JFreeChart;
 import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.data.category.DefaultCategoryDataset;
@@ -46,7 +46,7 @@ public class GraficoDeLinha<TIPOX extends Comparable<TIPOX>, TIPOY extends Numbe
          */
         File arquivo = new File(titulo + ".jpeg");
         try{
-            ChartUtilities.saveChartAsJPEG(arquivo, lineChartObject, largura, altura);
+            ChartUtils.saveChartAsJPEG(arquivo, lineChartObject, largura, altura);
         } catch (IOException ex){
             Logger.getLogger(GraficoDeLinha.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -70,7 +70,7 @@ public class GraficoDeLinha<TIPOX extends Comparable<TIPOX>, TIPOY extends Numbe
          */
         File arquivo = new File(titulo + ".jpeg");
         try{
-            ChartUtilities.saveChartAsJPEG(arquivo, lineChartObject, largura, altura);
+            ChartUtils.saveChartAsJPEG(arquivo, lineChartObject, largura, altura);
         } catch (IOException ex){
             Logger.getLogger(GraficoDeLinha.class.getName()).log(Level.SEVERE, null, ex);
         }

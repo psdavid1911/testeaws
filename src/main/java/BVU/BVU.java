@@ -68,7 +68,7 @@ public class BVU extends Application{
             int delayInicial = 1; // ms
             int tempoDeExecucao = 9 * delayLa;
             int delay = 1000;   // delay de 5 seg.
-            int interval = tempoDeExecucao + 1000;  // intervalo de 1 seg.
+            
             ScheduledExecutorService e = Executors.newScheduledThreadPool(30); // 10 tempo de vida ???
             e.scheduleAtFixedRate(() -> MacroSalva(delay), delayInicial, tempoDeExecucao, TimeUnit.MILLISECONDS);
         });

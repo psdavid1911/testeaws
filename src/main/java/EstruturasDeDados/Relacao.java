@@ -69,7 +69,7 @@ public class Relacao<A extends Comparable<A>, B extends Comparable<B>> implement
 
     //Não destrutivo
     public Par<A, B> pegaPar(A a, B b){
-        return relacao.get(relacao.indexOf(new Par(a, b)));
+        return relacao.get(relacao.indexOf(new Par<A, B>(a, b)));
     }
 
     //Não destrutivo

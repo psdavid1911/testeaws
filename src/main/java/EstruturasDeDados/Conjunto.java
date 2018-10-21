@@ -11,6 +11,11 @@ import java.util.TreeSet;
 public class Conjunto<T> extends TreeSet<T>{
 
     /**
+	 * 
+	 */
+	private static final long serialVersionUID = -6862409313698113312L;
+
+	/**
      * É o conjunto da união, menos a intercessão dos conjuntos
      *
      * @param colecao

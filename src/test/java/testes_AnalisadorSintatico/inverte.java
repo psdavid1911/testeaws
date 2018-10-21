@@ -1,8 +1,9 @@
 package testes_AnalisadorSintatico;
 
-import AnalisadorSintatico.Parsing;
+import org.junit.jupiter.api.Test;
+
 import AnalisadorSintatico.ManipuladorGrafo;
-import org.junit.Test;
+import AnalisadorSintatico.Parsing;
 
 /**
  * Não são usadas maiúsculas nos testes

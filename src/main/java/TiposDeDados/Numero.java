@@ -2,7 +2,11 @@ package TiposDeDados;
 
 public class Numero extends Number implements Comparable<Number>{
 
-    Number numero;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 7228753011479099930L;
+	Number numero;
 
     public Numero(Number numero){
         this.numero = numero;

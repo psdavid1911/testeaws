@@ -1,7 +1,8 @@
 package testes_Estruturas;
 
+import org.junit.jupiter.api.Test;
+
 import Estruturas.ArmazenagemEspacial;
-import org.junit.Test;
 
 public class ArmazenagemEspacialTeste{
 

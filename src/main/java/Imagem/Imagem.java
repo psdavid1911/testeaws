@@ -35,21 +35,7 @@ public class Imagem{
         pincel.setFont(new Font("Dialog", Font.PLAIN, 12));
     }
 
-    /**
-     * Abre uma imagem de um arquivo.
-     *
-     * @param arquivo
-     */
-    public Imagem(String caminhoDoArquivo){
-        GerenciadorDeArquivo arquivo = new GerenciadorDeArquivo(caminhoDoArquivo);
-        BufferedImage img = null;
-        try{
-            img = ImageIO.read(arquivo);
-        } catch (IOException e){
-            System.out.println("Não pude abrir a imagem.");
-        }
-    }
-
+  
     public void corDoFundo(Color cor){
         desenhaRetangulo(cor, 0, 0, largura, altura);
     }

@@ -8,7 +8,12 @@ import java.io.File;
  */
 public class GerenciadorDeArquivo extends File{
 
-    public GerenciadorDeArquivo(String caminho_do_arquivo){
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = -1638141568344529352L;
+
+	public GerenciadorDeArquivo(String caminho_do_arquivo){
         super(caminho_do_arquivo.replace("file://", "").replace("http://", "").replace("https://", ""));
     }
 

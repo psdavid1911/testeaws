@@ -13,7 +13,7 @@ public class LeitorFormatado{
      * @param arquivoWeb
      * @return
      */
-    public ArrayList<String> LeitorFormatado(String arquivoWeb){
+    public ArrayList<String> leitor(String arquivoWeb){
         ArrayList<String> linhasDoDocumento = PaginaHTML.pegaURL(arquivoWeb);
         ArrayList<String> linhasEditadas = new Lista<String>();
         for (String linha : linhasDoDocumento)linhasEditadas.add(RemoverdorDeEspacos.duplosParaSimples(linha));

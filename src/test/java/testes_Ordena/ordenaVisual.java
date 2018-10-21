@@ -1,9 +1,12 @@
 package testes_Ordena;
 
+import static javafx.util.Duration.seconds;
+
+import java.util.Random;
+
 import EstruturasDeDados.Dupla;
 import EstruturasDeDados.Lista;
 import Ordenacao.Bolha;
-import java.util.Random;
 import javafx.animation.ParallelTransition;
 import javafx.animation.PathTransition;
 import javafx.animation.SequentialTransition;
@@ -15,7 +18,6 @@ import javafx.scene.shape.LineTo;
 import javafx.scene.shape.MoveTo;
 import javafx.scene.shape.Path;
 import javafx.stage.Stage;
-import static javafx.util.Duration.seconds;
 
 public class ordenaVisual extends Application{
 

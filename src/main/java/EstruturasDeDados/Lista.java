@@ -13,10 +13,18 @@ import static java.util.Arrays.asList;
 
 public class Lista<T extends Comparable<T>> extends ArrayList<T> implements Iterable<T>, Comparable<Lista<T>>{
 
-    public ArrayList<Dupla<Integer>> historicoDeTrocas = new ArrayList<>();
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 4848437437820795914L;
+	public ArrayList<Dupla<Integer>> historicoDeTrocas = new ArrayList<>();
 
-    public Lista(T... elementos){
+    public Lista(T[] elementos){
         super(asList(elementos));
+    }
+    
+    public Lista(T elemento) {
+   	 super(asList(elemento));
     }
 
     public Lista(List<T> lista){
@@ -71,7 +79,7 @@ public class Lista<T extends Comparable<T>> extends ArrayList<T> implements Iter
         return Collections.min(this);
     }
 
-    public void ordena(Comparator comparador){
+    public void ordena(Comparator<T> comparador){
         Collections.sort(this, comparador);
     }
 
@@ -109,7 +117,7 @@ public class Lista<T extends Comparable<T>> extends ArrayList<T> implements Iter
     }
 
     public Lista<T> sublista(Predicate<T> expressaoLambda){
-        return new Lista(filtro(expressaoLambda).collect(Collectors.toList()));
+        return new Lista<>(filtro(expressaoLambda).collect(Collectors.toList()));
     }
 
     public void trocaElementos(int posicao1, int posicao2){

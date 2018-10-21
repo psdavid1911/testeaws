@@ -1,9 +1,11 @@
 package testes_FluxoDeArquivos;
 
-import FluxoDeArquivos.FluxoDeTexto;
 import java.util.ArrayList;
 import java.util.Arrays;
-import org.junit.Test;
+
+import org.junit.jupiter.api.Test;
+
+import FluxoDeArquivos.FluxoDeTexto;
 
 public class TestesFLuxoTexto{
 
