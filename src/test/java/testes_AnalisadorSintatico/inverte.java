@@ -1,6 +1,6 @@
 package testes_AnalisadorSintatico;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import AnalisadorSintatico.ManipuladorGrafo;
 import AnalisadorSintatico.Parsing;

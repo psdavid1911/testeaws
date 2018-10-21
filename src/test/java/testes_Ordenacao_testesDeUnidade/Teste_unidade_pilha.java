@@ -1,6 +1,6 @@
 package testes_Ordenacao_testesDeUnidade;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import Base.Aleatorio;
 import EstruturasDeDados.Lista;

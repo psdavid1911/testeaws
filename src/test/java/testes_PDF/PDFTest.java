@@ -1,6 +1,6 @@
 package testes_PDF;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import PDF.PDF;
 

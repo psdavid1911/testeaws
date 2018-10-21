@@ -1,6 +1,6 @@
 package testes_AnalisadorNovo;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import AnalisadorSintatico.Parsing;
 

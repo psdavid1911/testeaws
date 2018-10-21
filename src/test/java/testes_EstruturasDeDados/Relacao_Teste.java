@@ -1,6 +1,6 @@
 package testes_EstruturasDeDados;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import EstruturasDeDados.Par;
 import EstruturasDeDados.Relacao;

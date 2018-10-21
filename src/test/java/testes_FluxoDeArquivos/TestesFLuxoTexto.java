@@ -3,7 +3,7 @@ package testes_FluxoDeArquivos;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import FluxoDeArquivos.FluxoDeTexto;
 

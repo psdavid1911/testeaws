@@ -1,6 +1,6 @@
 package testes_Internet;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import Internet.Codificador;
 
