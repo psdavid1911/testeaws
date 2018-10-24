@@ -26,13 +26,13 @@ public class Parsing{
 
     private Lista<String> automato(Lista<String> estado){
         getProcedimento().add("\n<br>Estado |^|: " + estado);
-        if (estado.equals(getMeta()))return getMeta();
+        if (estado.equals(meta()))return meta();
         for (Lista<String> transicao : transicoes(estado))
-            if (automato(transicao).equals(getMeta())){
+            if (automato(transicao).equals(meta())){
                 getProcedimento().add("\n<br>Substituição |^|: " + transicao.toString());
-                return getMeta();
+                return meta();
             }
-        return getFalha();
+        return falha();
     }
 
     public Boolean comLexico(){
@@ -62,7 +62,7 @@ public class Parsing{
         return automato(conversaoInicial).get(0);
     }
 
-    public Lista<String> getFalha(){
+    public Lista<String> falha(){
         return falha;
     }
 
@@ -74,7 +74,7 @@ public class Parsing{
         return lexico;
     }
 
-    public Lista<String> getMeta(){
+    public Lista<String> meta(){
         return meta;
     }
 

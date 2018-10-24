@@ -13,10 +13,10 @@ public class Grafo<TIPO extends Comparable<TIPO>> extends TreeMap<TIPO, Lista<TI
 	 */
 	private static final long serialVersionUID = -6987041211334230258L;
 
-	public void adicionaAresta(TIPO vert, TIPO adja) {
-		adicionaVertice(vert);
-		adicionaVertice(adja);
-		if (!existeAresta(vert, adja)) adjascencias(vert).add(adja);
+	public void adicionaAresta(TIPO vertice, TIPO adjascencia) {
+		adicionaVertice(vertice);
+		adicionaVertice(adjascencia);
+		if (!existeAresta(vertice, adjascencia)) adjascencias(vertice).add(adjascencia);
 	}
 
 	public void adicionaVertice(TIPO vertice) {
