@@ -1,0 +1,7 @@
+Analisador sintático
+
+[x] Core
+[ ] Precedencia de operadores
+[ ] Chaveamento
+[ ] Encapsulamento
+[ ] Uso de parênteses
