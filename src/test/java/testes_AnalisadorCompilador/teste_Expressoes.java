@@ -3,12 +3,11 @@ package testes_AnalisadorCompilador;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.Arrays;
-import java.util.logging.Logger;
 
 import org.junit.Test;
 
 public class teste_Expressoes {
-	ExpressaoUtils e = new ExpressaoUtils();
+	public static ExpressaoUtils e = new ExpressaoUtils();
 
 	@Test public void simplifcaComSoma() {
 		assertEquals("3.0", e.simplificaBinario("1 + 2".split(" ")));
@@ -57,9 +56,12 @@ public class teste_Expressoes {
 	@Test public void simplifcaComIgual() {
 		assertEquals("0", e.simplificaBinario("3 = -2".split(" ")));
 	}
-	
-	@Test public void pegaPedacos() {
-		Logger.getGlobal().info(Arrays.toString(e.pegaPedacos("3 + 2")));
-		//assertEquals("5.0", );
+
+	public static void main(String args[]) {
+		final String s = "2+3*5-4";
+		String[]     a = e.pegaPedacos(s);
+		System.out.println(Arrays.toString(a));
 	}
+
+	@Test public void pegaPedacos() {}
 }
